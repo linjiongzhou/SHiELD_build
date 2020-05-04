@@ -1,0 +1,26 @@
+#!/bin/sh
+
+echo $PATH
+
+pushd ${SHiELD_SRC}
+
+\rm -rf pathnames_*
+
+list_paths -o ${BUILD_ROOT}/Build/exec/pathnames_gfs \
+    atmos_cubed_sphere/driver/fvGFS/gfdl_cloud_microphys.F90 \
+    atmos_cubed_sphere/driver/fvGFS/cloud_diagnosis.F90 \
+    fv3_gfsphysics/gsmphys/  \
+    fv3_gfsphysics/GFS_layer/ \
+    fv3_gfsphysics/IPD_layer
+
+list_paths -o ${BUILD_ROOT}/Build/exec/pathnames_fv3 \
+    fv3_gfsphysics/FV3GFS/ \
+    fv3_gfsphysics/atmos_drivers/coupled/atmos_model.F90 \
+    fv3_gfsphysics/simple_coupler/coupler_main.F90 \
+    atmos_cubed_sphere/driver/fvGFS/atmosphere.F90 \
+    atmos_cubed_sphere/tools/ \
+    atmos_cubed_sphere/model/
+
+popd
+
+exit 0

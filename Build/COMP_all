@@ -1,0 +1,156 @@
+#!/bin/sh
+
+#
+# function to display a spinning wheel while a command is in progress
+spin()
+{
+  spinner="\\|/-\\|/-"
+  while :
+  do
+    for i in `seq 0 7`
+    do
+      echo -n "${spinner:$i:1}"
+      echo -en "\010"
+      sleep 1
+    done
+  done
+}
+# end function
+
+#
+# start the spinner
+spin &
+SPIN_PID=$!
+trap "kill -9 $SPIN_PID" `seq 0 15`
+#------------------------------------------------------------------------------
+# functional code below this point
+
+#
+## set up some default variables for use within the helper scripts
+  export BUILD_ROOT=${PWD%/*}
+  export SHiELD_SRC=${PWD%/*/*}/SHiELD_SRC/
+  export PATH="${BUILD_ROOT}/mkmf/bin:${BUILD_ROOT}/Build/mk_scripts:${PATH}"
+
+#
+## load the proper environment for your machine
+  . ${BUILD_ROOT}/site/environment.sh
+
+#
+## check to make sure libFMS exists
+  if [ -d libFMS ] && [ -e libFMS/32bit/libFMS.a ] && [ -e libFMS/64bit/libFMS.a ] ; then
+     echo " pre-built libFMS exists"
+  else
+     echo " libFMS does not exist - building libFMS"
+     MAKE_libFMS >> build_libFMS.out 2>&1   # build 32bit and 64bit versions of libFMS
+     #
+     #     # test and report on libFMS build success
+     if [ $? -ne 0 ] ; then
+       echo ">>> libFMS build failed"
+       exit 1
+     fi
+     echo " libFMS build successful"
+  fi
+
+#
+## ensure the build and final executable locations are available
+  mkdir -p ./exec
+  mkdir -p ./bin
+
+#
+# configure you build parameters
+# options
+#    type:  nh, hydro
+#    comp:  prod, repro, debug
+#     bit:  32bit, 64bit
+#     avx:  Y, N               ! use AVX_LEVEl defined in site/env.cshrc
+#                              ! default AVX_LEVEL: CORE-AVX-I
+#
+# make non-hydrostatic prod 32bit
+  \rm -rf exec/*
+  type="nh"
+  comp="prod"
+  bit="32bit"
+  avx="Y"
+  echo -e "  building ${type} ${comp} ${bit} \t `date`"
+    mk_paths                        > build_${type}_${comp}.${bit}.out 2>&1   # create the file list for the buil
+    mk_makefile ${type} ${bit}     >> build_${type}_${comp}.${bit}.out 2>&1   # create the library makefiles
+    mk_make ${comp} ${bit} ${avx}  >> build_${type}_${comp}.${bit}.out 2>&1   # build the configuration
+    mv exec/test.x bin/SHiELD_${type}.${comp}.${bit}.x                        # move the executable to an accessible area
+
+  #
+  #     # test and report on libFMS build success
+  if [ $? -ne 0 ] ; then
+    echo ">>> SHiELD build ${type} ${comp} ${bit} failed"
+    exit 1
+  else
+    echo " SHiELD build ${type} ${comp} ${bit} successful"
+  fi
+
+#
+# make non-hydrostatic repro 32bit
+  \rm -rf exec/*
+  type="nh"
+  comp="repro"
+  bit="32bit"
+  avx="Y"
+  echo -e "  building ${type} ${comp} ${bit} \t `date`"
+    mk_paths                        > build_${type}_${comp}.${bit}.out 2>&1   # create the file list for the buil
+    mk_makefile ${type} ${bit}     >> build_${type}_${comp}.${bit}.out 2>&1   # create the library makefiles
+    mk_make ${comp} ${bit} ${avx}  >> build_${type}_${comp}.${bit}.out 2>&1   # build the configuration
+    mv exec/test.x bin/SHiELD_${type}.${comp}.${bit}.x                        # move the executable to an accessible area
+
+  #
+  #     # test and report on libFMS build success
+  if [ $? -ne 0 ] ; then
+    echo ">>> SHiELD build ${type} ${comp} ${bit} failed"
+    exit 1
+  else
+    echo " SHiELD build ${type} ${comp} ${bit} successful"
+  fi
+
+exit 0
+
+#
+# make hydrostatic prod 64bit
+  \rm -rf exec/*
+  type="hydro"
+  comp="prod"
+  bit="64bit"
+  avx="Y"
+  echo -e "  building ${type} ${comp} ${bit} \t `date`"
+    mk_paths                        > build_${type}_${comp}.${bit}.out 2>&1   # create the file list for the buil
+    mk_makefile ${type} ${bit}     >> build_${type}_${comp}.${bit}.out 2>&1   # create the library makefiles
+    mk_make ${comp} ${bit} ${avx}  >> build_${type}_${comp}.${bit}.out 2>&1   # build the configuration
+    mv exec/test.x bin/SHiELD_${type}.${comp}.${bit}.x                        # move the executable to an accessible area
+  #
+  #     # test and report on libFMS build success
+  if [ $? -ne 0 ] ; then
+    echo ">>> SHiELD build ${type} ${comp} ${bit} failed"
+    exit 1
+  else
+    echo " SHiELD build ${type} ${comp} ${bit} successful"
+  fi
+
+#
+# make hydrostatic prod 32bit
+  \rm -rf exec/*
+  type="hydro"
+  comp="prod"
+  bit="32bit"
+  avx="Y"
+  echo -e "  building ${type} ${comp} ${bit} \t `date`"
+    mk_paths                        > build_${type}_${comp}.${bit}.out 2>&1   # create the file list for the build
+    mk_makefile ${type} ${bit}     >> build_${type}_${comp}.${bit}.out 2>&1   # create the library makefiles
+    mk_make ${comp} ${bit} ${avx}  >> build_${type}_${comp}.${bit}.out 2>&1   # build the configuration
+    mv exec/test.x bin/SHiELD_${type}.${comp}.${bit}.x                        # move the executable to an accessible area
+
+  #
+  #     # test and report on libFMS build success
+  if [ $? -ne 0 ] ; then
+    echo ">>> SHiELD build ${type} ${comp} ${bit} failed"
+    exit 1
+  else
+    echo " SHiELD build ${type} ${comp} ${bit} successful"
+  fi
+
+exit 0

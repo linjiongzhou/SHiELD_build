@@ -1,0 +1,4 @@
+[submodule "mkmf"]
+	path = mkmf
+	url = https://github.com/NOAA-GFDL/mkmf
+	branch = master
