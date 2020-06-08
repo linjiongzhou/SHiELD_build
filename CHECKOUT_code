@@ -8,7 +8,7 @@ export SHiELD_SRC=${PWD%/*}/SHiELD_SRC/
 mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
-release="test"
+release="release_20200605"
 fms_release="2020.02"
 fv3_release="user/rab/ic_test_2020.02_updates"
 phy_release="user/rab/kyc_orig_coupler_main_2020.02"
@@ -18,4 +18,16 @@ git clone -b ${phy_release}  http://gitlab.gfdl.noaa.gov/Lucas.Harris/fv3_gfsphy
 git clone -b ${fms_release}  http://github.com/NOAA-GFDL/FMS
 
 #Automatic release tracking from Matt M.
-echo $release >! ../../release
+echo $release >& release
+
+#Note from Linjiong Zhou
+#Switch to SHiELD2020 Dynamical Core
+cd atmos_cubed_sphere
+git remote add lnzrepo http://gitlab.gfdl.noaa.gov/Linjiong.Zhou/atmos_cubed_sphere.git
+git pull lnzrepo
+git checkout user/lnz/shield2020
+#Switch to SHiELD2020 Physics Package
+cd fv3_gfsphysics
+git remote add lnzrepo http://gitlab.gfdl.noaa.gov/Linjiong.Zhou/fv3_gfsphysics.git
+git pull lnzrepo
+git checkout user/lnz/shield2020
