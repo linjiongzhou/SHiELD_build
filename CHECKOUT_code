@@ -18,4 +18,4 @@ git clone -b ${phy_release}  http://gitlab.gfdl.noaa.gov/Lucas.Harris/fv3_gfsphy
 git clone -b ${fms_release}  http://github.com/NOAA-GFDL/FMS
 
 #Automatic release tracking from Matt M.
-echo $release >! ../../release
+echo $release >& ../../release
