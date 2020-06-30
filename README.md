@@ -44,7 +44,7 @@ Process for building SHiELD
    * update AVX support
 3. Ensure you have the mkmf submodule
    * git submodule update --init
-   * git submodule update --remote
+   * git submodule update --remote mkmf
 4. In the Build directory, execute either
    * COMP_dev [clean]
      - builds a specific configuation
