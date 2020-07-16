@@ -2,6 +2,3 @@
 	path = mkmf
 	url = https://github.com/NOAA-GFDL/mkmf
 	branch = master
-[submodule "Users/kyc_runscripts"]
-	path = Users/kyc_runscripts
-	url = https://gitlab.gfdl.noaa.gov/fv3team/kyc_runscripts.git
