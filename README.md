@@ -74,7 +74,7 @@ Process for building SHiELD
      - *git add .*
      - *git commit -m "initial commit"*
    * add your origin branch
-     - *git remote add origin https://gitlab.gfdl.noaa.gov/fv3team/<name\>_runscripts.git*
+     - *git remote add origin https://gitlab.gfdl.noaa.gov/<First.Last\>/<name\>_runscripts.git*
    * push your first commit to the gitlab server
      - *git push --set-upstream origin master*
 2. Add your runscript repository as a submodule to SHiELD_build
@@ -87,7 +87,7 @@ Process for building SHiELD
    * change directory to the User space for repositories
      - *cd SHiELD_build/Users*
    * add your runscript repository as a submodule
-     - *git submodule add https://gitlab.gfdl.noaa.gov/fv3team/\<name\>_runscripts*
+     - *git submodule add https://gitlab.gfdl.noaa.gov/<First.Last\>/\<name\>_runscripts*
    * save and commit your changes
      - *git commit -am "added \<name\>_runscripts as a submodule"*
    * push your changes back to your fork on gitlab
