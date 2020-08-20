@@ -38,6 +38,10 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
           CLEAN="clean"
           shift # Remove --initialize from processing
           ;;
+          cleanall)
+          CLEAN="cleanall"
+          shift # Remove --initialize from processing
+          ;;
       esac
   done
 
@@ -52,8 +56,13 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
   . ${BUILD_ROOT}/site/environment.sh
 
 #
-# conditionally clean the build directory
-  if [ ${CLEAN} = "clean" ] ; then
+# conditionally clean the libFMS and/or build directory
+  if [ ${CLEAN} = "cleanall" ] ; then
+     echo " cleaning libFMS and build directories in 2 seconds"
+     sleep 2
+     \rm -rf libFMS
+     \rm -rf exec/*
+  elif [ ${CLEAN} = "clean" ] ; then
      echo " cleaning build directory in 2 seconds"
      sleep 2
      \rm -rf exec/*
