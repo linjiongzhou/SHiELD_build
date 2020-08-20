@@ -9,8 +9,13 @@ spin()
   do
     for i in `seq 0 7`
     do
-      echo -n "${spinner:$i:1}"
-      echo -en "\010"
+        #from https://unix.stackexchange.com/a/118468
+        case $(ps -o stat= -p $$) in
+          *+*) 
+              echo -n "${spinner:$i:1}"
+              echo -en "\010"
+              ;;
+      esac
       sleep 1
     done
   done
@@ -38,6 +43,10 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
           CLEAN="clean"
           shift # Remove --initialize from processing
           ;;
+          cleanall) #from LJZ
+          CLEAN="cleanall" 
+          shift # Remove --initialize from processing
+          ;;
       esac
   done
 
@@ -52,8 +61,13 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
   . ${BUILD_ROOT}/site/environment.sh
 
 #
-# conditionally clean the build directory
-  if [ ${CLEAN} = "clean" ] ; then
+# conditionally clean the libFMS and/or build directory
+  if [ ${CLEAN} = "cleanall" ] ; then
+     echo " cleaning libFMS and build directories in 2 seconds"
+     sleep 2
+     \rm -rf libFMS
+     \rm -rf exec/*
+  elif [ ${CLEAN} = "clean" ] ; then
      echo " cleaning build directory in 2 seconds"
      sleep 2
      \rm -rf exec/*
