@@ -9,13 +9,10 @@ mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
 release="release_20201011"
-fms_release="2020.03-beta2"
-fv3_release="user/lnz/shield2020"
-phy_release="user/lnz/shield2020"
 
-git clone -b ${fv3_release}  http://gitlab.gfdl.noaa.gov/Linjiong.Zhou/atmos_cubed_sphere.git
-git clone -b ${phy_release}  http://gitlab.gfdl.noaa.gov/Linjiong.Zhou/fv3_gfsphysics.git
-git clone -b ${fms_release}  http://github.com/NOAA-GFDL/FMS
+git clone --recurse http://gitlab.gfdl.noaa.gov/fv3team/atmos_cubed_sphere.git
+git clone --recurse http://gitlab.gfdl.noaa.gov/fv3team/fv3_gfsphysics.git
+git clone --recurse http://github.com/NOAA-GFDL/FMS
 
 #Automatic release tracking from Matt M.
 echo $release >& ../SHiELD_build/release
