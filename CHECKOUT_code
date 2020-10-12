@@ -8,8 +8,8 @@ export SHiELD_SRC=${PWD%/*}/SHiELD_SRC/
 mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
-release="release_20200820"
-fms_release="2020.03-beta1"
+release="release_20201011"
+fms_release="2020.03-beta2"
 fv3_release="user/lnz/shield2020"
 phy_release="user/lnz/shield2020"
 
