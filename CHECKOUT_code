@@ -8,10 +8,10 @@ export SHiELD_SRC=${PWD%/*}/SHiELD_SRC/
 mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
-release="release_20201011"
+release="release_20201015"
 
-git clone --recurse http://gitlab.gfdl.noaa.gov/fv3team/atmos_cubed_sphere.git
-git clone --recurse http://gitlab.gfdl.noaa.gov/fv3team/fv3_gfsphysics.git
+git clone --recurse http://gitlab.gfdl.noaa.gov/$USER/atmos_cubed_sphere.git
+git clone --recurse http://gitlab.gfdl.noaa.gov/$USER/fv3_gfsphysics.git
 git clone --recurse http://github.com/NOAA-GFDL/FMS
 
 #Automatic release tracking from Matt M.
