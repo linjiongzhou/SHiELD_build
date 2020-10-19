@@ -9,7 +9,7 @@ mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
 release="test"
-fms_release="2020.02"
+fms_release="2020.03"
 fv3_release="user/rab/ic_test_2020.02_updates"
 phy_release="user/rab/kyc_orig_coupler_main_2020.02"
 
