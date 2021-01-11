@@ -9,7 +9,7 @@ mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
 release="202006"
-fms_release="2020.02"
+fms_release="2020.04"
 fv3_release="user/lmh_fvGFS_newnest"
 phy_release="lmh_IPDv4"
 
