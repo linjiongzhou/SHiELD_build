@@ -1,0 +1,17 @@
+#!/bin/tcsh
+
+echo $PATH
+
+pushd ${SHiELD_SRC}
+
+\rm -rf pathnames_solo 
+
+list_paths -o ${BUILD_ROOT}/Build-solo/exec/pathnames_solo \
+    atmos_cubed_sphere/driver/solo/ \
+    atmos_cubed_sphere/tools/ \
+    atmos_cubed_sphere/model/ \
+    fv3_gfsphysics/atmos_drivers/solo/ 
+
+popd
+
+exit 0
