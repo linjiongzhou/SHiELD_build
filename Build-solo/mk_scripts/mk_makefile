@@ -13,7 +13,7 @@ BIT="32bit"
 for arg in "$@"
 do
     case $arg in
-        nh|hydro)
+        nh|hydro|sw)
         HYDRO="${arg#*=}"
         shift # Remove HYDRO from processing
         ;;
@@ -37,6 +37,10 @@ FV3_cppDefs="-DDYCORE_SOLO -Duse_libMPI -Duse_netCDF -DSPMD -DUSE_LOG_DIAG_FIELD
 # non-hydrostatic CPPDEFS
 if [ ${HYDRO} = "nh" ] ; then
   FV3_cppDefs="${FV3_cppDefs} -DMOIST_CAPPA -DUSE_COND"
+fi
+
+if [ ${HYDRO} = "sw" ] ; then
+    FV3_cppDefs="${FV3_cppDefs} -DSW_DYNAMICS"
 fi
 
 pushd exec/
