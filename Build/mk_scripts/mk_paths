@@ -8,7 +8,6 @@ pushd ${SHiELD_SRC}
 
 list_paths -o ${BUILD_ROOT}/Build/exec/pathnames_gfs \
     atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
-    atmos_cubed_sphere/model/cld_eff_rad.F90 \
     fv3_gfsphysics/gsmphys/  \
     fv3_gfsphysics/GFS_layer/ \
     fv3_gfsphysics/IPD_layer
@@ -19,6 +18,7 @@ list_paths -o ${BUILD_ROOT}/Build/exec/pathnames_fv3 \
     fv3_gfsphysics/simple_coupler/coupler_main.F90 \
     atmos_cubed_sphere/driver/fvGFS/atmosphere.F90 \
     atmos_cubed_sphere/tools/ \
+    atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90 \
     atmos_cubed_sphere/model/
 
 popd
