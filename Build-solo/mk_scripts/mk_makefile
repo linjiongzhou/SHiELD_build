@@ -31,7 +31,7 @@ done
 #
 # FV3 CPPDEFS
 #FV3_cppDefs="-DDYCORE_SOLO -Duse_libMPI -Duse_netCDF -DHAVE_SCHED_GETAFFINITY -DSPMD -DUSE_LOG_DIAG_FIELD_INFO -Duse_LARGEFILE -DNO_CMIP_DIAG -DINTERNAL_FILE_NML" #get_affinity doesn't work
-FV3_cppDefs="-DDYCORE_SOLO -Duse_libMPI -Duse_netCDF -DSPMD -DUSE_LOG_DIAG_FIELD_INFO -Duse_LARGEFILE -DNO_CMIP_DIAG -DINTERNAL_FILE_NML"
+FV3_cppDefs="-DDYCORE_SOLO -Duse_libMPI -Duse_netCDF -DSPMD -DUSE_LOG_DIAG_FIELD_INFO -Duse_LARGEFILE -DNO_CMIP_DIAG -DINTERNAL_FILE_NML -DDCMIP -DHIWPP"
 
 #
 # non-hydrostatic CPPDEFS
@@ -40,7 +40,7 @@ if [ ${HYDRO} = "nh" ] ; then
 fi
 
 if [ ${HYDRO} = "sw" ] ; then
-    FV3_cppDefs="${FV3_cppDefs} -DSW_DYNAMICS"
+    FV3_cppDefs="${FV3_cppDefs} -DSW_DYNAMICS -DDYNAMICS_ZS"
 fi
 
 pushd exec/

@@ -6,7 +6,7 @@ CLEAN="noclean"
 COMP="prod"
 BIT="32bit"
 AVX="Y"
-
+SMALL=""
 #
 ## parse arguments
 for arg in "$@"
@@ -28,6 +28,8 @@ do
         AVX="${arg#*=}"
         shift # Remove AVX Y/N/y/n from processing
         ;;
+        small)
+        SMALL="small"
     esac
 done
 
@@ -45,7 +47,7 @@ module list
 
 ifort -V
 
-NCEPLIBS="../libFMS/${BIT}/libFMS.a"
+NCEPLIBS="../libFMS/${BIT}${SMALL}/libFMS.a"
 
 if [ ${COMP} = "debug" ] && [ ${BIT} = "32bit" ] ; then
   echo " debug w/ 32-bit dy-core"

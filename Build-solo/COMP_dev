@@ -101,7 +101,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 #
 # configure your build parameters
 # options
-#    type:  nh, hydro
+#    type:  nh, hydro, sw
 #    comp:  prod, repro, debug
 #     bit:  32bit, 64bit
 #     avx:  Y, N               ! use AVX_LEVEl defined in site/environment.sh

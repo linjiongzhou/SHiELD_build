@@ -17,7 +17,7 @@ cppDefs="-Duse_libMPI -Duse_netCDF -Duse_LARGEFILE -DHAVE_SCHED_GETAFFINITY -DIN
 #
 # clean up and create the FMS library directory
 pushd ../Build/
-\rm -rf libFMS
+\rm -rf libFMS/??bit
 
 #########################
 #---CREATE 32-BIT libFMS
