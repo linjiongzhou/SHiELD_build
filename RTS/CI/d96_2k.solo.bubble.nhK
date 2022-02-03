@@ -12,7 +12,8 @@ if [ -z ${BUILDDIR} ] ; then
 fi
 
 # configure the site
-. ${BUILDDIR}/site/environment.sh
+COMPILER=${COMPILER:-intel}
+. ${BUILDDIR}/site/environment.${COMPILER}.sh
 
 set -x
 
@@ -30,7 +31,7 @@ COMP="repro"       # choices:  debug, repro, prod
 
 # directory structure
 WORKDIR=${SCRATCHDIR:-${BUILDDIR}}/CI/BATCH-CI/${GRID}.${MEMO}/
-executable=${BUILDDIR}/Build-solo/bin/solo_hydro.${COMP}.${MODE}.x
+executable=${BUILDDIR}/Build/bin/SOLO_hydro.${COMP}.${MODE}.${COMPILER}.x
 
 # changeable parameters
     # dycore definitions
