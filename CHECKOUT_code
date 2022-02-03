@@ -13,7 +13,7 @@ fms_release="2021.03"
 fv3_release="test2"
 phy_release="system_update"
 
-git clone -b ${fv3_release}  https://gitlab.gfdl.noaa.gov:Rusty.Benson/atmos_cubed_sphere.git
+git clone -b ${fv3_release}  https://gitlab.gfdl.noaa.gov/Rusty.Benson/atmos_cubed_sphere.git
 git clone -b ${phy_release}  https://gitlab.gfdl.noaa.gov/Rusty.Benson/fv3_gfsphysics.git
 git clone -b ${fms_release}  https://github.com/NOAA-GFDL/FMS
 
