@@ -41,7 +41,7 @@ done
 if [ ${CLEAN} = "clean" ] ; then
   echo " cleaning build directory in 4 seconds "
   sleep 2
-  (cd exec_${COMPILER} ; \rm -f *.f90 *.o *.mod test.x)
+  (cd exec/${COMPILER} ; \rm -f *.f90 *.o *.mod test.x)
 fi
 
 #-- load the development environment
@@ -50,35 +50,35 @@ module list
 
 $FC --version
 
-NCEPLIBS="../libFMS/${COMPILER}/${BIT}/libFMS.a ./libgfs.a -L../nceplibs/${COMPILER}/ -lbacio_4  -lsp_v2.0.2_d  -lw3emc_d  -lw3nco_d"
+NCEPLIBS="../../libFMS/${COMPILER}/${BIT}/libFMS.a ./libgfs.a -L../../nceplibs/${COMPILER}/ -lbacio_4  -lsp_v2.0.2_d  -lw3emc_d  -lw3nco_d"
 
 if [ ${COMP} = "debug" ] && [ ${BIT} = "32bit" ] ; then
   echo " debug w/ 32-bit dy-core"
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} -f Makefile_gfs)
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} -f Makefile_gfs)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 elif [ ${COMP} = "debug" ] && [ ${BIT} != "32bit" ] ; then
   echo " debug w/ 64-bit dy-core"
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} -f Makefile_gfs)
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} -f Makefile_gfs)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 elif [ ${COMP} = "repro" ] && [ ${BIT} = "32bit" ] ; then
   echo " repro w/ 32-bit dy-core"
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} -f Makefile_gfs)
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} -f Makefile_gfs)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 elif [ ${COMP} = "repro" ] && [ ${BIT} != "32bit" ] ; then
   echo " repro w/ 64-bit dy-core"
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} -f Makefile_gfs)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} -f Makefile_gfs)
     ifort -V
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 elif [ ${COMP} = "prod" ] && [ ${BIT} = "32bit" ] ; then
   echo " prod w/ 32-bit dy-core"
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} -f Makefile_gfs)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} -f Makefile_gfs)
     ifort -V
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 elif [ ${COMP} = "prod" ] && [ ${BIT} != "32bit" ] ; then
   echo " prod w/ 64-bit dy-core"
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} -f Makefile_gfs)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} -f Makefile_gfs)
     ifort -V
-    (cd exec_${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 fi
 
 exit 0

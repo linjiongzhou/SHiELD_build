@@ -101,9 +101,9 @@ elif [ `hostname | cut -c1-3` = "lsc" ] ; then
    echo " lsc environment "
 
    source $MODULESHOME/init/sh
-   module load oneapi/2021.2
-   module load compiler/2021.2
-   module load mpi/2021.2
+   module load oneapi/2022.1
+   module load compiler/2022.0.1
+   module load mpi/2021.5.0
    module load netcdf/4.8.0
    module load hdf5/1.12.0
 

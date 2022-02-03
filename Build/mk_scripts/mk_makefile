@@ -41,17 +41,17 @@ if [ ${HYDRO} = "nh" ] ; then
   FV3_cppDefs="${FV3_cppDefs} -DMOIST_CAPPA -DUSE_COND"
 fi
 
-pushd exec_${COMPILER}/
+pushd exec/${COMPILER}/
 
 ############################
 #---CREATE MAKEFILES
 ############################
 mkmf -m Makefile_gfs -a ${SHiELD_SRC} -t "${BUILD_ROOT}/${TEMPLATE}" -o "-cpp" -c "${GFS_cppDefs}" \
-         -p libgfs.a ${BUILD_ROOT}/Build/exec_${COMPILER}/pathnames_gfs
+         -p libgfs.a ${BUILD_ROOT}/Build/exec/${COMPILER}/pathnames_gfs
 
 mkmf -m Makefile_fv3 -a ${SHiELD_SRC} -t "${BUILD_ROOT}/${TEMPLATE}" -c "${FV3_cppDefs}" \
          -p test.x -o "-I${SHiELD_SRC}/FMS/include -I${BUILD_ROOT}/Build/libFMS/${COMPILER}/${BIT}" \
-          ${BUILD_ROOT}/Build/exec_${COMPILER}/pathnames_fv3
+          ${BUILD_ROOT}/Build/exec/${COMPILER}/pathnames_fv3
 
 ############################
 #---ADD LIBS TO FINAL LINK

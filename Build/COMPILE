@@ -36,7 +36,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 #     avx:  Y(D), N   ! use AVX_LEVEl defined in site/environment.${compiler}.sh
 #
   type="nh"
-  comp="debug"
+  comp="prod"
   bit="32bit"
   avx="Y"
   compiler="intel"
@@ -108,11 +108,11 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
      echo " cleaning FMS library and build directory in 2 seconds"
      sleep 2
      \rm -rf libFMS/${compiler}/*
-     \rm -rf exec_${compiler}/*
+     \rm -rf exec/${compiler}/*
   elif [ ${clean} = "clean" ] ; then
      echo " cleaning build directory in 2 seconds"
      sleep 2
-     \rm -rf exec_${compiler}/*
+     \rm -rf exec/${compiler}/*
   fi
 
 #
@@ -133,15 +133,15 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 
 #
 # ensure the build and final executable locations are available
-  mkdir -p ./exec_${compiler}
-  mkdir -p ./bin_${compiler}
+  mkdir -p ./exec/${compiler}
+  mkdir -p ./bin/
 
 # build the model
   echo -e "  building ${type} ${comp} ${bit} \t `date`"
     mk_paths ${compiler}                       > build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # create the file list for the build
     mk_makefile ${type} ${bit} ${compiler}    >> build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # create the library makefiles
     mk_make ${comp} ${bit} ${avx} ${compiler} >> build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # build the configuration
-    mv exec_${compiler}/test.x bin_${compiler}/SHiELD_${type}.${comp}.${bit}.x                        # move the executable to an accessible area
+    mv exec/${compiler}/test.x bin/SHiELD_${type}.${comp}.${bit}.${compiler}.x                        # move the executable to an accessible area
 
 #
 # test and report on build success
