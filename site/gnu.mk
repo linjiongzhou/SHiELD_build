@@ -31,50 +31,41 @@ NETCDF_ROOT = $(NETCDF_DIR)
 MPI_ROOT    = $(MPICH_DIR)
 INCLUDE = -I$(NETCDF_ROOT)/include
 
-FPPFLAGS := -fpp -Wp,-w $(INCLUDE)
+FPPFLAGS := -cpp -Wp,-w $(INCLUDE)
 
-FFLAGS := $(INCLUDE) -fno-alias -auto -safe-cray-ptr -ftz -assume byterecl -nowarn -sox -align array64byte -traceback
+FFLAGS := $(INCLUDE) -fcray-pointer -ffree-line-length-none -fno-range-check -fbacktrace
 
 ifeq ($(32BIT),Y)
-FFLAGS += -DOVERLOAD_R4 -DOVERLOAD_R8 -i4 -real-size 32
+CPPDEFS += -DOVERLOAD_R4 -DOVERLOAD_R8
+FFLAGS +=
 else
-FFLAGS += -i4 -real-size 64 -no-prec-div -no-prec-sqrt
+FFLAGS += -fdefault-real-8 -fdefault-double-8
 endif
 
-ifeq ($(AVX),Y)
-FFLAGS += $(AVX_LEVEL) -qno-opt-dynamic-align
-CFLAGS += $(AVX_LEVEL) -qno-opt-dynamic-align
-else
-FFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
-CFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
-endif
 
-FFLAGS_OPT = -O2 -debug minimal -fp-model source -qoverride-limits -qopt-prefetch=3
-FFLAGS_REPRO = -O2 -debug minimal -fp-model source -qoverride-limits #-fpe0 #causes problems??
-FFLAGS_DEBUG = -g -O0 -debug -check -check noarg_temp_created -check nopointer -warn -warn noerrors -fp-stack-check -fstack-protector-all -fpe0 -ftrapuv
+FFLAGS_OPT = -O2 -fno-range-check
+FFLAGS_REPRO = -O2 -ggdb -fno-range-check
+FFLAGS_DEBUG = -O0 -ggdb -fno-unsafe-math-optimizations -frounding-math -fsignaling-nans -ffpe-trap=invalid,zero,overflow -fbounds-check
 
-TRANSCENDENTALS := -fast-transcendentals
-FFLAGS_OPENMP = -qopenmp
-FFLAGS_VERBOSE = -v -V -what
+TRANSCENDENTALS :=
+FFLAGS_OPENMP =  #-fopenmp
+FFLAGS_VERBOSE = -v
 
-CFLAGS := -D__IFC -sox -msse2 -fp-model source
-ifeq ($(AVX2),Y)
-#CFLAGS += -xHOST -xCORE-AVX2 -qno-opt-dynamic-align
-endif
+CFLAGS :=
 
-CFLAGS_OPT = -O2 -debug minimal
-CFLAGS_REPRO = -O2 -debug minimal
-CFLAGS_OPENMP = -qopenmp
-CFLAGS_DEBUG = -O0 -g -ftrapuv -traceback
+CFLAGS_OPT = -O2
+CFLAGS_REPRO = -O2 -ggdb
+CFLAGS_OPENMP = #-fopenmp
+CFLAGS_DEBUG = -O0 -ggdb -g
 
 # Optional Testing compile flags.  Mutually exclusive from DEBUG, REPRO, and OPT
 # *_TEST will match the production if no new option(s) is(are) to be tested.
 FFLAGS_TEST = -O3 -debug minimal -fp-model source -qoverride-limits
 CFLAGS_TEST = -O2
 
-LDFLAGS :=
-LDFLAGS_OPENMP := -qopenmp
-LDFLAGS_VERBOSE := -Wl,-V,--verbose,-cref,-M
+LDFLAGS := -L/usr/lib
+LDFLAGS_OPENMP := #-fopenmp
+LDFLAGS_VERBOSE := --verbose
 
 # start with blank LIBS
 LIBS :=
@@ -116,14 +107,11 @@ ifeq ($(NETCDF),3)
   endif
 endif
 
-ifneq ($(findstring netcdf/4,$(LOADEDMODULES)),)
-  LIBS += -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lz
-else
-  LIBS += -lnetcdf
-endif
+# NetCDF libraries
+LIBS += -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lz
 
 LIBS +=
-LDFLAGS += $(LIBS)
+LDFLAGS += $(LIBS) -L$(NETCDF_ROOT)/lib -L$(HDF5_DIR)/lib
 
 #---------------------------------------------------------------------------
 # you should never need to change any lines below.

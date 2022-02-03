@@ -1,0 +1,155 @@
+#!/bin/sh
+
+#
+# function to display a spinning wheel while a command is in progress
+spin()
+{
+  spinner="\\|/-\\|/-"
+  while :
+  do
+    for i in `seq 0 7`
+    do
+      echo -n "${spinner:$i:1}"
+      echo -en "\010"
+      sleep 1
+    done
+  done
+}
+# end function
+
+#
+# start the spinner
+spin &
+SPIN_PID=$!
+trap "kill -9 $SPIN_PID" `seq 0 15`
+#------------------------------------------------------------------------------
+# functional code below this point
+
+#
+# set default values
+#
+# configure your build parameters
+# options
+#    type:  nh(D), hydro
+#    comp:  prod(D), repro, debug
+#     bit:  32bit(D), 64bit
+#     avx:  Y(D), N   ! use AVX_LEVEl defined in site/environment.${compiler}.sh
+#
+  type="nh"
+  comp="debug"
+  bit="32bit"
+  avx="Y"
+  compiler="intel"
+  clean="noclean"
+
+#
+# parse arguments
+  for arg in "$@"
+  do
+      case $arg in
+          nh|hydro)
+             type="${arg#*=}"
+             shift # remove "type" from processing
+             ;;
+          prod|repro|debug)
+             comp="${arg#*=}"
+             shift # remove "comp" from processing
+             ;;
+          32bit|64bit)
+             bit="${arg#*=}"
+             shift # remove "bit" from processing
+             ;;
+          avx|noavx)
+             argtest="${arg#*=}"
+             if [ $argtest = 'noavx' ] ; then
+               avx="N"
+             fi
+             shift # remove "avx from processing
+             ;;
+          intel|gnu)
+             compiler="${arg#*=}"
+             shift # Remove "compiler" from processing
+             ;;
+          noclean|clean|cleanall)
+             clean="${arg#*=}"
+             shift # Remove "clean" from processing
+             ;;
+          *)
+          if [ ${arg#} != '--help' ] && [ ${arg#} != '-h' ] ; then
+            echo "option "${arg#}" not found"
+          fi
+          echo -e ' '
+          echo -e "valid options are:"
+          echo -e "\t[nh(D) | hydro] \t\t executable configuration"
+          echo -e "\t[prod(D) | repro | debug] \t\t compiler option settings"
+          echo -e "\t[32bit(D) | 64bit] \t\t FV3 precision option"
+          echo -e "\t[AVX(D) | NOAVX] \t\t use AVX_LEVEL defined in site/environment.<compiler>.sh"
+          echo -e "\t[intel(D) | gnu] \t\t compiler"
+          echo -e "\t[noclean(D} | clean | cleanall]  cleans exec area"
+          echo -e "\n"
+          exit
+          ;;
+      esac
+  done
+
+#
+# set up some default variables for use within the helper scripts
+  export BUILD_ROOT=${PWD%/*}
+  export SHiELD_SRC=${PWD%/*/*}/SHiELD_SRC/
+  export PATH="${BUILD_ROOT}/mkmf/bin:${BUILD_ROOT}/Build/mk_scripts:${PATH}"
+
+#
+# load the proper environment for your machine
+  . ${BUILD_ROOT}/site/environment.${compiler}.sh
+
+#
+# conditionally clean the build directory
+  if [ ${clean} = "cleanall" ] ; then
+     echo " cleaning FMS library and build directory in 2 seconds"
+     sleep 2
+     \rm -rf libFMS/${compiler}/*
+     \rm -rf exec_${compiler}/*
+  elif [ ${clean} = "clean" ] ; then
+     echo " cleaning build directory in 2 seconds"
+     sleep 2
+     \rm -rf exec_${compiler}/*
+  fi
+
+#
+# check to make sure libFMS exists
+  if [ -d libFMS/${compiler} ] && [ -e libFMS/${compiler}/32bit/libFMS.a ] && [ -e libFMS/${compiler}/64bit/libFMS.a ] ; then
+     echo " pre-built libFMS/${compiler} exists"
+  else
+     echo " libFMS/${compiler} does not exist - building libFMS/${compiler}"
+     MAKE_libFMS ${compiler}  >> build_libFMS_${compiler}.out 2>&1   # build 32bit and 64bit versions of libFMS
+     #
+     # test and report on libFMS build success
+     if [ $? -ne 0 ] ; then
+       echo ">>> libFMS $compiler build failed"
+       exit 1
+     fi
+     echo " libFMS build successful"
+  fi
+
+#
+# ensure the build and final executable locations are available
+  mkdir -p ./exec_${compiler}
+  mkdir -p ./bin_${compiler}
+
+# build the model
+  echo -e "  building ${type} ${comp} ${bit} \t `date`"
+    mk_paths ${compiler}                       > build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # create the file list for the build
+    mk_makefile ${type} ${bit} ${compiler}    >> build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # create the library makefiles
+    mk_make ${comp} ${bit} ${avx} ${compiler} >> build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # build the configuration
+    mv exec_${compiler}/test.x bin_${compiler}/SHiELD_${type}.${comp}.${bit}.x                        # move the executable to an accessible area
+
+#
+# test and report on build success
+  if [ $? -ne 0 ] ; then
+     echo ">>> SHiELD build ${type} ${comp} ${bit} ${compiler} failed"
+     exit 1
+  else
+     echo " SHiELD build ${type} ${comp} ${bit} ${compiler} successful"
+  fi
+
+exit 0

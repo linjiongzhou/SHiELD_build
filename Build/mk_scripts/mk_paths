@@ -1,26 +1,40 @@
 #!/bin/sh
 
+COMPILER="intel"
+#
+## parse arguments
+for arg in "$@"
+do
+    case $arg in
+        intel|gnu)
+        COMPILER="${arg#*=}"
+        shift # Remove compiler from processing
+        ;;
+    esac
+done
+
 echo $PATH
 
 pushd ${SHiELD_SRC}
 
 \rm -rf pathnames_*
 
-list_paths -o ${BUILD_ROOT}/Build/exec/pathnames_gfs \
+list_paths -o ${BUILD_ROOT}/Build/exec_${COMPILER}/pathnames_gfs \
     atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
     atmos_cubed_sphere/model/cld_eff_rad.F90 \
     fv3_gfsphysics/gsmphys/  \
     fv3_gfsphysics/GFS_layer/ \
-    fv3_gfsphysics/IPD_layer
+    fv3_gfsphysics/IPD_layer/ \
+    fv3_gfsphysics/COSP
 
-list_paths -o ${BUILD_ROOT}/Build/exec/pathnames_fv3 \
+list_paths -o ${BUILD_ROOT}/Build/exec_${COMPILER}/pathnames_fv3 \
     fv3_gfsphysics/FV3GFS/ \
     fv3_gfsphysics/atmos_drivers/coupled/atmos_model.F90 \
     fv3_gfsphysics/simple_coupler/coupler_main.F90 \
-    atmos_cubed_sphere/driver/fvGFS/atmosphere.F90 \
-    atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90 \
+    atmos_cubed_sphere/driver/SHiELD/atmosphere.F90 \
     atmos_cubed_sphere/tools/ \
-    atmos_cubed_sphere/model/
+    atmos_cubed_sphere/model/ \
+    atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
 
 popd
 
