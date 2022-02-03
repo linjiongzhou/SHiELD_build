@@ -29,27 +29,31 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 # set default values
 #
 # configure your build parameters
-# options
-#    type:  nh(D), hydro
-#    comp:  prod(D), repro, debug
-#     bit:  32bit(D), 64bit
-#     avx:  Y(D), N   ! use AVX_LEVEl defined in site/environment.${compiler}.sh
-#
-  type="nh"
+  config="shield"
+  hydro="nh"
   comp="prod"
   bit="32bit"
   avx="Y"
   compiler="intel"
   clean="noclean"
 
+  config_name="SHiELD"
+
 #
 # parse arguments
   for arg in "$@"
   do
       case $arg in
-          nh|hydro)
-             type="${arg#*=}"
-             shift # remove "type" from processing
+          shield|solo)
+             config="${arg#*=}"
+             if [ $config = 'solo' ] ; then
+               config_name="SOLO"
+             fi
+             shift # Remove "config" from processing
+             ;;
+          nh|hydro|sw)
+             hydro="${arg#*=}"
+             shift # remove "hydro" from processing
              ;;
           prod|repro|debug)
              comp="${arg#*=}"
@@ -60,8 +64,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
              shift # remove "bit" from processing
              ;;
           avx|noavx)
-             argtest="${arg#*=}"
-             if [ $argtest = 'noavx' ] ; then
+             if [ ${arg#*} = 'noavx' ] ; then
                avx="N"
              fi
              shift # remove "avx from processing
@@ -80,17 +83,19 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
           fi
           echo -e ' '
           echo -e "valid options are:"
-          echo -e "\t[nh(D) | hydro] \t\t executable configuration"
+          echo -e "\t[shield(D) | solo] \t\t\t configuration"
+          echo -e "\t[nh(D) | hydro | sw] \t\t\t executable configuration"
           echo -e "\t[prod(D) | repro | debug] \t\t compiler option settings"
-          echo -e "\t[32bit(D) | 64bit] \t\t FV3 precision option"
-          echo -e "\t[AVX(D) | NOAVX] \t\t use AVX_LEVEL defined in site/environment.<compiler>.sh"
-          echo -e "\t[intel(D) | gnu] \t\t compiler"
-          echo -e "\t[noclean(D} | clean | cleanall]  cleans exec area"
+          echo -e "\t[32bit(D) | 64bit] \t\t\t FV3 precision option"
+          echo -e "\t[AVX(D) | NOAVX] \t\t\t use AVX_LEVEL defined in site/environment.<compiler>.sh"
+          echo -e "\t[intel(D) | gnu] \t\t\t compiler"
+          echo -e "\t[noclean(D} | clean | cleanall] \t cleans exec area"
           echo -e "\n"
           exit
           ;;
       esac
   done
+
 
 #
 # set up some default variables for use within the helper scripts
@@ -103,16 +108,31 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
   . ${BUILD_ROOT}/site/environment.${compiler}.sh
 
 #
+# output the build setup
+echo -e ' '
+module list
+echo -e "Compilation will continue in five seconds with"
+echo -e "\tconfig   = $config"
+echo -e "\thydro    = $hydro"
+echo -e "\tcomp     = $comp"
+echo -e "\tbit      = $bit"
+echo -e "\tavx      = $avx"
+echo -e "\tcompiler = $compiler"
+echo -e "\tclean    = $clean"
+echo -e "\n"
+sleep 5
+
+#
 # conditionally clean the build directory
   if [ ${clean} = "cleanall" ] ; then
      echo " cleaning FMS library and build directory in 2 seconds"
      sleep 2
      \rm -rf libFMS/${compiler}/*
-     \rm -rf exec/${compiler}/*
+     \rm -rf exec/${config}_${compiler}/*
   elif [ ${clean} = "clean" ] ; then
      echo " cleaning build directory in 2 seconds"
      sleep 2
-     \rm -rf exec/${compiler}/*
+     \rm -rf exec/${config}_${compiler}/*
   fi
 
 #
@@ -133,23 +153,39 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 
 #
 # ensure the build and final executable locations are available
-  mkdir -p ./exec/${compiler}
+  mkdir -p ./exec/${config}_${compiler}
   mkdir -p ./bin/
 
 # build the model
-  echo -e "  building ${type} ${comp} ${bit} \t `date`"
-    mk_paths ${compiler}                       > build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # create the file list for the build
-    mk_makefile ${type} ${bit} ${compiler}    >> build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # create the library makefiles
-    mk_make ${comp} ${bit} ${avx} ${compiler} >> build_${type}_${comp}_${compiler}.${bit}.out 2>&1    # build the configuration
-    mv exec/${compiler}/test.x bin/SHiELD_${type}.${comp}.${bit}.${compiler}.x                        # move the executable to an accessible area
+echo -e "  building ${config} ${hydro} ${comp} ${bit} ${compiler} \t `date`"
+  #
+  # create the file list for the build
+    mk_paths ${config} ${compiler}                      > build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
+    if [ $? -ne 0 ] ; then
+       echo ">>> filelist cration failed"
+       exit 1
+    fi
+  #
+  # create the library makefiles
+    mk_makefile ${config} ${hydro} ${bit} ${compiler}  >> build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
+    if [ $? -ne 0 ] ; then
+       echo ">>> makefile creation failed"
+       exit 1
+    fi
+  #
+  # build the configuration
+    mk_make ${config} ${comp} ${bit} ${avx} ${compiler}          >> build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
+  #
+  # move the executable to an accessible area
+    mv exec/${config}_${compiler}/test.x bin/${config_name}_${hydro}.${comp}.${bit}.${compiler}.x
 
 #
 # test and report on build success
   if [ $? -ne 0 ] ; then
-     echo ">>> SHiELD build ${type} ${comp} ${bit} ${compiler} failed"
+     echo ">>> ${config_name} build ${hydro} ${comp} ${bit} ${compiler} failed"
      exit 1
   else
-     echo " SHiELD build ${type} ${comp} ${bit} ${compiler} successful"
+     echo " ${config_name} build ${hydro} ${comp} ${bit} ${compiler} successful"
   fi
 
 exit 0

@@ -2,47 +2,48 @@
 
 #
 ## set default values
-CLEAN="noclean"
-COMP="prod"
-BIT="32bit"
+CONFIG="shield"
+COMP=""
+BIT="32BIT=Y"
 AVX="Y"
 COMPILER="intel"
+
+bit="32bit"
 
 #
 ## parse arguments
 for arg in "$@"
 do
     case $arg in
+        shield|solo)
+          CONFIG="${arg#*=}"
+          shift # Remove CONFIG from processing
+          ;;
         prod|repro|debug)
-        COMP="${arg#*=}"
-        shift # Remove AVX Y/N/y/n from processing
-        ;;
-        clean)
-        CLEAN="clean"
-        shift # Remove clean from processing
-        ;;
+          if [ ${arg#} = 'repro' ] ; then
+            COMP="REPRO=Y"
+          elif [ ${arg#} = 'debug' ] ; then
+            COMP="DEBUG=Y"
+          fi
+          shift # Remove COMP from processing
+          ;;
         32bit|64bit)
-        BIT="${arg#*=}"
-        shift # Remove *bit from processing
-        ;;
-        Y|N|y|n)
-        AVX="${arg#*=}"
-        shift # Remove AVX Y/N/y/n from processing
-        ;;
+          bit="${arg#*=}"
+          if [ "${arg#}" = '64bit' ] ; then
+            BIT=""
+          fi
+          shift # Remove BIT from processing
+          ;;
+        Y|N)
+          AVX="${arg#*=}"
+          shift # Remove AVX from processing
+          ;;
         intel|gnu)
-        COMPILER="${arg#*=}"
-        shift # Remove compiler from processing
-        ;;
+          COMPILER="${arg#*=}"
+          shift # Remove COMPILER from processing
+          ;;
     esac
 done
-
-#
-# clean out exec build area
-if [ ${CLEAN} = "clean" ] ; then
-  echo " cleaning build directory in 4 seconds "
-  sleep 2
-  (cd exec/${COMPILER} ; \rm -f *.f90 *.o *.mod test.x)
-fi
 
 #-- load the development environment
 . ${BUILD_ROOT}/site/environment.${COMPILER}.sh
@@ -50,35 +51,15 @@ module list
 
 $FC --version
 
-NCEPLIBS="../../libFMS/${COMPILER}/${BIT}/libFMS.a ./libgfs.a -L../../nceplibs/${COMPILER}/ -lbacio_4  -lsp_v2.0.2_d  -lw3emc_d  -lw3nco_d"
-
-if [ ${COMP} = "debug" ] && [ ${BIT} = "32bit" ] ; then
-  echo " debug w/ 32-bit dy-core"
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} -f Makefile_gfs)
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
-elif [ ${COMP} = "debug" ] && [ ${BIT} != "32bit" ] ; then
-  echo " debug w/ 64-bit dy-core"
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} -f Makefile_gfs)
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y DEBUG=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
-elif [ ${COMP} = "repro" ] && [ ${BIT} = "32bit" ] ; then
-  echo " repro w/ 32-bit dy-core"
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} -f Makefile_gfs)
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
-elif [ ${COMP} = "repro" ] && [ ${BIT} != "32bit" ] ; then
-  echo " repro w/ 64-bit dy-core"
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} -f Makefile_gfs)
-    ifort -V
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y REPRO=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
-elif [ ${COMP} = "prod" ] && [ ${BIT} = "32bit" ] ; then
-  echo " prod w/ 32-bit dy-core"
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} -f Makefile_gfs)
-    ifort -V
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} NETCDF=3 32BIT=Y NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
-elif [ ${COMP} = "prod" ] && [ ${BIT} != "32bit" ] ; then
-  echo " prod w/ 64-bit dy-core"
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} -f Makefile_gfs)
-    ifort -V
-    (cd exec/${COMPILER} ; make -j 8 OPENMP=Y AVX=${AVX} NETCDF=3 NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
+NCEPLIBS="../../libFMS/${COMPILER}/${bit}/libFMS.a"
+if [ ${CONFIG} = 'shield' ] ; then
+  NCEPLIBS+=" ./libgfs.a"
 fi
+NCEPLIBS+=" -L../../nceplibs/${COMPILER}/ -lbacio_4  -lsp_v2.0.2_d  -lw3emc_d  -lw3nco_d"
+
+if [ ${CONFIG} = 'shield' ] ; then
+  (cd exec/${CONFIG}_${COMPILER} ; make -j 8 OPENMP=Y ${COMP} AVX=${AVX} -f Makefile_gfs)
+fi
+(cd exec/${CONFIG}_${COMPILER} ; make -j 8 OPENMP=Y NETCDF=3 ${COMP} AVX=${AVX} ${BIT} NCEPLIBS="${NCEPLIBS}" -f Makefile_fv3)
 
 exit 0
