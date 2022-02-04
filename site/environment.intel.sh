@@ -119,8 +119,11 @@ elif [ `hostname | cut -c1-3` = "lsc" ] ; then
    export LAUNCHER=mpirun
 
    # highest level of AVX support
-   export AVX_LEVEL=-xSKYLAKE-AVX512
-#   export AVX_LEVEL=-march=core-avx2
+   if [ `hsostname | cut -c4-6` = "amd" ] ; then
+     export AVX_LEVEL=-march=core-avx2
+   else
+     export AVX_LEVEL=-xSKYLAKE-AVX512
+   fi
 
 else
 
