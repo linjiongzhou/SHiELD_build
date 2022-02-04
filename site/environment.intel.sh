@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut c1-3` = "nid" ] ; then
+if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; then
    echo " gaea environment "
 
    . ${MODULESHOME}/init/sh
