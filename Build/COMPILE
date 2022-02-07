@@ -87,7 +87,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
           echo -e "\t[nh(D) | hydro | sw] \t\t\t executable configuration"
           echo -e "\t[prod(D) | repro | debug] \t\t compiler option settings"
           echo -e "\t[32bit(D) | 64bit] \t\t\t FV3 precision option"
-          echo -e "\t[AVX(D) | NOAVX] \t\t\t use AVX_LEVEL defined in site/environment.<compiler>.sh"
+          echo -e "\t[avx(D) | noavx] \t\t\t use AVX_LEVEL defined in site/environment.<compiler>.sh"
           echo -e "\t[intel(D) | gnu] \t\t\t compiler"
           echo -e "\t[noclean(D) | clean | cleanall] \t cleans exec area"
           echo -e "\n"
@@ -96,16 +96,20 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
       esac
   done
 
+if [ $hydro = "sw" ] && [ $config = "shield" ] ; then
+  echo -e ">>> option '$hydro' with '$config' is not a valid configuration"
+  exit 1
+fi
 
 #
 # set up some default variables for use within the helper scripts
-  export BUILD_ROOT=${PWD%/*}
-  export SHiELD_SRC=${PWD%/*/*}/SHiELD_SRC/
-  export PATH="${BUILD_ROOT}/mkmf/bin:${BUILD_ROOT}/Build/mk_scripts:${PATH}"
+export BUILD_ROOT=${PWD%/*}
+export SHiELD_SRC=${PWD%/*/*}/SHiELD_SRC/
+export PATH="${BUILD_ROOT}/mkmf/bin:${BUILD_ROOT}/Build/mk_scripts:${PATH}"
 
 #
 # load the proper environment for your machine
-  . ${BUILD_ROOT}/site/environment.${compiler}.sh
+. ${BUILD_ROOT}/site/environment.${compiler}.sh
 
 #
 # output the build setup
@@ -146,7 +150,7 @@ sleep 5
      # test and report on libFMS build success
      if [ $? -ne 0 ] ; then
        echo ">>> libFMS $compiler build failed"
-       exit 1
+       exit 2
      fi
      echo " libFMS build successful"
   fi
@@ -163,14 +167,14 @@ echo -e "  building ${config} ${hydro} ${comp} ${bit} ${compiler} \t `date`"
     mk_paths ${config} ${compiler}                      > build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
     if [ $? -ne 0 ] ; then
        echo ">>> filelist cration failed"
-       exit 1
+       exit 3
     fi
   #
   # create the library makefiles
     mk_makefile ${config} ${hydro} ${bit} ${compiler}  >> build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
     if [ $? -ne 0 ] ; then
        echo ">>> makefile creation failed"
-       exit 1
+       exit 4
     fi
   #
   # build the configuration
@@ -183,7 +187,7 @@ echo -e "  building ${config} ${hydro} ${comp} ${bit} ${compiler} \t `date`"
 # test and report on build success
   if [ $? -ne 0 ] ; then
      echo ">>> ${config_name} build ${hydro} ${comp} ${bit} ${compiler} failed"
-     exit 1
+     exit 5
   else
      echo " ${config_name} build ${hydro} ${comp} ${bit} ${compiler} successful"
   fi
