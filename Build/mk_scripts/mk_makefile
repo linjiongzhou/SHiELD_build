@@ -31,6 +31,8 @@ do
     esac
 done
 
+set -x
+
 #
 # GFS CPPDEFS
 GFS_cppDefs="-DNEW_TAUCTMAX -DNEMS_GSM -DINTERNAL_FILE_NML"

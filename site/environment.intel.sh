@@ -8,8 +8,7 @@ if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; t
    module unload PrgEnv-pgi
    module load   PrgEnv-intel
    module rm intel
-   #module load intel/19.0.5.281
-   module load intel/18.0.6.288
+   module load intel/19.0.5.281
    module load cray-netcdf
    module load craype-hugepages4M
 

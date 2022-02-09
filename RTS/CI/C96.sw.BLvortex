@@ -148,7 +148,7 @@ cat > input.nml <<EOF
 
  &fms_nml
        clock_grain = 'ROUTINE',
-       domains_stack_size = 16000000,
+       domains_stack_size = 96000000,
        print_memory_usage = .false.
 /
 
