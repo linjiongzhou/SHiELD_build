@@ -1,6 +1,6 @@
 # SHiELD_build
 
-This run/build environment is for use with the SHiELD code base.
+This run/build environment is intended for use with the SHiELD code base.
 
 
 # Description
@@ -38,7 +38,7 @@ Process for building SHiELD
 
 1. Modify/run CHECKOUT_code
    * tags/branches from GitHub and/or GitLab
-2. Ensure the platform you are using is supported in *site/environment.<compiler>.sh*
+2. Ensure the platform you are using is supported in *site/environment.\<compiler\>.sh*
    *  modules
    *  compiler driver selections
    *  AVX support
@@ -48,10 +48,10 @@ Process for building SHiELD
      - *git submodule update --init mkmf*
    * update mkmf to the latest version
      - *git submodule update --remote mkmf*
-4. In the Build directory, execute either
+4. Build executable(s)
    * COMPILE
      - [-h|--help] to see the command-line options
-     - builds a specific configuation
+     - build a specific configuation
 5. Ensure you have your latest runscrips and/or those of others
    * samples are provided in the RTS/ directory
    * download a particular user's runscripts
