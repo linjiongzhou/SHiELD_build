@@ -1,6 +1,6 @@
 # SHiELD_build
 
-This run/build environment is for use with the SHiELD code base.
+This run/build environment is intended for use with the SHiELD code base.
 
 
 # Description
@@ -48,7 +48,7 @@ Process for building SHiELD
      - *git submodule update --init mkmf*
    * update mkmf to the latest version
      - *git submodule update --remote mkmf*
-4. In the Build directory, execute either
+4. Build executable(s)
    * COMPILE
      - [-h|--help] to see the command-line options
      - build a specific configuation
