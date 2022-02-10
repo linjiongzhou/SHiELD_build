@@ -10,11 +10,11 @@ cd ${SHiELD_SRC}
 
 release="test"
 fms_release="2021.03"
-fv3_release="test2"
-phy_release="system_update"
+fv3_release="main"
+phy_release="main"
 
-git clone -b ${fv3_release}  https://gitlab.gfdl.noaa.gov/Rusty.Benson/atmos_cubed_sphere.git
-git clone -b ${phy_release}  https://gitlab.gfdl.noaa.gov/Rusty.Benson/fv3_gfsphysics.git
+git clone -b ${fv3_release}  https://gitlab.gfdl.noaa.gov/fv3team/atmos_cubed_sphere.git
+git clone -b ${phy_release}  https://gitlab.gfdl.noaa.gov/fv3team/fv3_gfsphysics.git
 git clone -b ${fms_release}  https://github.com/NOAA-GFDL/FMS
 
 #Automatic release tracking from Matt M.
