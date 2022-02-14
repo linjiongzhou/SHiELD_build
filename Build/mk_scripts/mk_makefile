@@ -2,15 +2,21 @@
 
 #
 ## set default values
+CONFIG="shield"
 HYDRO="nh"
 BIT="32bit"
+COMPILER="intel"
 
 #
 ### parse arguments
 for arg in "$@"
 do
     case $arg in
-        nh|hydro)
+        shield|solo)
+        CONFIG="${arg#*=}"
+        shift # Remove CONFIG from processing
+        ;;
+        nh|hydro|sw)
         HYDRO="${arg#*=}"
         shift # Remove HYDRO from processing
         ;;
@@ -18,8 +24,14 @@ do
         BIT="${arg#*=}"
         shift # Remove *bit from processing
         ;;
+        intel|gnu)
+        COMPILER="${arg#*=}"
+        shift # Remove compiler from processing
+        ;;
     esac
 done
+
+set -x
 
 #
 # GFS CPPDEFS
@@ -27,22 +39,34 @@ GFS_cppDefs="-DNEW_TAUCTMAX -DNEMS_GSM -DINTERNAL_FILE_NML"
 
 #
 # FV3 CPPDEFS
-FV3_cppDefs="-Duse_libMPI -Duse_netCDF -DHAVE_SCHED_GETAFFINITY -DSPMD -DUSE_LOG_DIAG_FIELD_INFO -Duse_LARGEFILE -DUSE_GFSL63 -DGFS_PHYS -DNO_CMIP_DIAG -DINTERNAL_FILE_NML"
-
-#
-# non-hydrostatic CPPDEFS
-if [ ${HYDRO} = "nh" ] ; then
-  FV3_cppDefs="${FV3_cppDefs} -DMOIST_CAPPA -DUSE_COND"
+FV3_cppDefs="-Duse_libMPI -Duse_netCDF -DHAVE_SCHED_GETAFFINITY -DSPMD -Duse_LARGEFILE -DINTERNAL_FILE_NML"
+if [ ${CONFIG} = 'shield' ] ; then
+  FV3_cppDefs+=" -DGFS_PHYS -DUSE_GFSL63"
+elif [ ${CONFIG} = 'solo' ] ; then
+  FV3_cppDefs+=" -DDCMIP -DDYCORE_SOLO -DHIWPP"
 fi
 
-pushd exec/
+#
+# add non-hydrostatic or shallow-water CPPDEFS
+if [ ${HYDRO} = 'nh' ] ; then
+  FV3_cppDefs+=" -DMOIST_CAPPA -DUSE_COND"
+elif [ ${HYDRO} = 'sw' ] ; then
+  FV3_cppDefs+=" -DSW_DYNAMICS -DDYNAMICS_ZS"
+fi
+
+pushd exec/${CONFIG}_${COMPILER}/
 
 ############################
 #---CREATE MAKEFILES
 ############################
-mkmf -m Makefile_gfs -a ${SHiELD_SRC} -t "${BUILD_ROOT}/${TEMPLATE}" -o "-cpp" -c "${GFS_cppDefs}" -p libgfs.a ${BUILD_ROOT}/Build/exec/pathnames_gfs
+if [ ${CONFIG} = 'shield' ] ; then
+  mkmf -m Makefile_gfs -a ${SHiELD_SRC} -t "${BUILD_ROOT}/${TEMPLATE}" -o "-cpp" -c "${GFS_cppDefs}" \
+           -p libgfs.a ${BUILD_ROOT}/Build/exec/${CONFIG}_${COMPILER}/pathnames_gfs
+fi
 
-mkmf -m Makefile_fv3 -a ${SHiELD_SRC} -t "${BUILD_ROOT}/${TEMPLATE}" -c "${FV3_cppDefs}" -o "-I${SHiELD_SRC}/FMS/include -I${BUILD_ROOT}/Build/libFMS/${BIT}" -p test.x ${BUILD_ROOT}/Build/exec/pathnames_fv3
+mkmf -m Makefile_fv3 -a ${SHiELD_SRC} -t "${BUILD_ROOT}/${TEMPLATE}" -c "${FV3_cppDefs}" \
+         -p test.x -o "-I${SHiELD_SRC}/FMS/include -I${BUILD_ROOT}/Build/libFMS/${COMPILER}/${BIT}" \
+          ${BUILD_ROOT}/Build/exec/${CONFIG}_${COMPILER}/pathnames_fv3
 
 ############################
 #---ADD LIBS TO FINAL LINK
@@ -54,26 +78,26 @@ mv OUT Makefile_fv3
 #---COMPILE -O0 (for speed)
 #---GFS_diagnostics.F90
 ############################
-sed 's"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/GFS_layer/GFS_diagnostics.F90" $(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -O0 -c\t$(SRCROOT)fv3_gfsphysics/GFS_layer/GFS_diagnostics.F90" ' < Makefile_gfs > OUT
-mv OUT Makefile_gfs
+if [ ${CONFIG} = 'shield' ] ; then
+  sed -i 's"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/GFS_layer/GFS_diagnostics.F90" $(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -O0 -c\t$(SRCROOT)fv3_gfsphysics/GFS_layer/GFS_diagnostics.F90" ' Makefile_gfs
 
 ############################
 #---COMPILE -xCORE-AVX-I
 #---radiation_aerosols.f
 ############################
-sed 's"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -xCORE-AVX-I -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"' < Makefile_gfs > OUT
-mv OUT Makefile_gfs
+  if [ ${COMPILER} = 'intel' ]; then
+    sed -i 's"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -xCORE-AVX-I -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"' Makefile_gfs
+  fi
+fi
 
 ############################
 #---ADD FAST TRANSCENDENTALS
 #---model/nh_utils.F90
 #---model/fv_mapz.F90
 ############################
-sed 's"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)atmos_cubed_sphere/model/nh_utils.F90"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) $(FAST) -c\t$(SRCROOT)atmos_cubed_sphere/model/nh_utils.F90"' < Makefile_fv3 > OUT
-mv OUT Makefile_fv3
+sed -i 's"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)atmos_cubed_sphere/model/nh_utils.F90"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) $(FAST) -c\t$(SRCROOT)atmos_cubed_sphere/model/nh_utils.F90"' Makefile_fv3
 
-sed 's"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)atmos_cubed_sphere/model/fv_mapz.F90"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) $(FAST) -c\t$(SRCROOT)atmos_cubed_sphere/model/fv_mapz.F90"' < Makefile_fv3 > OUT
-mv OUT Makefile_fv3
+sed -i 's"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)atmos_cubed_sphere/model/fv_mapz.F90"$(FC) $(CPPDEFS) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) $(FAST) -c\t$(SRCROOT)atmos_cubed_sphere/model/fv_mapz.F90"' Makefile_fv3
 
 ############################
 

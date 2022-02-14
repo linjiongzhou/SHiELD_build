@@ -1,6 +1,30 @@
 #!/bin/sh
 
-if [ `hostname | cut -c1-5` = "Orion" ] ; then
+
+if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; then
+   echo " gaea environment "
+
+   . ${MODULESHOME}/init/sh
+   module unload PrgEnv-pgi
+   module load   PrgEnv-intel
+   module rm intel
+   module load intel/19.0.5.281
+   module load cray-netcdf
+   module load craype-hugepages4M
+
+   # make your compiler selections here
+   export FC=ftn
+   export CC=cc
+   export CXX=CC
+   export LD=ftn
+   export TEMPLATE=site/intel.mk
+   export LAUNCHER=srun
+
+   # highest level of AVX support
+   export AVX_LEVEL=-xCORE-AVX2
+
+
+elif [ `hostname | cut -c1-5` = "Orion" ] ; then
    echo " Orion environment "
 
    . ${MODULESHOME}/init/sh
@@ -20,34 +44,13 @@ if [ `hostname | cut -c1-5` = "Orion" ] ; then
    export CXX=mpicpc
    export LD=mpiifort
    export TEMPLATE=site/intel.mk
+   export LAUNCHER=srun
 
    # highest level of AVX support
    export AVX_LEVEL=-xSKYLAKE-AVX512
 
 
-elif [ `hostname | cut -c1-4` = "gaea" ] ; then
-   echo " gaea environment "
-
-   . ${MODULESHOME}/init/sh
-   module unload PrgEnv-pgi
-   module load   PrgEnv-intel
-   module rm intel
-   module load intel/19.0.5.281
-   module load cray-netcdf
-   module load craype-hugepages4M
-
-   # make your compiler selections here
-   export FC=ftn
-   export CC=cc
-   export CXX=CC
-   export LD=ftn
-   export TEMPLATE=site/intel.mk
-
-   # highest level of AVX support
-   export AVX_LEVEL=-xCORE-AVX2
-
-
-elif [ `hostname | cut -c1-2` = "fe" || `hostname | cut -c1` = "x" ] ; then
+elif [ `hostname | cut -c1-2` = "fe" ] || [ `hostname | cut -c1` = "x" ] ; then
    echo " jet environment "
 
    . ${MODULESHOME}/init/sh
@@ -68,6 +71,7 @@ elif [ `hostname | cut -c1-2` = "fe" || `hostname | cut -c1` = "x" ] ; then
    export CXX=mpicpc
    export LD=mpiifort
    export TEMPLATE=site/intel.mk
+   export LAUNCHER=srun
 
 
 elif [ `hostname | cut -c1` = "h" ] ; then
@@ -87,10 +91,38 @@ elif [ `hostname | cut -c1` = "h" ] ; then
    export CXX=mpicpc
    export LD=mpiifort
    export TEMPLATE=site/intel.mk
+   export LAUNCHER=srun
 
    # highest level of AVX support
    export AVX_LEVEL=-xSKYLAKE-AVX512
 
+elif [ `hostname | cut -c1-3` = "lsc" ] ; then
+   echo " lsc environment "
+
+   source $MODULESHOME/init/sh
+   module load oneapi/2022.1
+   module load compiler/2022.0.1
+   module load mpi/2021.5.0
+   module load netcdf/4.8.0
+   module load hdf5/1.12.0
+
+   export CPATH="${NETCDF_ROOT}/include:${CPATH}"
+   export NETCDF_DIR=${NETCDF_ROOT}
+
+   # make your compiler selections here
+   export FC=mpiifort
+   export CC=mpiicc
+   export CXX=mpicpc
+   export LD=mpiifort
+   export TEMPLATE=site/intel.mk
+   export LAUNCHER=mpirun
+
+   # highest level of AVX support
+   if [ `hostname | cut -c4-6` = "amd" ] ; then
+     export AVX_LEVEL=-march=core-avx2
+   else
+     export AVX_LEVEL=-xSKYLAKE-AVX512
+   fi
 
 else
 

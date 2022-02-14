@@ -1,7 +1,6 @@
 # SHiELD_build
 
-This run/build environment is for use with the SHiELD code base and is
-an update to the original fvGFS build system.
+This run/build environment is intended for use with the SHiELD code base.
 
 
 # Description
@@ -12,6 +11,7 @@ Supported platforms:
   * Orion
   * Hera
   * Jet (untested)
+  * internal MSD dev boxes
 
 The build system builds the FMS library once and will use it for all subsequent
 builds.
@@ -37,24 +37,23 @@ the following files:
 Process for building SHiELD
 
 1. Modify/run CHECKOUT_code
-   * tags/branches from GitHub and GitLab
-2. Ensure the platform you are using is supported in *site/environment.sh*
-   * update modules
-   * update compiler selections
-   * update AVX support
+   * tags/branches from GitHub and/or GitLab
+2. Ensure the platform you are using is supported in *site/environment.\<compiler\>.sh*
+   *  modules
+   *  compiler driver selections
+   *  AVX support
+   *  launcher being used (srun, mpiexec, mpirun, etc)
 3. Ensure you have the mkmf submodule
    * downloads version of mkmf pointed to by the project
      - *git submodule update --init mkmf*
    * update mkmf to the latest version
      - *git submodule update --remote mkmf*
-4. In the Build directory, execute either
-   * COMP_dev [clean]
-     - builds a specific configuation
-     - allows for recursive use when omitting argument
-   * COMP_all
-     - creates executables for a set of configurations
-     - always performs a clean compile
+4. Build executable(s)
+   * COMPILE
+     - [-h|--help] to see the command-line options
+     - build a specific configuation
 5. Ensure you have your latest runscrips and/or those of others
+   * samples are provided in the RTS/ directory
    * download a particular user's runscripts
      - *git submodule update --init Users/\<name\>_runscripts*
    * update the runscript submodule to the latest version
@@ -96,7 +95,7 @@ Process for building SHiELD
    * open *https://gitlab.gfdl.noaa.gov/<First.Last\>/SHiELD_build*
    * select *Merge Requests" in the left-hand side panel
    * follow directions to finalize creation of the merge request
- 
+
 
 # Disclaimer
 
