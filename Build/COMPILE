@@ -35,9 +35,10 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
   bit="32bit"
   avx="Y"
   compiler="intel"
-  clean="noclean"
+  clean="clean"
 
   config_name="SHiELD"
+  tag="RT2022.e001"
 
 #
 # parse arguments
@@ -124,6 +125,7 @@ echo -e "\tbit      = $bit"
 echo -e "\tavx      = $avx"
 echo -e "\tcompiler = $compiler"
 echo -e "\tclean    = $clean"
+echo -e "\ttag      = $tag"
 echo -e "\n"
 sleep 5
 
@@ -182,7 +184,7 @@ echo -e "  building ${config} ${hydro} ${comp} ${bit} ${compiler} \t `date`"
     mk_make ${config} ${comp} ${bit} ${avx} ${compiler}          >> build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
   #
   # move the executable to an accessible area
-    mv exec/${config}_${compiler}/test.x bin/${config_name}_${hydro}.${comp}.${bit}.${compiler}.x
+    mv exec/${config}_${compiler}/test.x bin/${config_name}_${hydro}.${comp}.${bit}.${compiler}.${tag}.x
 
 #
 # test and report on build success
