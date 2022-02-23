@@ -69,7 +69,7 @@ executable=${BUILDDIR}/Build/bin/SOLO_${TYPE}.${COMP}.${MODE}.${COMPILER}.x
     nthreads="2"
 
     # run length
-    days="100"
+    days="7"
     hours="0"
     minutes="0"
     seconds="0"
