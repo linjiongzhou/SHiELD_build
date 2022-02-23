@@ -9,7 +9,7 @@ mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
 release="test"
-fms_release="2021.03"
+fms_release="2021.04"
 fv3_release="main"
 phy_release="main"
 
