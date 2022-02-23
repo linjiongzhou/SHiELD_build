@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=gfdl_w
-#SBATCH --time=1:00:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=0:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=12
+#SBATCH --nodes=3
 
 #Based on quickstart-scripts/NH/super_cases/superC_c512r20.j
 
@@ -207,7 +207,7 @@ EOF
 cat > input.nml <<EOF
 
  &diag_manager_nml
-    flush_nc_files = .true.
+    flush_nc_files = .false.
     prepend_date = .F.
 ! this diag table creates a lot of files
 ! next three lines are necessary

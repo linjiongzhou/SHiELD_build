@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=gfdl_w
-#SBATCH --time=1:00:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=0:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=12
+#SBATCH --nodes=11
 
 #Based on quickstart-scripts/NH/super_cases/superC_c512r20.j
 
@@ -40,15 +40,15 @@ executable=${BUILDDIR}/Build/bin/SOLO_${TYPE}.${COMP}.${MODE}.${COMPILER}.x
     npx="513"
     npy="513"
     npz="50"
-    layout_x="4"
-    layout_y="4"
+    layout_x="8"
+    layout_y="8"
     io_layout="1,1" #Want to increase this in a production run??
     nthreads="2"
 
     # run length
     days="0"
-    hours="2"
-    minutes="0"
+    hours="0"
+    minutes="30"
     seconds="0"
     dt_atmos="15"
 
@@ -207,7 +207,7 @@ EOF
 cat > input.nml <<EOF
 
  &diag_manager_nml
-    flush_nc_files = .true.
+    flush_nc_files = .false.
     prepend_date = .F.
 ! this diag table creates a lot of files
 ! next three lines are necessary

@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=nggps_gfdl
-#SBATCH --time=1:00:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=00:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=3
+#SBATCH --nodes=1
 
 # Resting, dry flow over a mountain
 # Tests PGF, in this case for nonhydrostatic dynamics
@@ -29,7 +29,7 @@ MEMO="solo.mtn_rest.nonmono.diff2" # name of test
 TYPE="nh"         # choices:  nh, hydro
 MODE="64bit"      # choices:  32bit, 64bit
 GRID="C$res"
-HYPT="off"         # choices:  on, off  (controls hyperthreading)
+HYPT="on"          # choices:  on, off  (controls hyperthreading)
 COMP="repro"       # choices:  debug, repro, prod
 
 # directory structure
@@ -41,13 +41,13 @@ executable=${BUILDDIR}/Build/bin/SOLO_${TYPE}.${COMP}.${MODE}.${COMPILER}.x
     npx="97"
     npy="97"
     npz="30"
-    layout_x="4"
-    layout_y="4"
+    layout_x="2"
+    layout_y="2"
     io_layout="1,1" #Want to increase this in a production run??
     nthreads="2"
 
     # run length
-    days="6"
+    days="4"
     hours="0"
     minutes="0"
     seconds="0"

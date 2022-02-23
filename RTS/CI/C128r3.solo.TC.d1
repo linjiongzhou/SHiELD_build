@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=nggps_gfdl
-#SBATCH --time=1:00:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=0:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=6
+#SBATCH --nodes=3
 
 #Jablonowski-Reed TC test using simple surface fluxes and PBL mixing
 # plus GFDL microphysics.
@@ -51,7 +51,7 @@ executable=${BUILDDIR}/Build/bin/SOLO_${TYPE}.${COMP}.${MODE}.${COMPILER}.x
     nthreads="2"
 
     # run length
-    days="10"
+    days="1"
     hours="0"
     minutes="0"
     seconds="0"

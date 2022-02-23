@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=nggps_gfdl
-#SBATCH --time=01:00:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=00:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=8
+#SBATCH --nodes=1
 
 if [ -z ${BUILDDIR} ] ; then
   echo -e "\nERROR:\tset BUILDDIR to the base path /<path>/SHiELD_build/ \n"
@@ -51,7 +51,7 @@ executable=${BUILDDIR}/Build/bin/SOLO_${TYPE}.${COMP}.${MODE}.${COMPILER}.x
     dt_atmos="15"
 
     # blocking factor used for threading and general physics performance
-    blocksize="16"
+    blocksize="32"
 
     # run length
     months="0"

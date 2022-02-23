@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=gfdl_w
+#SBATCH --account=_your_acct_
 #SBATCH --time=0:10:00
 #SBATCH --clusters=c4
 #SBATCH --nodes=3

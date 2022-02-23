@@ -1,8 +1,8 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=nggps_gfdl
-#SBATCH --time=00:20:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=00:10:00
 #SBATCH --clusters=c4
 #SBATCH --nodes=1
 
@@ -222,7 +222,6 @@ cat > field_table <<EOF
            "units",        "kg/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
 EOF
-
 
 #
 # build the input.nml

@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=nggps_gfdl
+#SBATCH --account=_your_acct_
 #SBATCH --time=0:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=3
+#SBATCH --nodes=1
 
 #Dry baroclinic wave
 #Also demonstrates the plev diagnostic capability
@@ -41,13 +41,13 @@ COMP="repro"       # choices:  debug, repro, prod
     npx="97"
     npy="97"
     npz="32"
-    layout_x="4"
-    layout_y="4"
+    layout_x="2"
+    layout_y="2"
     io_layout="1,1" #Want to increase this in a production run??
     nthreads="2"
 
     # run length
-    days="10"
+    days="4"
     hours="0"
     minutes="0"
     seconds="0"
