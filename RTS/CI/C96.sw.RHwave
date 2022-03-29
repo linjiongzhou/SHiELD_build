@@ -1,10 +1,35 @@
 #!/bin/sh
+#***********************************************************************
+#*                   GNU Lesser General Public License
+#*
+#* This file is part of the SHiELD Build System.
+#*
+#* The SHiELD Build System free software: you can redistribute it
+#* and/or modify it under the terms of the
+#* GNU Lesser General Public License as published by the
+#* Free Software Foundation, either version 3 of the License, or
+#* (at your option) any later version.
+#*
+#* The SHiELD Build System distributed in the hope that it will be
+#* useful, but WITHOUT ANYWARRANTY; without even the implied warranty
+#* of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#* See the GNU General Public License for more details.
+#*
+#* You should have received a copy of the GNU Lesser General Public
+#* License along with theSHiELD Build System
+#* If not, see <http://www.gnu.org/licenses/>.
+#***********************************************************************
+#
+#  DISCLAIMER: This script is provided as-is for the purpose of continuous
+#              integration software regression testing and as such is
+#              unsupported.
+#
 #SBATCH --output=./stdout/%x.o%j
 #SBATCH --qos=debug
-#SBATCH --account=gfdl_w
-#SBATCH --time=0:20:00
+#SBATCH --account=_your_acct_
+#SBATCH --time=0:10:00
 #SBATCH --clusters=c4
-#SBATCH --nodes=3
+#SBATCH --nodes=1
 
 if [ -z ${BUILDDIR} ] ; then
   echo -e "\nERROR:\tset BUILDDIR to the base path /<path>/SHiELD_build/ \n"
@@ -38,13 +63,13 @@ executable=${BUILDDIR}/Build/bin/SOLO_${TYPE}.${COMP}.${MODE}.${COMPILER}.x
     npx="97"
     npy="97"
     npz="1" #Shallow water
-    layout_x="4"
-    layout_y="4"
+    layout_x="2"
+    layout_y="2"
     io_layout="1,1" #Want to increase this in a production run??
     nthreads="2"
 
     # run length
-    days="150"
+    days="100"
     hours="0"
     minutes="0"
     seconds="0"
