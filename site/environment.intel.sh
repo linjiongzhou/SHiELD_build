@@ -29,9 +29,9 @@ if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; t
 
    . ${MODULESHOME}/init/sh
    module unload PrgEnv-pgi
-   module load   PrgEnv-intel
+   module swap PrgEnv-intel PrgEnv-intel/6.0.10
    module rm intel
-   module load intel/19.0.5.281
+   module load intel/intel-classic-2021.3.0
    module load cray-netcdf
    module load craype-hugepages4M
 

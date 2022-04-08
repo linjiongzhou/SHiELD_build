@@ -49,7 +49,8 @@ FFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
 CFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
 endif
 
-FFLAGS_OPT = -O2 -debug minimal -fp-model source -qoverride-limits -qopt-prefetch=3
+FFLAGS_OPT = -Ofast -debug minimal -unroll-aggressive -vecabi=cmdtarget -falign-loops -fma -qoverride-limits -qopt-prefetch=3
+#FFLAGS_OPT = -O2 -debug minimal -fp-model source -qoverride-limits -qopt-prefetch=3
 FFLAGS_REPRO = -O2 -debug minimal -fp-model source -qoverride-limits #-fpe0 #causes problems??
 FFLAGS_DEBUG = -g -O0 -debug -check -check noarg_temp_created -check nopointer -warn -warn noerrors -fp-stack-check -fstack-protector-all -fpe0 -ftrapuv
 
