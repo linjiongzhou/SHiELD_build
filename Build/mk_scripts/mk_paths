@@ -51,28 +51,28 @@ pushd ${SHiELD_SRC}
 
 if [ ${CONFIG} = 'solo' ] ; then
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${COMPILER}/pathnames_fv3 \
-      atmos_cubed_sphere/driver/solo/ \
-      atmos_cubed_sphere/tools/ \
-      atmos_cubed_sphere/model/ \
-      atmos_drivers/solo/
+      GFDL_atmos_cubed_sphere/driver/solo/ \
+      GFDL_atmos_cubed_sphere/tools/ \
+      GFDL_atmos_cubed_sphere/model/ \
+      SHiELD_physics/atmos_drivers/solo/
 
 elif [ ${CONFIG} = 'shield' ] ; then
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${COMPILER}/pathnames_gfs \
-      atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
-      atmos_cubed_sphere/model/cld_eff_rad.F90 \
-      fv3_gfsphysics/gsmphys/  \
-      fv3_gfsphysics/GFS_layer/ \
-      fv3_gfsphysics/IPD_layer/ \
-      fv3_gfsphysics/COSP
+      GFDL_atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
+      GFDL_atmos_cubed_sphere/model/cld_eff_rad.F90 \
+      SHiELD_physics/gsmphys/  \
+      SHiELD_physics/GFS_layer/ \
+      SHiELD_physics/IPD_layer/ \
+      SHiELD_physics/COSP
 
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${COMPILER}/pathnames_fv3 \
-      fv3_gfsphysics/FV3GFS/ \
-      atmos_drivers/SHiELD/atmos_model.F90 \
-      FMSCoupler/SHiELD/coupler_main.F90 \
-      atmos_cubed_sphere/driver/SHiELD/atmosphere.F90 \
-      atmos_cubed_sphere/tools/ \
-      atmos_cubed_sphere/model/ \
-      atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
+      SHiELD_physics/FV3GFS/ \
+      SHiELD_physics/atmos_drivers/coupled/atmos_model.F90 \
+      SHiELD_physics/simple_coupler/coupler_main.F90 \
+      GFDL_atmos_cubed_sphere/driver/SHiELD/atmosphere.F90 \
+      GFDL_atmos_cubed_sphere/tools/ \
+      GFDL_atmos_cubed_sphere/model/ \
+      GFDL_atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
 fi
 
 popd

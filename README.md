@@ -13,12 +13,12 @@ The top level directory structure groups source code and input files as follow:
 | ```CHECKOUT_code```  | script to download necessary source for proper build GFDL's SHield and FV3 Solo models |
 | ```Build/```         | contains scripts used for building models listed above |
 | ```mkmf/```          | submodule entry point for the externally managed [mkmf software](https://github.com/NOAA-GFDL/mkmf) |
-| ```RT/```            | contains scripts for use in CI software regression testing |
+| ```RTS/```           | contains scripts for use in CI software regression testing (see RTS/REAMDE.md)|
 | ```site/```          | contains site specific scripts and compiler make templates |
 
 # Compiling
 
-Please make sure to download the mkmf submodule prior to beginning.  To use:
+Be sure to download the mkmf submodule prior to beginning.  To use:
 
  1) checkout code via CHECKOUT_code script
  2) cd Build and execute ./COMPILE script with the --help option to see usage

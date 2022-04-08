@@ -31,18 +31,15 @@ export SHiELD_SRC=${PWD%/*}/SHiELD_SRC/
 mkdir -p ${SHiELD_SRC}
 cd ${SHiELD_SRC}
 
-release="test"
-fv3_release="main"
-phy_release="main"
-fms_release="2021.04"
-cplr_release="SHiELD_add"
-adrv_release="SHiELD_add"
+release="FV3-202204-public"
 
-git clone -b ${fv3_release}   https://gitlab.gfdl.noaa.gov/fv3team/atmos_cubed_sphere.git
-git clone -b ${phy_release}   https://gitlab.gfdl.noaa.gov/fv3team/fv3_gfsphysics.git
+fv3_release=$release
+phy_release=$release
+fms_release="2022.01"
+
+git clone -b ${fv3_release}   https://github.com/NOAA-GFDL/GFDL_atmos_cubed_sphere
+git clone -b ${phy_release}   https://github.com/NOAA-GFDL/SHiELD_physics
 git clone -b ${fms_release}   https://github.com/NOAA-GFDL/FMS
-git clone -b ${cplr_release}  https://github.com/bensonr/FMSCoupler
-git clone -b ${adrv_release}  https://github.com/bensonr/atmos_drivers
 
 #Automatic release tracking from Matt M.
 echo $release > ../../release
