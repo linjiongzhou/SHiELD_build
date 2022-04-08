@@ -2,6 +2,3 @@
 	path = mkmf
 	url = https://github.com/NOAA-GFDL/mkmf
 	branch = master
-[submodule "Users/tshield_runscripts"]
-	path = Users/tshield_runscripts
-	url = https://gitlab.gfdl.noaa.gov/Kun.Gao/tshield_runscripts
