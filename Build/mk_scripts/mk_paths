@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #***********************************************************************
 #*                   GNU Lesser General Public License
 #*
@@ -62,8 +62,7 @@ elif [ ${CONFIG} = 'shield' ] ; then
       atmos_cubed_sphere/model/cld_eff_rad.F90 \
       fv3_gfsphysics/gsmphys/  \
       fv3_gfsphysics/GFS_layer/ \
-      fv3_gfsphysics/IPD_layer/ \
-      fv3_gfsphysics/COSP
+      fv3_gfsphysics/IPD_layer/
 
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${COMPILER}/pathnames_fv3 \
       fv3_gfsphysics/FV3GFS/ \
