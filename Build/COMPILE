@@ -32,9 +32,14 @@ spin()
   do
     for i in `seq 0 7`
     do
-      echo -n "${spinner:$i:1}"
-      echo -en "\010"
-      sleep 1
+      #from https://unix.stackexchange.com/a/118468
+      case $(ps -o stat= -p $$) in
+        *+*)
+            echo -n "${spinner:$i:1}"
+            echo -en "\010"
+            sleep 1
+            ;;
+      esac
     done
   done
 }
