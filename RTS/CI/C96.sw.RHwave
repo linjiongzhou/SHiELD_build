@@ -217,6 +217,7 @@ cat > input.nml <<EOF
        hord_dp = 8
        hord_tr = 8
        adjust_dry_mass = .F.
+       is_ideal_case = .T.
        print_freq = 24
        warm_start = .F.
      do_schmidt = .false.
