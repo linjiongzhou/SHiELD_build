@@ -61,7 +61,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
   clean="clean"
 
   config_name="SHiELD"
-  tag="RT2022.e001"
+  tag="RT2023.e001"
 
 #
 # parse arguments
