@@ -69,7 +69,7 @@ if [ ${CONFIG} = 'solo' ] ; then
       atmos_cubed_sphere/driver/solo/ \
       atmos_cubed_sphere/tools/ \
       atmos_cubed_sphere/model/ \
-      fv3_gfsphysics/atmos_drivers/solo/
+      atmos_drivers/solo/
 
 elif [ ${CONFIG} = 'shield' ] ; then
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_gfs \
@@ -81,8 +81,8 @@ elif [ ${CONFIG} = 'shield' ] ; then
 
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_fv3 \
       fv3_gfsphysics/FV3GFS/ \
-      fv3_gfsphysics/atmos_drivers/coupled/atmos_model.F90 \
-      fv3_gfsphysics/simple_coupler/coupler_main.F90 \
+      atmos_drivers/SHiELD/atmos_model.F90 \
+      FMSCoupler/SHiELD/coupler_main.F90 \
       atmos_cubed_sphere/driver/SHiELD/atmosphere.F90 \
       atmos_cubed_sphere/tools/ \
       atmos_cubed_sphere/model/ \
