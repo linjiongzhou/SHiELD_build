@@ -24,16 +24,21 @@
 #              integration software regression testing and as such is
 #              unsupported.
 #
-#SBATCH --output=./stdout/%x.o%j
-#SBATCH --qos=debug
-#SBATCH --account=_your_acct_
-#SBATCH --time=00:10:00
-#SBATCH --clusters=c4
-#SBATCH --nodes=1
+#SBATCH --ntasks=24
 
 if [ -z ${BUILDDIR} ] ; then
   echo -e "\nERROR:\tset BUILDDIR to the base path /<path>/SHiELD_build/ \n"
   exit 99
+fi
+
+# when we are running this test for CI, we run it in a container
+# an expected value for container would be "--mpi=pmi2 singularity exec -B <file directory> <container>"
+# this is needed within the run command
+if [ -z "$1" ] ; then
+  CONTAINER=""
+else
+  CONTAINER=$1
+  echo -e "\nThis test will be run inside of a container with the command $1"
 fi
 
 # configure the site
@@ -173,10 +178,10 @@ npes=`expr ${layout_x} \* ${layout_y}`
 LAUNCHER=${LAUNCHER:-srun}
 if [ ${LAUNCHER} = 'srun' ] ; then
     export SLURM_CPU_BIND=verbose
-    run_cmd="${LAUNCHER} --label --ntasks=$npes --cpus-per-task=$skip ./${executable##*/}"
+    run_cmd="${LAUNCHER} --label --ntasks=$npes --cpus-per-task=$skip $CONTAINER ./${executable##*/}"
 else
     export MPICH_ENV_DISPLAY=YES
-    run_cmd="${LAUNCHER} -prepend-rank -np $npes ./${executable##*/}"
+    run_cmd="${LAUNCHER} -prepend-rank -np $npes $CONTAINER ./${executable##*/}"
 fi
 
 # set up the run area
@@ -379,6 +384,7 @@ cat > input.nml <<EOF
        na_init = $na_init
        nudge_qv = .T.
        external_ic = ${external_ic}
+       is_ideal_case = .T.
        add_noise = ${add_noise}
        mountain = $mountain
 
@@ -403,8 +409,6 @@ cat > input.nml <<EOF
 
      !Physics options
        consv_te = $consv_te
-       do_sat_adj = .F.
-       do_inline_mp = .T.
        fill = .T.
        phys_hydrostatic = .F.
 
@@ -415,6 +419,11 @@ cat > input.nml <<EOF
        fv_debug = .F.
        range_warn = .F.
 
+/
+
+&integ_phys_nml
+       do_sat_adj = .F.
+       do_inline_mp = .T.
 /
 
 &test_case_nml ! cold start
@@ -435,7 +444,6 @@ cat > input.nml <<EOF
 
 
  &gfdl_mp_nml
-       sedi_transport = .true.
        do_sedi_heat = .true.
        rad_snow = .true.
        rad_graupel = .true.
@@ -457,7 +465,6 @@ cat > input.nml <<EOF
        !do_qa = .true.
        tau_l2v = 180.
        tau_v2l =  90.
-       tau_g2v = 900.
        rthresh = 10.e-6  ! This is a key parameter for cloud water
        dw_land  = 0.16
        dw_ocean = 0.10
@@ -474,10 +481,6 @@ cat > input.nml <<EOF
        ccn_l = 300.
        ccn_o = 200.
        c_paut = 0.5
-       c_cracw = 0.8
-       use_ppm = .false.
-       use_ccn = .true.
-       mono_prof = .true.
        z_slope_liq  = .true.
        z_slope_ice  = .true.
        fix_negative = .true.

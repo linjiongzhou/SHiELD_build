@@ -24,16 +24,21 @@
 #              integration software regression testing and as such is
 #              unsupported.
 #
-#SBATCH --output=./stdout/%x.o%j
-#SBATCH --qos=debug
-#SBATCH --account=_your_account_
-#SBATCH --time=00:10:00
-#SBATCH --clusters=c4
-#SBATCH --nodes=1
+#SBATCH --ntasks=24
 
 if [ -z ${BUILDDIR} ] ; then
   echo -e "\nERROR:\tset BUILDDIR to the base path /<path>/SHiELD_build/ \n"
   exit 99
+fi
+
+# when we are running this test for CI, we run it in a container
+# an expected value for container would be "--mpi=pmi2 singularity exec -B <file directory> <container>"
+# this is needed within the run command
+if [ -z "$1" ] ; then
+  CONTAINER=""
+else
+  CONTAINER=$1
+  echo -e "\nThis test will be run inside of a container with the command $1"
 fi
 
 # configure the site
@@ -172,10 +177,10 @@ npes=`expr ${layout_x} \* ${layout_y}`
 LAUNCHER=${LAUNCHER:-srun}
 if [ ${LAUNCHER} = 'srun' ] ; then
     export SLURM_CPU_BIND=verbose
-    run_cmd="${LAUNCHER} --label --ntasks=$npes --cpus-per-task=$skip ./${executable##*/}"
+    run_cmd="${LAUNCHER} --label --ntasks=$npes --cpus-per-task=$skip $CONTAINER ./${executable##*/}"
 else
     export MPICH_ENV_DISPLAY=YES
-    run_cmd="${LAUNCHER} -prepend-rank -np $npes ./${executable##*/}"
+    run_cmd="${LAUNCHER} -prepend-rank -np $npes $CONTAINER ./${executable##*/}"
 fi
 
 # set up the run area
@@ -320,6 +325,7 @@ cat > input.nml <<EOF
        na_init = $na_init
        nudge_qv = .F.
        external_ic = ${external_ic}
+       is_ideal_case = .T.
        add_noise = ${add_noise}
        mountain = $mountain
 
@@ -344,8 +350,6 @@ cat > input.nml <<EOF
 
      !Physics options
        consv_te = $consv_te
-       do_sat_adj = .F.
-       do_inline_mp = .F.
        fill = .T.
        phys_hydrostatic = .F.
 
@@ -356,6 +360,11 @@ cat > input.nml <<EOF
        fv_debug = .F.
        range_warn = .F.
 
+/
+
+&integ_phys_nml
+       do_sat_adj = .F.
+       do_inline_mp = .F.
 /
 
 &gfdl_mp_nml

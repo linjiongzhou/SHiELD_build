@@ -35,14 +35,14 @@ release="main"
 
 fv3_release=$release
 phy_release=$release
-fms_release="2022.02"
+fms_release="2022.03"
+drivers_release="2022.02"
 
 git clone -b ${fv3_release}   https://gitlab.gfdl.noaa.gov/fv3team/atmos_cubed_sphere
 git clone -b ${phy_release}   https://gitlab.gfdl.noaa.gov/fv3team/fv3_gfsphysics
 git clone -b ${fms_release}   https://github.com/NOAA-GFDL/FMS
 git clone -b ${fms_release}   https://github.com/NOAA-GFDL/FMSCoupler
-git clone -b ${fms_release}   https://github.com/NOAA-GFDL/atmos_drivers
+git clone -b ${drivers_release}   https://github.com/NOAA-GFDL/atmos_drivers
 
 #Automatic release tracking from Matt M.
 echo $release >& ../SHiELD_build/release
-
