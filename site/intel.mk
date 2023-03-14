@@ -58,7 +58,7 @@ FFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
 CFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
 endif
 
-FFLAGS_OPT = -O2 -debug minimal -fp-model source -qoverride-limits -qopt-prefetch=3
+FFLAGS_OPT = -O3 -debug minimal -fp-model source -qoverride-limits -qopt-prefetch=3
 FFLAGS_REPRO = -O2 -debug minimal -fp-model source -qoverride-limits #-fpe0 #causes problems??
 FFLAGS_DEBUG = -g -O0 -debug -check -check noarg_temp_created -check nopointer -warn -warn noerrors -fp-stack-check -fstack-protector-all -fpe0 -ftrapuv
 
@@ -71,7 +71,7 @@ ifeq ($(AVX2),Y)
 #CFLAGS += -xHOST -xCORE-AVX2 -qno-opt-dynamic-align
 endif
 
-CFLAGS_OPT = -O2 -debug minimal
+CFLAGS_OPT = -O3 -debug minimal
 CFLAGS_REPRO = -O2 -debug minimal
 CFLAGS_OPENMP = -qopenmp
 CFLAGS_DEBUG = -O0 -g -ftrapuv -traceback

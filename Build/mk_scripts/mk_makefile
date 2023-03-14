@@ -114,7 +114,11 @@ if [ ${CONFIG} = 'shield' ] ; then
 #---radiation_aerosols.f
 ############################
   if [ ${COMPILER} = 'intel' ]; then
-    sed -i 's"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -xCORE-AVX-I -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"' Makefile_gfs
+	  if [ `hostname | cut -c1-5` = "gaea5" ]; then
+      sed -i 's"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -march=core-avx-i -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"' Makefile_gfs
+		else
+		  sed -i 's"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"$(FC) $(FPPFLAGS) $(FFLAGS) $(OTHERFLAGS) $(OTHER_FFLAGS) -xCORE-AVX-I -c\t$(SRCROOT)fv3_gfsphysics/gsmphys/radiation_aerosols.f"' Makefile_gfs
+		fi
   fi
 fi
 

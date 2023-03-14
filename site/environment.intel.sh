@@ -25,28 +25,57 @@
 
 
 if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; then
-   echo " gaea environment "
+   if [ `hostname | cut -c1-5` = "gaea5" ] ; then
+      echo " gaea C5 environment "
 
-   . ${MODULESHOME}/init/sh
-   module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
-   module load   PrgEnv-intel
-   module rm intel
-   module rm gcc
-   module load intel/19.0.5.281
-   module load cray-netcdf
-   module load craype-hugepages4M
-   module load cmake/3.20.1
+      . ${MODULESHOME}/init/sh
+      module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
+      module load   PrgEnv-intel
+      module rm intel
+      module rm gcc
+      module load intel-classic/2022.0.2
+      module load cray-hdf5
+      module load cray-netcdf
+      module load craype-hugepages4M
+      module load cmake/3.20.1
+ 
+      # make your compiler selections here
+      export FC=ftn
+      export CC=cc
+      export CXX=CC
+      export LD=ftn
+      export TEMPLATE=site/intel.mk
+      export LAUNCHER=srun
+ 
+      # highest level of AVX support
+      export AVX_LEVEL=-march=core-avx-i
+   
+   else
+      echo " gaea environment "
+   
+      . ${MODULESHOME}/init/sh
+      module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
+      module load   PrgEnv-intel
+      module rm intel
+      module rm gcc
+      module load intel/19.0.5.281
+      module load cray-netcdf
+      module load craype-hugepages4M
+      module load cmake/3.20.1
+   
+      # make your compiler selections here
+      export FC=ftn
+      export CC=cc
+      export CXX=CC
+      export LD=ftn
+      export TEMPLATE=site/intel.mk
+      export LAUNCHER=srun
+   
+      # highest level of AVX support
+      export AVX_LEVEL=-xCORE-AVX2
+    
+   fi
 
-   # make your compiler selections here
-   export FC=ftn
-   export CC=cc
-   export CXX=CC
-   export LD=ftn
-   export TEMPLATE=site/intel.mk
-   export LAUNCHER=srun
-
-   # highest level of AVX support
-   export AVX_LEVEL=-xCORE-AVX2
 
    echo -e ' '
    module list
