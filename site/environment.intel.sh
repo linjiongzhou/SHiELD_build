@@ -25,7 +25,7 @@
 
 
 if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; then
-   if [ `hostname | cut -c1-5` = "gaea5" ] ; then
+   if [ `hostname | cut -c1-5` = "gaea5" ] || [ `hostname | cut -c1-3` = "c5n" ] ; then
       echo " gaea C5 environment "
 
       . ${MODULESHOME}/init/sh
@@ -48,7 +48,7 @@ if [ `hostname | cut -c1-4` = "gaea" ] || [ `hostname | cut -c1-3` = "nid" ] ; t
       export LAUNCHER=srun
  
       # highest level of AVX support
-      export AVX_LEVEL=-march=core-avx-i
+      export AVX_LEVEL=-march=core-avx2
    
    else
       echo " gaea environment "
