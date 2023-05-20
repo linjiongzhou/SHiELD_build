@@ -63,7 +63,8 @@ case $hostname in
       module rm intel
       module rm gcc
       module load intel/19.0.5.281
-      module load cray-netcdf
+      module load cray-hdf5/1.12.1.3
+      module load cray-netcdf/4.8.1.3
       module load craype-hugepages4M
       module load cmake/3.20.1
    
