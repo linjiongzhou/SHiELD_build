@@ -54,8 +54,8 @@ ifeq ($(AVX),Y)
 FFLAGS += $(AVX_LEVEL) -qno-opt-dynamic-align
 CFLAGS += $(AVX_LEVEL) -qno-opt-dynamic-align
 else
-FFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
-CFLAGS += -xCORE-AVX-I -qno-opt-dynamic-align
+FFLAGS += -march=core-avx-i -qno-opt-dynamic-align
+CFLAGS += -march=core-avx-i -qno-opt-dynamic-align
 endif
 
 FFLAGS_OPT = -O2 -debug minimal -fp-model source -qoverride-limits -qopt-prefetch=3

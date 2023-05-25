@@ -39,6 +39,7 @@ case $hostname in
       module load cray-hdf5
       module load cray-netcdf
       module load craype-hugepages4M
+      module load cray-libsci/22.10.1.2
       module load cmake/3.23.1
  
       # make your compiler selections here
@@ -50,7 +51,7 @@ case $hostname in
       export LAUNCHER=srun
  
       # highest level of AVX support
-      export AVX_LEVEL=-march=core-avx2
+      export AVX_LEVEL=-march=core-avx-i
       echo -e ' '
       module list
       ;;
