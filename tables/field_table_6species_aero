@@ -40,3 +40,8 @@
            "longname",     "cloud amount"
            "units",        "1"
        "profile_type", "fixed", "surface_value=1.e30" /
+# non-prognostic aerosol
+ "TRACER", "atmos_mod", "aerosol"
+           "longname",     "aerosol"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
