@@ -26,18 +26,58 @@
 hostname=`hostname`
 
 case $hostname in
-   gaea9 | gaea1? | nid* )
-       echo " gaea C4 environment "
-
-       . ${MODULESHOME}/init/sh
+   gaea5? | c5n* )
+      echo " gaea C5 environment "
+      . ${MODULESHOME}/init/sh
        module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
+       module rm intel-classic
+       module rm intel-oneapi
        module rm intel
        module load   PrgEnv-gnu
        module rm gcc
-       module load gcc/9.2.0
-       module load cray-netcdf
+       module load gcc/10.3.0
+       module load cray-hdf5/1.12.2.3
+       module load cray-netcdf/4.9.0.3
+       module load craype-hugepages4M
+       module load cmake/3.23.1
+       module load libyaml/0.2.5
+
+       # Add -DHAVE_GETTID to the FMS cppDefs
+       export FMS_CPPDEFS=-DHAVE_GETTID
+
+       # make your compiler selections here
+       export FC=ftn
+       export CC=cc
+       export CXX=CC
+       export LD=ftn
+       export TEMPLATE=site/gnu.mk
+       export LAUNCHER=srun
+
+       # highest level of AVX support
+       export AVX_LEVEL=-march=native
+
+       echo -e ' '
+       module list
+       ;;
+   gaea1? | nid* )
+       echo " gaea C3/C4 environment "
+
+       . ${MODULESHOME}/init/sh
+       module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
+       module rm intel-classic
+       module rm intel-oneapi
+       module rm intel
+       module load   PrgEnv-gnu
+       module rm gcc
+       module load gcc/10.3.0
+       module load cray-hdf5/1.12.1.3
+       module load cray-netcdf/4.8.1.3
        module load craype-hugepages4M
        module load cmake/3.20.1
+       module load libyaml/0.2.5
+
+       # Add -DHAVE_GETTID to the FMS cppDefs
+       export FMS_CPPDEFS=-DHAVE_GETTID
 
        # make your compiler selections here
        export FC=ftn
@@ -67,6 +107,7 @@ case $hostname in
        export HDF5=${HDF5_ROOT}
        export LIBRARY_PATH="${LIBRARY_PATH}:${NETCDF}/lib:${HDF5}/lib"
        export NETCDF_DIR=${NETCDF}
+       export FMS_CPPDEFS=""
 
        # make your compiler selections here
        export FC=mpif90
@@ -95,6 +136,7 @@ case $hostname in
 
        export LIBRARY_PATH="${LIBRARY_PATH}:${NETCDF4}/lib:${HDF5}/lib"
        export NETCDF_DIR=${NETCDF4}
+       export FMS_CPPDEFS=""
 
        # make your compiler selections here
        export FC=mpif90
@@ -122,6 +164,7 @@ case $hostname in
 
        export LIBRARY_PATH="${LIBRARY_PATH}:${NETCDF}/lib:${HDF5}/lib"
        export NETCDF_DIR=${NETCDF}
+       export FMS_CPPDEFS=""
 
        # make your compiler selections here
        export FC=mpif90
@@ -149,6 +192,7 @@ case $hostname in
 
        export CPATH="${NETCDF_ROOT}/include:${CPATH}"
        export NETCDF_DIR=${NETCDF_ROOT}
+       export FMS_CPPDEFS=""
 
        # make your compiler selections here
        export FC=mpif90
