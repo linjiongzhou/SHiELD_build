@@ -188,6 +188,7 @@
 # "dynamics", "base_reflectivity", "REFD1km", "atmos_4xdaily","all",.false., "none", 2
 # "dynamics", "4km_reflectivity",  "REFD4km", "atmos_4xdaily","all",.false., "none", 2
 # "dynamics", "m10C_reflectivity","REFDm10C", "atmos_4xdaily","all",.false., "none", 2
+ "dynamics", "40dBz_height","40dBz_height", "atmos_4xdaily","all",.false., "none", 2
 ####
  "dynamics",  "intqv",     "intqv",    "atmos_4xdaily", "all", .false.,  "none", 2
  "dynamics",  "intql",     "intql",    "atmos_4xdaily", "all", .false.,  "none", 2
@@ -377,6 +378,55 @@
 #"cosp",  "pctisccp"              "pctisccp"            "cosp2d",         "all",  .false.,  "none",  2
 #"cosp",  "tauisccp"              "tauisccp"            "cosp2d",         "all",  .false.,  "none",  2
 #"cosp",  "albisccp"              "albisccp"            "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_01"         "clisccp_01_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_02"         "clisccp_01_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_03"         "clisccp_01_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_04"         "clisccp_01_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_05"         "clisccp_01_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_06"         "clisccp_01_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_01_07"         "clisccp_01_07"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_01"         "clisccp_02_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_02"         "clisccp_02_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_03"         "clisccp_02_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_04"         "clisccp_02_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_05"         "clisccp_02_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_06"         "clisccp_02_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_02_07"         "clisccp_02_07"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_01"         "clisccp_03_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_02"         "clisccp_03_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_03"         "clisccp_03_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_04"         "clisccp_03_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_05"         "clisccp_03_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_06"         "clisccp_03_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_03_07"         "clisccp_03_07"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_01"         "clisccp_04_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_02"         "clisccp_04_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_03"         "clisccp_04_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_04"         "clisccp_04_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_05"         "clisccp_04_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_06"         "clisccp_04_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_04_07"         "clisccp_04_07"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_01"         "clisccp_05_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_02"         "clisccp_05_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_03"         "clisccp_05_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_04"         "clisccp_05_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_05"         "clisccp_05_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_06"         "clisccp_05_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_05_07"         "clisccp_05_07"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_01"         "clisccp_06_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_02"         "clisccp_06_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_03"         "clisccp_06_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_04"         "clisccp_06_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_05"         "clisccp_06_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_06"         "clisccp_06_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_06_07"         "clisccp_06_07"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_01"         "clisccp_07_01"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_02"         "clisccp_07_02"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_03"         "clisccp_07_03"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_04"         "clisccp_07_04"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_05"         "clisccp_07_05"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_06"         "clisccp_07_06"       "cosp2d",         "all",  .false.,  "none",  2
+#"cosp",  "clisccp_07_07"         "clisccp_07_07"       "cosp2d",         "all",  .false.,  "none",  2
 #"cosp",  "misr_meanztop"         "misr_meanztop"       "cosp2d",         "all",  .false.,  "none",  2
 #"cosp",  "misr_cldarea"          "misr_cldarea"        "cosp2d",         "all",  .false.,  "none",  2
  "cosp",  "cltmodis"              "cltmodis"            "cosp2d",         "all",  .false.,  "none",  2
@@ -487,7 +537,6 @@
 #"cosp",  "Reff_LSSNOW"           "Reff_LSSNOW"         "cosp3d",         "all",  .false.,  "none",  2
 #"cosp",  "Reff_LSGRPL"           "Reff_LSGRPL"         "cosp3d",         "all",  .false.,  "none",  2
 #############################################################################################
-###
 ###
 # gfs physics data
 ###
@@ -685,7 +734,9 @@
 ####
 ## hourly statistics
 ####
- "dynamics", "uh25", "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
+ "dynamics", "uh25",   "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
+ "dynamics", "wmaxup", "WMAXup",      "atmos_sos_ave", "all", max, "none", 2
+#"dynamics", "wmaxdn", "WMAXdn",      "atmos_sos_ave", "all", max, "none", 2
 ####
 ## Monthly averages:
 ####

@@ -189,6 +189,7 @@
 # "dynamics", "base_reflectivity", "REFD1km", "atmos_4xdaily","all",.false., "none", 2
 # "dynamics", "4km_reflectivity",  "REFD4km", "atmos_4xdaily","all",.false., "none", 2
 # "dynamics", "m10C_reflectivity","REFDm10C", "atmos_4xdaily","all",.false., "none", 2
+ "dynamics", "40dBz_height","40dBz_height", "atmos_4xdaily","all",.false., "none", 2
 ####
  "dynamics",  "intqv",     "intqv",    "atmos_4xdaily", "all", .false.,  "none", 2
  "dynamics",  "intql",     "intql",    "atmos_4xdaily", "all", .false.,  "none", 2
@@ -520,7 +521,6 @@
 "cosp",  "Reff_LSGRPL"           "Reff_LSGRPL"         "cosp3d",         "all",  .false.,  "none",  2
 #############################################################################################
 ###
-###
 # gfs physics data
 ###
 #"gfs_phys",  "fluxr_01"   "fluxr_01"   "gfs_physics",   "all",  .false.,  "none",  2
@@ -717,7 +717,9 @@
 ####
 ## hourly statistics
 ####
- "dynamics", "uh25", "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
+ "dynamics", "uh25",   "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
+ "dynamics", "wmaxup", "WMAXup",      "atmos_sos_ave", "all", max, "none", 2
+#"dynamics", "wmaxdn", "WMAXdn",      "atmos_sos_ave", "all", max, "none", 2
 ####
 ## Monthly averages:
 ####
