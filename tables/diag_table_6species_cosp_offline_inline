@@ -5,6 +5,7 @@
 "atmos_static",           -1,  "hours",    1, "hours",  "time"
 "atmos_sos",               1,  "hours",    1, "hours",  "time"
 "atmos_sos_ave",           1,  "hours",    1, "hours",  "time"
+#"atmos_coarse",            6,  "hours",    1, "hours",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics",             0,  "hours",    1, "hours",  "time"
 #"gfs_surface",             0,  "hours",    1, "hours",  "time"
@@ -16,6 +17,7 @@
 "tracer3d_4xdaily",        6,  "hours",    1, "hours",  "time"
 #"cloud3d_4xdaily",         6,  "hours",    1, "hours",  "time"
 #"nggps3d_dt",              6,  "hours",    1, "hours",  "time"
+#"phys_coarse",             6,  "hours",    1, "hours",  "time"
 #"energy2d",                0,  "hours",    1, "hours",  "time"
 
 #
@@ -269,6 +271,67 @@
 # "dynamics",  "rrg",         "rrg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
 # "dynamics",  "tvg",         "tvg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
 #############################################################################################
+###
+# coarse grained diagnostics
+###
+# "dynamics", "qv_dt_phys_coarse", "qv_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "ql_dt_phys_coarse", "ql_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qi_dt_phys_coarse", "qi_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "liq_wat_dt_phys_coarse", "liq_wat_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "ice_wat_dt_phys_coarse", "ice_wat_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qr_dt_phys_coarse", "qr_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qs_dt_phys_coarse", "qs_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qg_dt_phys_coarse", "qg_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "t_dt_phys_coarse", "t_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "u_dt_phys_coarse", "u_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "v_dt_phys_coarse", "v_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "t_dt_nudge_coarse", "t_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "ps_dt_nudge_coarse", "ps_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "delp_dt_nudge_coarse", "delp_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "u_dt_nudge_coarse", "u_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "v_dt_nudge_coarse", "v_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qv_dt_nudge_coarse", "qv_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qv_dt_gfdlmp_coarse", "qv_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "ql_dt_gfdlmp_coarse", "ql_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qi_dt_gfdlmp_coarse", "qi_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "liq_wat_dt_gfdlmp_coarse", "liq_wat_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "ice_wat_dt_gfdlmp_coarse", "ice_wat_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qr_dt_gfdlmp_coarse", "qr_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qs_dt_gfdlmp_coarse", "qs_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qg_dt_gfdlmp_coarse", "qg_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "t_dt_gfdlmp_coarse", "t_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "u_dt_gfdlmp_coarse", "u_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "v_dt_gfdlmp_coarse", "v_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "t_dt_sg_coarse", "t_dt_sg_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "u_dt_sg_coarse", "u_dt_sg_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "v_dt_sg_coarse", "v_dt_sg_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "qv_dt_sg_coarse", "qv_dt_sg_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qv_dt_phys_coarse", "int_qv_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_ql_dt_phys_coarse", "int_ql_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qi_dt_phys_coarse", "int_qi_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_liq_wat_dt_phys_coarse", "int_liq_wat_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_ice_wat_dt_phys_coarse", "int_ice_wat_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qr_dt_phys_coarse", "int_qr_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qs_dt_phys_coarse", "int_qs_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qg_dt_phys_coarse", "int_qg_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_t_dt_phys_coarse", "int_t_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_u_dt_phys_coarse", "int_u_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_v_dt_phys_coarse", "int_v_dt_phys_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_t_dt_nudge_coarse", "int_t_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_u_dt_nudge_coarse", "int_u_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_v_dt_nudge_coarse", "int_v_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qv_dt_nudge_coarse", "int_qv_dt_nudge_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qv_dt_gfdlmp_coarse", "int_qv_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_ql_dt_gfdlmp_coarse", "int_ql_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qi_dt_gfdlmp_coarse", "int_qi_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_liq_wat_dt_gfdlmp_coarse", "int_liq_wat_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_ice_wat_dt_gfdlmp_coarse", "int_ice_wat_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qr_dt_gfdlmp_coarse", "int_qr_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qs_dt_gfdlmp_coarse", "int_qs_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_qg_dt_gfdlmp_coarse", "int_qg_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_t_dt_gfdlmp_coarse", "int_t_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_u_dt_gfdlmp_coarse", "int_u_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
+# "dynamics", "int_v_dt_gfdlmp_coarse", "int_v_dt_gfdlmp_coarse", "atmos_coarse", "all", .false., "none", 2
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
@@ -699,6 +762,37 @@
 #"gfs_phys",  "dclwmr_dt"  "dclwmr_dt"  "gfs_physics6",  "all",  .false.,  "none",  2
 #"gfs_phys",  "do3mr_dt"   "do3mr_dt"   "gfs_physics6",  "all",  .false.,  "none",  2
 #"gfs_phys",  "dqdt_v"     "dqdt_v"     "gfs_physics6",  "all",  .false.,  "none",  2
+###
+# coarse grained diagnostics
+###
+# "gfs_phys", "tendency_of_air_temperature_due_to_longwave_heating_coarse", "dT_RAD_lw_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_shortwave_heating_coarse", "dT_RAD_sw_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_turbulence_coarse", "dT_PBL_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_deep_convection_coarse", "dT_CNV_deep_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_shallow_convection_coarse", "dT_CNV_shal_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_microphysics_coarse", "dT_MP_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_dissipation_of_gravity_waves_coarse", "dT_GWD_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_longwave_heating_assuming_clear_sky_coarse", "dT_RAD_lw_clr_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_air_temperature_due_to_shortwave_heating_assuming_clear_sky_coarse", "dT_RAD_sw_clr_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_longwave_heating_coarse", "int_dT_RAD_lw_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_shortwave_heating_coarse", "int_dT_RAD_sw_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_turbulence_coarse", "int_dT_PBL_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_deep_convection_coarse", "int_dT_CNV_deep_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_shallow_convection_coarse", "int_dT_CNV_shal_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_microphysics_coarse", "int_dT_MP_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_dissipation_of_gravity_waves_coarse", "int_dT_GWD_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_longwave_heating_assuming_clear_sky_coarse", "int_dT_RAD_lw_clr_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_air_temperature_due_to_shortwave_heating_assuming_clear_sky_coarse", "int_dT_RAD_sw_clr_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_specific_humidity_due_to_turbulence_coarse", "dq_PBL_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_specific_humidity_due_to_deep_convection_coarse", "dq_CNV_deep_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_specific_humidity_due_to_shallow_convection_coarse", "dq_CNV_shal_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_specific_humidity_due_to_microphysics_coarse", "dq_MP_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "tendency_of_specific_humidity_due_to_change_in_atmosphere_mass_coarse", "dq_MASS_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_specific_humidity_due_to_turbulence_coarse", "int_dq_PBL_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_specific_humidity_due_to_deep_convection_coarse", "int_dq_CNV_deep_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_specific_humidity_due_to_shallow_convection_coarse", "int_dq_CNV_shal_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_specific_humidity_due_to_microphysics_coarse", "int_dq_MP_coarse", "phys_coarse", "all", .false., "none", 2
+# "gfs_phys", "vertically_integrated_tendency_of_specific_humidity_due_to_change_in_atmosphere_mass_coarse", "int_dq_MASS_coarse", "phys_coarse", "all", .false., "none", 2
 ####
 ## SOS high-frequency
 ####
