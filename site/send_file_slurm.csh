@@ -5,7 +5,7 @@
 #SBATCH --job-name=Send_file
 #SBATCH --output=%x.o%j
 #SBATCH --time=16:00:00
-#SBATCH --partition=rdtn
+#SBATCH --partition=rdtn_c5
 #SBATCH --cluster=es
 #SBATCH --account=gfdl_w
 #SBATCH --ntasks=1
@@ -22,7 +22,7 @@
   echo "test!"
   #setenv siteConfig /autofs/mnt/ncrc-svm1_home1/Jan-Huey.Chen/Util/env_c3.cshrc
   #if ( -f $siteConfig ) source $siteConfig
-  source /opt/modules/default/init/tcsh
+  source $MODULESHOME/init/tcsh
   module load gcp
   echo "test2!"
 

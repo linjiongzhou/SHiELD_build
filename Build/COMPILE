@@ -63,7 +63,7 @@ spin()
   yaml="noyaml"
 
   config_name="SHiELD"
-  tag="RT2024.e001"
+  tag="RT2024"
 
 #
 # parse arguments

@@ -270,6 +270,17 @@
 # "dynamics",  "oeg",         "oeg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
 # "dynamics",  "rrg",         "rrg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
 # "dynamics",  "tvg",         "tvg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qcw",         "qcw",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qci",         "qci",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qcr",         "qcr",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qcs",         "qcs",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qcg",         "qcg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "rew",         "rew",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "rei",         "rei",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "rer",         "rer",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "res",         "res",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "reg",         "reg",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "cld",         "cld",        "cloud3d_4xdaily",  "all",  .false.,  "none",  2
 #############################################################################################
 ###
 # coarse grained diagnostics
@@ -335,27 +346,28 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "ucomp",       "ucomp",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "vcomp",       "vcomp",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "temp",        "temp",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "delp",        "delp",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "pfhy",        "hypres",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "pfnh",        "nhpres",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "w",           "w",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "delz",        "delz",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "rh",          "rh",         "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "u_plev",       "u_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "v_plev",       "v_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "t_plev",       "t_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "h_plev",       "h_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "q_plev",       "q_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "ql_plev",      "ql_plev",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qi_plev",      "qi_plev",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qr_plev",      "qr_plev",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qs_plev",      "qs_plev",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qg_plev",      "qg_plev",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "cf_plev",      "cf_plev",     "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "omg_plev",     "omg_plev",    "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "ucomp",         "ucomp",         "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "vcomp",         "vcomp",         "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "temp",          "temp",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "delp",          "delp",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "pfhy",          "hypres",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "pfnh",          "nhpres",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "w",             "w",             "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "delz",          "delz",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "rh",            "rh",            "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "u_plev",        "u_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "v_plev",        "v_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "t_plev",        "t_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "h_plev",        "h_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "q_plev",        "q_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "ql_plev",       "ql_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_plev",       "qi_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qr_plev",       "qr_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qs_plev",       "qs_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qg_plev",       "qg_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "cf_plev",       "cf_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "omg_plev",      "omg_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "reflectivity",  "reflectivity",  "nggps3d_4xdaily",  "all",  .false.,  "none",  2
 ###
 # tendencies
 ###
