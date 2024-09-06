@@ -1,7 +1,7 @@
 [submodule "mkmf"]
 	path = mkmf
 	url = https://github.com/NOAA-GFDL/mkmf
-	branch = master
+	branch = main
 [submodule "Users/shield_runscripts"]
 	path = Users/shield_runscripts
 	url = https://gitlab.gfdl.noaa.gov/Linjiong.Zhou/shield_run.git
