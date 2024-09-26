@@ -8,6 +8,7 @@
 #SBATCH --partition=rdtn_c5
 #SBATCH --cluster=es
 #SBATCH --account=gfdl_w
+####SBATCH --account=bil-coastal-gfdl
 #SBATCH --ntasks=1
 #SBATCH --export=NONE
 
