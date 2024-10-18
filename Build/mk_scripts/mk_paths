@@ -34,7 +34,7 @@ COMPILER="intel"
 for arg in "$@"
 do
     case $arg in
-        shield|solo)
+        shield|solo|shieldfull|shiemom)
         CONFIG="${arg#*=}"
         shift # Remove CONFIG from processing
         ;;
@@ -82,11 +82,63 @@ elif [ ${CONFIG} = 'shield' ] ; then
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_fv3 \
       fv3_gfsphysics/FV3GFS/ \
       atmos_drivers/SHiELD/atmos_model.F90 \
-      FMSCoupler/SHiELD/coupler_main.F90 \
       atmos_cubed_sphere/driver/SHiELD/atmosphere.F90 \
       atmos_cubed_sphere/tools/ \
       atmos_cubed_sphere/model/ \
       atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
+
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_driver \
+      FMSCoupler/SHiELD/coupler_main.F90
+
+elif [ ${CONFIG} = 'shieldfull' ] ; then
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_gfs \
+      atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
+      atmos_cubed_sphere/model/cld_eff_rad.F90 \
+      fv3_gfsphysics/gsmphys/  \
+      fv3_gfsphysics/GFS_layer/ \
+      fv3_gfsphysics/IPD_layer/
+
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_fv3 \
+      fv3_gfsphysics/FV3GFS/ \
+      atmos_cubed_sphere/tools/ \
+      atmos_cubed_sphere/model/ \
+      fv3_gfsphysics/atmos_shared/  \
+      atmos_cubed_sphere/driver/SHiELDFULL/atmosphere.F90 \
+      atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
+
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_driver \
+      ocean_null/ \
+      ice_null/ \
+      ice_param/ \
+      land_null/ \
+      atmos_drivers/SHiELDFULL/ \
+      FMSCoupler/full/ \
+      FMSCoupler/shared/
+
+elif  [ ${CONFIG} = 'shiemom' ] ; then
+
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_gfs \
+      atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
+      atmos_cubed_sphere/model/cld_eff_rad.F90 \
+      fv3_gfsphysics/gsmphys/  \
+      fv3_gfsphysics/GFS_layer/ \
+      fv3_gfsphysics/IPD_layer/
+
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_fv3 \
+      fv3_gfsphysics/FV3GFS/ \
+      atmos_cubed_sphere/tools/ \
+      atmos_cubed_sphere/model/ \
+      fv3_gfsphysics/atmos_shared/  \
+      atmos_cubed_sphere/driver/SHiELDFULL/atmosphere.F90 \
+      atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
+
+  list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_driver \
+      land_null/
+      atmos_drivers/SHiELDFULL/ \
+      atmos_cubed_sphere/driver/SHiELDFULL/atmosphere.F90 \
+      FMSCoupler/full/ \
+      FMSCoupler/shared/
+
 fi
 
 popd

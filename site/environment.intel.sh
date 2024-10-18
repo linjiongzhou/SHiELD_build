@@ -27,23 +27,24 @@
 hostname=`hostname`
 
 case $hostname in
-   gaea5? | c5n* )
-      echo " gaea C5 environment "
+   gaea6? | c6n* )
+      echo " gaea C6 environment "
 
       . ${MODULESHOME}/init/sh
       module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
+      module unload darshan-runtime
       module load   PrgEnv-intel
       module rm intel-classic
       module rm intel-oneapi
       module rm intel
       module rm gcc
-      module load intel-classic/2022.2.1
+      module load intel-classic/2023.2.0
       module unload cray-libsci
       module load cray-hdf5
       module load cray-netcdf
       module load craype-hugepages4M
-      module load cmake/3.23.1
-      module load libyaml/0.2.5
+      #module load cmake/3.23.1
+      #module load libyaml/0.2.5
 
       # Add -DHAVE_GETTID to the FMS cppDefs
       export FMS_CPPDEFS=-DHAVE_GETTID
@@ -55,7 +56,44 @@ case $hostname in
       export LD=ftn
       export TEMPLATE=site/intel.mk
       export LAUNCHER=srun
- 
+
+      # highest level of AVX support
+      export AVX_LEVEL=-march=core-avx2
+      echo -e ' '
+      module list
+      ;;
+   gaea5? | c5n* )
+      echo " gaea C5 environment "
+
+      . ${MODULESHOME}/init/sh
+      module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
+      module unload darshan-runtime
+      module load   PrgEnv-intel
+      module rm intel-classic
+      module rm intel-oneapi
+      module rm intel
+      module rm gcc
+      module load intel-classic/2023.2.0
+      module unload cray-libsci
+      module load cray-hdf5/1.12.2.11
+      module load cray-netcdf/4.9.0.11
+      module load craype-hugepages4M
+      module load cmake/3.23.1
+      module load libyaml/0.2.5
+
+      # Add -DHAVE_GETTID to the FMS cppDefs
+      export FMS_CPPDEFS=-DHAVE_GETTID
+      # Needed with the new Environment on C5 as of 10/16/2024
+      export FI_VERBS_PREFER_XRC=0
+
+      # make your compiler selections here
+      export FC=ftn
+      export CC=cc
+      export CXX=CC
+      export LD=ftn
+      export TEMPLATE=site/intel.mk
+      export LAUNCHER=srun
+
       # highest level of AVX support
       export AVX_LEVEL=-march=core-avx2
       echo -e ' '
@@ -88,7 +126,7 @@ case $hostname in
       export LD=ftn
       export TEMPLATE=site/intel.mk
       export LAUNCHER=srun
-   
+
       # highest level of AVX support
       export AVX_LEVEL=-xCORE-AVX2
       echo -e ' '
@@ -96,14 +134,14 @@ case $hostname in
       ;;
    Orion* )
       echo " Orion environment "
- 
+
       . ${MODULESHOME}/init/sh
       module load intel/2020
       module load impi/2020
       module load netcdf
       module load hdf5
       module load cmake/3.22.1
- 
+
       export CPATH="${NETCDF}/include:${CPATH}"
       export HDF5=${HDF5_ROOT}
       export LIBRARY_PATH="${LIBRARY_PATH}:${NETCDF}/lib:${HDF5}/lib"
@@ -117,7 +155,7 @@ case $hostname in
       export LD=mpiifort
       export TEMPLATE=site/intel.mk
       export LAUNCHER=srun
- 
+
       # highest level of AVX support
       export AVX_LEVEL=-xSKYLAKE-AVX512
       echo -e ' '
@@ -207,6 +245,33 @@ case $hostname in
       fi
       echo -e ' '
       module list
+      ;;
+   stellar* )
+     echo " Stellar environment "                                                                                                                            
+
+      . ${MODULESHOME}/init/sh
+      module purge
+      module load cmake/3.19.7
+      module load intel/2021.1.2
+      module load openmpi/intel-2021.1/4.1.2
+      module load netcdf/intel-2021.1/hdf5-1.10.6/4.7.4
+      module load hdf5/intel-2021.1/1.10.6
+
+      export FMS_CPPDEFS=""
+
+      # make your compiler selections here
+      export FC=mpif90
+      export CC=mpicc
+      export CXX=mpicxx
+      export LD=mpif90
+      export TEMPLATE=site/intel.mk
+      export LAUNCHER=srun
+
+      # highest level of AVX support
+      export AVX_LEVEL=-march=core-avx2
+      echo -e ' '
+      module list  
+ 
       ;;
    * )
       echo " no environment available based on the hostname "
