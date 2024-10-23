@@ -5,8 +5,9 @@
 #SBATCH --job-name=Send_file
 #SBATCH --output=%x.o%j
 #SBATCH --time=16:00:00
-#SBATCH --partition=rdtn_c5
+#SBATCH --partition=dtn_f5_f6
 #SBATCH --cluster=es
+#SBATCH --qos=ppan
 #SBATCH --account=gfdl_w
 ####SBATCH --account=bil-coastal-gfdl
 #SBATCH --ntasks=1

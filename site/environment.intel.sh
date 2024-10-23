@@ -37,7 +37,7 @@ case $hostname in
       module rm intel-oneapi
       module rm intel
       module rm gcc
-      module load intel-classic/2022.2.1
+      module load intel-classic/2023.2.0
       module unload cray-libsci
       module load cray-hdf5
       module load cray-netcdf
@@ -55,7 +55,7 @@ case $hostname in
       export LD=ftn
       export TEMPLATE=site/intel.mk
       export LAUNCHER=srun
- 
+
       # highest level of AVX support
       export AVX_LEVEL=-march=core-avx2
       echo -e ' '
@@ -88,7 +88,7 @@ case $hostname in
       export LD=ftn
       export TEMPLATE=site/intel.mk
       export LAUNCHER=srun
-   
+
       # highest level of AVX support
       export AVX_LEVEL=-xCORE-AVX2
       echo -e ' '
@@ -96,14 +96,14 @@ case $hostname in
       ;;
    Orion* )
       echo " Orion environment "
- 
+
       . ${MODULESHOME}/init/sh
       module load intel/2020
       module load impi/2020
       module load netcdf
       module load hdf5
       module load cmake/3.22.1
- 
+
       export CPATH="${NETCDF}/include:${CPATH}"
       export HDF5=${HDF5_ROOT}
       export LIBRARY_PATH="${LIBRARY_PATH}:${NETCDF}/lib:${HDF5}/lib"
@@ -117,7 +117,7 @@ case $hostname in
       export LD=mpiifort
       export TEMPLATE=site/intel.mk
       export LAUNCHER=srun
- 
+
       # highest level of AVX support
       export AVX_LEVEL=-xSKYLAKE-AVX512
       echo -e ' '
