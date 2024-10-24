@@ -81,9 +81,9 @@ echo ' '
 release="main"
 
 fv3_release=$release
-drivers_release="main"
-fms_release="main"
-fms_c_release="main"
+drivers_release=$release
+fms_release=$release
+fms_c_release=$release
 
 git clone -b ${fv3_release}   https://gitlab.gfdl.noaa.gov/fv3team/atmos_cubed_sphere
 git clone -b ${fms_release}   https://github.com/NOAA-GFDL/FMS
