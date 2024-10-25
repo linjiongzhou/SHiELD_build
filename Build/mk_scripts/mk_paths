@@ -90,8 +90,6 @@ elif [ ${CONFIG} = 'shield' ] ; then
 
 elif [ ${CONFIG} = 'shieldfull' ] ; then
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_gfs \
-      atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
-      atmos_cubed_sphere/model/cld_eff_rad.F90 \
       fv3_gfsphysics/gsmphys/  \
       fv3_gfsphysics/GFS_layer/ \
       fv3_gfsphysics/IPD_layer/
@@ -116,8 +114,6 @@ elif [ ${CONFIG} = 'shieldfull' ] ; then
 elif  [ ${CONFIG} = 'shiemom' ] ; then
 
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_gfs \
-      atmos_cubed_sphere/model/gfdl_cld_mp.F90 \
-      atmos_cubed_sphere/model/cld_eff_rad.F90 \
       fv3_gfsphysics/gsmphys/  \
       fv3_gfsphysics/GFS_layer/ \
       fv3_gfsphysics/IPD_layer/
