@@ -6,6 +6,7 @@
 "atmos_sos",               1,  "hours",    1, "hours",  "time"
 "atmos_sos_ave",           1,  "hours",    1, "hours",  "time"
 #"atmos_coarse",            6,  "hours",    1, "hours",  "time"
+"atmos3d_4xdaily",         6,  "hours",    1, "hours",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics",             0,  "hours",    1, "hours",  "time"
 #"gfs_surface",             0,  "hours",    1, "hours",  "time"
@@ -190,7 +191,7 @@
 # "dynamics", "base_reflectivity", "REFD1km", "atmos_4xdaily","all",.false., "none", 2
 # "dynamics", "4km_reflectivity",  "REFD4km", "atmos_4xdaily","all",.false., "none", 2
 # "dynamics", "m10C_reflectivity","REFDm10C", "atmos_4xdaily","all",.false., "none", 2
- "dynamics", "40dBz_height","40dBz_height", "atmos_4xdaily","all",.false., "none", 2
+# "dynamics", "40dBz_height","40dBz_height", "atmos_4xdaily","all",.false., "none", 2
 ####
  "dynamics",  "intqv",     "intqv",    "atmos_4xdaily", "all", .false.,  "none", 2
  "dynamics",  "intql",     "intql",    "atmos_4xdaily", "all", .false.,  "none", 2
@@ -345,27 +346,30 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "ucomp",         "ucomp",         "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "vcomp",         "vcomp",         "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "temp",          "temp",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "delp",          "delp",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "pfhy",          "hypres",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "pfnh",          "nhpres",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "w",             "w",             "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "delz",          "delz",          "nggps3d_4xdaily",  "all",  .false.,  "none",  2
- "dynamics",  "rh",            "rh",            "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "u_plev",        "u_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "v_plev",        "v_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "t_plev",        "t_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "h_plev",        "h_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "q_plev",        "q_plev",        "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "ql_plev",       "ql_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qi_plev",       "qi_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qr_plev",       "qr_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qs_plev",       "qs_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "qg_plev",       "qg_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "cf_plev",       "cf_plev",       "nggps3d_4xdaily",  "all",  .false.,  "none",  2
-# "dynamics",  "omg_plev",      "omg_plev",      "nggps3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "ucomp",         "ucomp",         "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "vcomp",         "vcomp",         "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "temp",          "temp",          "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "delp",          "delp",          "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "pfhy",          "hypres",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "pfnh",          "nhpres",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "w",             "w",             "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "delz",          "delz",          "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+ "dynamics",  "rh",            "rh",            "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "u_plev",        "u_plev",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "v_plev",        "v_plev",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "t_plev",        "t_plev",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "h_plev",        "h_plev",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "q_plev",        "q_plev",        "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "ql_plev",       "ql_plev",       "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_plev",       "qi_plev",       "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qr_plev",       "qr_plev",       "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qs_plev",       "qs_plev",       "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "qg_plev",       "qg_plev",       "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "cf_plev",       "cf_plev",       "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+# "dynamics",  "omg_plev",      "omg_plev",      "atmos3d_4xdaily",  "all",  .false.,  "none",  2
+###
+# FV3 variabls needed for NGGPS evaluation
+###
  "dynamics",  "reflectivity",  "reflectivity",  "nggps3d_4xdaily",  "all",  .false.,  "none",  2
 ###
 # tendencies
@@ -410,6 +414,7 @@
 # "gfs_sfc",   "SOILW2"         "SOILW2"     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW3"         "SOILW3"     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW4"         "SOILW4"     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "dpt2m"          "DPT2m"      "nggps2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "q2m"            "SPFH2m"     "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDCclm"        "TCDCclm"    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDChcl"        "TCDChcl"    "nggps2d",         "all",  .false.,  "none",  2
@@ -841,8 +846,9 @@
 ## hourly statistics
 ####
  "dynamics", "uh25",   "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
- "dynamics", "wmaxup", "WMAXup",      "atmos_sos_ave", "all", max, "none", 2
-#"dynamics", "wmaxdn", "WMAXdn",      "atmos_sos_ave", "all", max, "none", 2
+ "dynamics", "uh25",   "MNUPHL2_5km", "atmos_sos_ave", "all", min, "none", 2
+ "dynamics", "wmaxup", "MAXUVV",      "atmos_sos_ave", "all", max, "none", 2
+ "dynamics", "wmaxdn", "MAXDVV",      "atmos_sos_ave", "all", min, "none", 2
 ####
 ## Monthly averages:
 ####
