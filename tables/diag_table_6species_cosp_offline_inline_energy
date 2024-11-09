@@ -416,369 +416,369 @@
 ###
 # GFS variabls needed for NGGPS evaluation
 ###
-# "gfs_phys",  "ALBDOsfc"       "ALBDOsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "cnvprcpb_ave"   "CPRATsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "totprcpb_ave"   "PRATEsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "DLWRFsfc"       "DLWRFsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "ULWRFsfc"       "ULWRFsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "DSWRFsfc"       "DSWRFsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "USWRFsfc"       "USWRFsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "DSWRFtoa"       "DSWRFtoa"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "USWRFtoa"       "USWRFtoa"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "ULWRFtoa"       "ULWRFtoa"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csdlf_ave"      "DLWRFsfc_clr"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csulf_ave"      "ULWRFsfc_clr"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csdsf_ave"      "DSWRFsfc_clr"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csusf_ave"      "USWRFsfc_clr"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csusf_avetoa"   "USWRFtoa_clr"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csulf_avetoa"   "ULWRFtoa_clr"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "gflux_ave"      "GFLUXsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "HGTsfc"         "HGTsfc"     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "hpbl"           "HPBLsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "fice"           "ICECsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "SLMSKsfc"       "SLMSKsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "lhtfl_ave"      "LHTFLsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "shtfl_ave"      "SHTFLsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "psurf"          "PRESsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "pwat"           "PWATclm"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "soilm"          "SOILM"      "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW1"         "SOILW1"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW2"         "SOILW2"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW3"         "SOILW3"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW4"         "SOILW4"     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "dpt2m"          "DPT2m"      "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "q2m"            "SPFH2m"     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDCclm"        "TCDCclm"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDChcl"        "TCDChcl"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDClcl"        "TCDClcl"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDCmcl"        "TCDCmcl"    "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT1"         "SOILT1"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT2"         "SOILT2"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT3"         "SOILT3"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT4"         "SOILT4"     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "t2m"            "TMP2m"      "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "tsfc"           "TMPsfc"     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "u-gwd_ave"      "UGWDsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "v-gwd_ave"      "VGWDsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dusfc"          "UFLXsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dvsfc"          "VFLXsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "u10m"           "UGRD10m"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "v10m"           "VGRD10m"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "weasd"          "WEASDsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "snowd"          "SNODsfc"    "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "acond"          "CMMsfc"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "sfexc"          "CHHsfc"     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "ffmm"           "FFMMsfc"    "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "ffhh"           "FFHHsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "ZORLsfc"        "ZORLsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "VFRACsfc"       "VFRACsfc"   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "f10m"           "F10Msfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "vtype"          "VTYPEsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "stype"          "STYPEsfc"   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "toticeb_ave"     "ICEsfc"     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "totsnwb_ave"     "SNOWsfc"    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "totgrpb_ave"     "GRAUPELsfc" "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "netflxsfc"      "netflxsfc"  "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "tclim_iano"     "tclim_iano" "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "ALBDOsfc",       "ALBDOsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "cnvprcpb_ave",   "CPRATsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "totprcpb_ave",   "PRATEsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "DLWRFsfc",       "DLWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "ULWRFsfc",       "ULWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "DSWRFsfc",       "DSWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "USWRFsfc",       "USWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "DSWRFtoa",       "DSWRFtoa",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "USWRFtoa",       "USWRFtoa",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "ULWRFtoa",       "ULWRFtoa",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csdlf_ave",      "DLWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csulf_ave",      "ULWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csdsf_ave",      "DSWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csusf_ave",      "USWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csusf_avetoa",   "USWRFtoa_clr",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csulf_avetoa",   "ULWRFtoa_clr",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "gflux_ave",      "GFLUXsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "HGTsfc",         "HGTsfc",     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "hpbl",           "HPBLsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "fice",           "ICECsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "SLMSKsfc",       "SLMSKsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "lhtfl_ave",      "LHTFLsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "shtfl_ave",      "SHTFLsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "psurf",          "PRESsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "pwat",           "PWATclm",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "soilm",          "SOILM",      "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW1",         "SOILW1",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW2",         "SOILW2",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW3",         "SOILW3",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW4",         "SOILW4",     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "dpt2m",          "DPT2m",      "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "q2m",            "SPFH2m",     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDCclm",        "TCDCclm",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDChcl",        "TCDChcl",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDClcl",        "TCDClcl",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDCmcl",        "TCDCmcl",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT1",         "SOILT1",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT2",         "SOILT2",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT3",         "SOILT3",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT4",         "SOILT4",     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "t2m",            "TMP2m",      "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "tsfc",           "TMPsfc",     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "u-gwd_ave",      "UGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "v-gwd_ave",      "VGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dusfc",          "UFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dvsfc",          "VFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "u10m",           "UGRD10m",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "v10m",           "VGRD10m",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "weasd",          "WEASDsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "snowd",          "SNODsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "acond",          "CMMsfc",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "sfexc",          "CHHsfc",     "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "ffmm",           "FFMMsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "ffhh",           "FFHHsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "ZORLsfc",        "ZORLsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "VFRACsfc",       "VFRACsfc",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "f10m",           "F10Msfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "vtype",          "VTYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "stype",          "STYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "toticeb_ave",     "ICEsfc",     "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "totsnwb_ave",     "SNOWsfc",    "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "totgrpb_ave",     "GRAUPELsfc", "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "netflxsfc",      "netflxsfc",  "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "tclim_iano",     "tclim_iano", "nggps2d",         "all",  .false.,  "none",  2
 #
 ###
 # COSP variables
 ###
-##"cosp",  "cltisccp"              "cltisccp"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "meantbisccp"           "meantbisccp"         "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "meantbclrisccp"        "meantbclrisccp"      "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "pctisccp"              "pctisccp"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "tauisccp"              "tauisccp"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "albisccp"              "albisccp"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "misr_meanztop"         "misr_meanztop"       "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "misr_cldarea"          "misr_cldarea"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cltmodis"              "cltmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clwmodis"              "clwmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "climodis"              "climodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clhmodis"              "clhmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clmmodis"              "clmmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cllmodis"              "cllmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "tautmodis"             "tautmodis"           "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "tauwmodis"             "tauwmodis"           "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "tauimodis"             "tauimodis"           "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "tautlogmodis"          "tautlogmodis"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "tauwlogmodis"          "tauwlogmodis"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "tauilogmodis"          "tauilogmodis"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "reffclwmodis"          "reffclwmodis"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "reffclimodis"          "reffclimodis"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "pctmodis"              "pctmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "lwpmodis"              "lwpmodis"            "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "iwpmodis"              "iwpmodis"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cltlidarradar"         "cltlidarradar"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cllcalipsoice"         "cllcalipsoice"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clmcalipsoice"         "clmcalipsoice"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clhcalipsoice"         "clhcalipsoice"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cltcalipsoice"         "cltcalipsoice"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cllcalipsoliq"         "cllcalipsoliq"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clmcalipsoliq"         "clmcalipsoliq"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clhcalipsoliq"         "clhcalipsoliq"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cltcalipsoliq"         "cltcalipsoliq"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cllcalipsoun"          "cllcalipsoun"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clmcalipsoun"          "clmcalipsoun"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clhcalipsoun"          "clhcalipsoun"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cltcalipsoun"          "cltcalipsoun"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cllcalipso"            "cllcalipso"          "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clmcalipso"            "clmcalipso"          "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clhcalipso"            "clhcalipso"          "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "cltcalipso"            "cltcalipso"          "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clopaquecalipso"       "clopaquecalipso"     "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clthincalipso"         "clthincalipso"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clzopaquecalipso"      "clzopaquecalipso"    "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clopaquetemp"          "clopaquetemp"        "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clthintemp"            "clthintemp"          "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clzopaquetemp"         "clzopaquetemp"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clopaquemeanz"         "clopaquemeanz"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clthinmeanz"           "clthinmeanz"         "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clthinemis"            "clthinemis"          "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clopaquemeanzse"       "clopaquemeanzse"     "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clthinmeanzse"         "clthinmeanzse"       "cosp2d",         "all",  .false.,  "none",  2
-# "cosp",  "clzopaquecalipsose"    "clzopaquecalipsose"  "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cllgrLidar532"         "cllgrLidar532"       "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "clmgrLidar532"         "clmgrLidar532"       "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "clhgrLidar532"         "clhgrLidar532"       "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cltgrLidar532"         "cltgrLidar532"       "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cllatlid"              "cllatlid"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "clmatlid"              "clmatlid"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "clhatlid"              "clhatlid"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cltatlid"              "cltatlid"            "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag0"       "ptcloudsatflag0"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag1"       "ptcloudsatflag1"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag2"       "ptcloudsatflag2"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag3"       "ptcloudsatflag3"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag4"       "ptcloudsatflag4"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag5"       "ptcloudsatflag5"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag6"       "ptcloudsatflag6"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag7"       "ptcloudsatflag7"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag8"       "ptcloudsatflag8"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "ptcloudsatflag9"       "ptcloudsatflag9"     "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cloudsatpia"           "cloudsatpia"         "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cloudsat_tcc"          "cloudsat_tcc"        "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "cloudsat_tcc2"         "cloudsat_tcc2"       "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "npdfcld"               "npdfcld"             "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "npdfdrz"               "npdfdrz"             "cosp2d",         "all",  .false.,  "none",  2
-##"cosp",  "npdfrain"              "npdfrain"            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cltisccp",              "cltisccp",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "meantbisccp",           "meantbisccp",         "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "meantbclrisccp",        "meantbclrisccp",      "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "pctisccp",              "pctisccp",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "tauisccp",              "tauisccp",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "albisccp",              "albisccp",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "misr_meanztop",         "misr_meanztop",       "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "misr_cldarea",          "misr_cldarea",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cltmodis",              "cltmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clwmodis",              "clwmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "climodis",              "climodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clhmodis",              "clhmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clmmodis",              "clmmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cllmodis",              "cllmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "tautmodis",             "tautmodis",           "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "tauwmodis",             "tauwmodis",           "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "tauimodis",             "tauimodis",           "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "tautlogmodis",          "tautlogmodis",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "tauwlogmodis",          "tauwlogmodis",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "tauilogmodis",          "tauilogmodis",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "reffclwmodis",          "reffclwmodis",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "reffclimodis",          "reffclimodis",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "pctmodis",              "pctmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "lwpmodis",              "lwpmodis",            "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "iwpmodis",              "iwpmodis",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cltlidarradar",         "cltlidarradar",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cllcalipsoice",         "cllcalipsoice",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clmcalipsoice",         "clmcalipsoice",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clhcalipsoice",         "clhcalipsoice",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cltcalipsoice",         "cltcalipsoice",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cllcalipsoliq",         "cllcalipsoliq",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clmcalipsoliq",         "clmcalipsoliq",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clhcalipsoliq",         "clhcalipsoliq",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cltcalipsoliq",         "cltcalipsoliq",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cllcalipsoun",          "cllcalipsoun",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clmcalipsoun",          "clmcalipsoun",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clhcalipsoun",          "clhcalipsoun",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cltcalipsoun",          "cltcalipsoun",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cllcalipso",            "cllcalipso",          "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clmcalipso",            "clmcalipso",          "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clhcalipso",            "clhcalipso",          "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "cltcalipso",            "cltcalipso",          "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clopaquecalipso",       "clopaquecalipso",     "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clthincalipso",         "clthincalipso",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clzopaquecalipso",      "clzopaquecalipso",    "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clopaquetemp",          "clopaquetemp",        "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clthintemp",            "clthintemp",          "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clzopaquetemp",         "clzopaquetemp",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clopaquemeanz",         "clopaquemeanz",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clthinmeanz",           "clthinmeanz",         "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clthinemis",            "clthinemis",          "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clopaquemeanzse",       "clopaquemeanzse",     "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clthinmeanzse",         "clthinmeanzse",       "cosp2d",         "all",  .false.,  "none",  2
+# "cosp",  "clzopaquecalipsose",    "clzopaquecalipsose",  "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cllgrLidar532",         "cllgrLidar532",       "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "clmgrLidar532",         "clmgrLidar532",       "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "clhgrLidar532",         "clhgrLidar532",       "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cltgrLidar532",         "cltgrLidar532",       "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cllatlid",              "cllatlid",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "clmatlid",              "clmatlid",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "clhatlid",              "clhatlid",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cltatlid",              "cltatlid",            "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag0",       "ptcloudsatflag0",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag1",       "ptcloudsatflag1",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag2",       "ptcloudsatflag2",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag3",       "ptcloudsatflag3",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag4",       "ptcloudsatflag4",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag5",       "ptcloudsatflag5",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag6",       "ptcloudsatflag6",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag7",       "ptcloudsatflag7",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag8",       "ptcloudsatflag8",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "ptcloudsatflag9",       "ptcloudsatflag9",     "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cloudsatpia",           "cloudsatpia",         "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cloudsat_tcc",          "cloudsat_tcc",        "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "cloudsat_tcc2",         "cloudsat_tcc2",       "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "npdfcld",               "npdfcld",             "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "npdfdrz",               "npdfdrz",             "cosp2d",         "all",  .false.,  "none",  2
+##"cosp",  "npdfrain",              "npdfrain",            "cosp2d",         "all",  .false.,  "none",  2
 #############################################################################################
 ###
 # COSP Offline variables
 ###
-"cosp",  "skt"                   "skt"                 "cosp2d",         "all",  .false.,  "none",  2
-"cosp",  "surfelev"              "surfelev"            "cosp2d",         "all",  .false.,  "none",  2
-"cosp",  "landmask"              "landmask"            "cosp2d",         "all",  .false.,  "none",  2
-"cosp",  "sunlit"                "sunlit"              "cosp2d",         "all",  .false.,  "none",  2
-"cosp",  "p"                     "p"                   "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "ph"                    "ph"                  "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "zlev"                  "zlev"                "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "zlev_half"             "zlev_half"           "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "T"                     "T"                   "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "sh"                    "sh"                  "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "tca"                   "tca"                 "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "cca"                   "cca"                 "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "u_wind"                "u_wind"              "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "v_wind"                "v_wind"              "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "mr_lsliq"              "mr_lsliq"            "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "mr_lsice"              "mr_lsice"            "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "mr_ccliq"              "mr_ccliq"            "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "mr_ccice"              "mr_ccice"            "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "mr_ozone"              "mr_ozone"            "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "fl_lsrain"             "fl_lsrain"           "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "fl_lssnow"             "fl_lssnow"           "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "fl_lsgrpl"             "fl_lsgrpl"           "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "fl_ccrain"             "fl_ccrain"           "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "fl_ccsnow"             "fl_ccsnow"           "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "dtau_s"                "dtau_s"              "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "dtau_c"                "dtau_c"              "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "dem_s"                 "dem_s"               "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "dem_c"                 "dem_c"               "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "Reff_LSCLIQ"           "Reff_LSCLIQ"         "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "Reff_LSCICE"           "Reff_LSCICE"         "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "Reff_LSRAIN"           "Reff_LSRAIN"         "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "Reff_LSSNOW"           "Reff_LSSNOW"         "cosp3d",         "all",  .false.,  "none",  2
-"cosp",  "Reff_LSGRPL"           "Reff_LSGRPL"         "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "skt",                   "skt",                 "cosp2d",         "all",  .false.,  "none",  2
+"cosp",  "surfelev",              "surfelev",            "cosp2d",         "all",  .false.,  "none",  2
+"cosp",  "landmask",              "landmask",            "cosp2d",         "all",  .false.,  "none",  2
+"cosp",  "sunlit",                "sunlit",              "cosp2d",         "all",  .false.,  "none",  2
+"cosp",  "p",                     "p",                   "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "ph",                    "ph",                  "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "zlev",                  "zlev",                "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "zlev_half",             "zlev_half",           "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "T",                     "T",                   "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "sh",                    "sh",                  "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "tca",                   "tca",                 "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "cca",                   "cca",                 "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "u_wind",                "u_wind",              "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "v_wind",                "v_wind",              "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "mr_lsliq",              "mr_lsliq",            "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "mr_lsice",              "mr_lsice",            "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "mr_ccliq",              "mr_ccliq",            "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "mr_ccice",              "mr_ccice",            "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "mr_ozone",              "mr_ozone",            "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "fl_lsrain",             "fl_lsrain",           "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "fl_lssnow",             "fl_lssnow",           "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "fl_lsgrpl",             "fl_lsgrpl",           "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "fl_ccrain",             "fl_ccrain",           "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "fl_ccsnow",             "fl_ccsnow",           "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "dtau_s",                "dtau_s",              "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "dtau_c",                "dtau_c",              "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "dem_s",                 "dem_s",               "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "dem_c",                 "dem_c",               "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "Reff_LSCLIQ",           "Reff_LSCLIQ",         "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "Reff_LSCICE",           "Reff_LSCICE",         "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "Reff_LSRAIN",           "Reff_LSRAIN",         "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "Reff_LSSNOW",           "Reff_LSSNOW",         "cosp3d",         "all",  .false.,  "none",  2
+"cosp",  "Reff_LSGRPL",           "Reff_LSGRPL",         "cosp3d",         "all",  .false.,  "none",  2
 #############################################################################################
 ###
 # gfs physics data
 ###
-#"gfs_phys",  "fluxr_01"   "fluxr_01"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_02"   "fluxr_02"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_03"   "fluxr_03"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_04"   "fluxr_04"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_05"   "fluxr_05"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_06"   "fluxr_06"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_07"   "fluxr_07"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_08"   "fluxr_08"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_09"   "fluxr_09"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_10"   "fluxr_10"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_11"   "fluxr_11"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_12"   "fluxr_12"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_13"   "fluxr_13"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_14"   "fluxr_14"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_15"   "fluxr_15"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_16"   "fluxr_16"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_17"   "fluxr_17"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_18"   "fluxr_18"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_19"   "fluxr_19"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_20"   "fluxr_20"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_21"   "fluxr_21"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_22"   "fluxr_22"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_23"   "fluxr_23"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_24"   "fluxr_24"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_25"   "fluxr_25"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_26"   "fluxr_26"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_27"   "fluxr_27"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_28"   "fluxr_28"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_29"   "fluxr_29"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_30"   "fluxr_30"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_31"   "fluxr_31"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_32"   "fluxr_32"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_33"   "fluxr_33"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_34"   "fluxr_34"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_35"   "fluxr_35"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_36"   "fluxr_36"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_37"   "fluxr_37"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_38"   "fluxr_38"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "fluxr_39"   "fluxr_39"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dswcmp_1"   "dswcmp_1"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dswcmp_2"   "dswcmp_2"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dswcmp_3"   "dswcmp_3"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dswcmp_4"   "dswcmp_4"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "uswcmp_1"   "uswcmp_1"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "uswcmp_2"   "uswcmp_2"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "uswcmp_3"   "uswcmp_3"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "uswcmp_4"   "uswcmp_4"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "sw_upfxc"   "sw_upfxc"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "sw_dnfxc"   "sw_dnfxc"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "sw_upfx0"   "sw_upfx0"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "lw_upfxc"   "lw_upfxc"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "lw_upfx0"   "lw_upfx0"   "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "srunoff"    "srunoff"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "evbsa"      "evbsa"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "evcwa"      "evcwa"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "snohfa"     "snohfa"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "transa"     "transa"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "sbsnoa"     "sbsnoa"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "snowca"     "snowca"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "soilm"      "soilm"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "tmpmin"     "tmpmin"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "tmpmax"     "tmpmax"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dusfc"      "dusfc"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dvsfc"      "dvsfc"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dtsfc"      "dtsfc"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dqsfc"      "dqsfc"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "totprcp"    "totprcp"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "gflux"      "gflux"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dlwsfc"     "dlwsfc"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "ulwsfc"     "ulwsfc"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "suntim"     "suntim"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "runoff"     "runoff"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "ep"         "ep"         "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "cldwrk"     "cldwrk"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dugwd"      "dugwd"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dvgwd"      "dvgwd"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "psmean"     "psmean"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "cnvprcp"    "cnvprcp"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "spfhmin"    "spfhmin"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "spfhmax"    "spfhmax"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "rain"       "rain"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "rainc"      "rainc"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "u10m"       "u10m"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "v10m"       "v10m"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "zlvl"       "zlvl"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "psurf"      "psurf"      "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "hpbl"       "hpbl"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "pwat"       "pwat"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "t1"         "t1"         "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "q1"         "q1"         "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "u1"         "u1"         "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "v1"         "v1"         "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "chh"        "chh"        "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "cmm"        "cmm"        "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dlwsfci"    "dlwsfci"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "ulwsfci"    "ulwsfci"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dswsfci"    "dswsfci"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "uswsfci"    "uswsfci"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dusfci"     "dusfci"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dvsfci"     "dvsfci"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dtsfci"     "dtsfci"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "dqsfci"     "dqsfci"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "gfluxi"     "gfluxi"     "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "epi"        "epi"        "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "smcwlt2"    "smcwlt2"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "smcref2"    "smcref2"    "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "wet1"       "wet1"       "gfs_physics",   "all",  .false.,  "none",  2
-#"gfs_phys",  "sr"         "sr"         "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_01",   "fluxr_01",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_02",   "fluxr_02",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_03",   "fluxr_03",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_04",   "fluxr_04",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_05",   "fluxr_05",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_06",   "fluxr_06",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_07",   "fluxr_07",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_08",   "fluxr_08",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_09",   "fluxr_09",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_10",   "fluxr_10",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_11",   "fluxr_11",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_12",   "fluxr_12",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_13",   "fluxr_13",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_14",   "fluxr_14",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_15",   "fluxr_15",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_16",   "fluxr_16",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_17",   "fluxr_17",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_18",   "fluxr_18",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_19",   "fluxr_19",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_20",   "fluxr_20",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_21",   "fluxr_21",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_22",   "fluxr_22",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_23",   "fluxr_23",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_24",   "fluxr_24",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_25",   "fluxr_25",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_26",   "fluxr_26",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_27",   "fluxr_27",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_28",   "fluxr_28",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_29",   "fluxr_29",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_30",   "fluxr_30",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_31",   "fluxr_31",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_32",   "fluxr_32",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_33",   "fluxr_33",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_34",   "fluxr_34",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_35",   "fluxr_35",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_36",   "fluxr_36",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_37",   "fluxr_37",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_38",   "fluxr_38",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "fluxr_39",   "fluxr_39",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dswcmp_1",   "dswcmp_1",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dswcmp_2",   "dswcmp_2",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dswcmp_3",   "dswcmp_3",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dswcmp_4",   "dswcmp_4",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "uswcmp_1",   "uswcmp_1",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "uswcmp_2",   "uswcmp_2",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "uswcmp_3",   "uswcmp_3",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "uswcmp_4",   "uswcmp_4",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "sw_upfxc",   "sw_upfxc",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "sw_dnfxc",   "sw_dnfxc",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "sw_upfx0",   "sw_upfx0",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "lw_upfxc",   "lw_upfxc",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "lw_upfx0",   "lw_upfx0",   "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "srunoff",    "srunoff",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "evbsa",      "evbsa",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "evcwa",      "evcwa",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "snohfa",     "snohfa",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "transa",     "transa",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "sbsnoa",     "sbsnoa",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "snowca",     "snowca",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "soilm",      "soilm",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "tmpmin",     "tmpmin",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "tmpmax",     "tmpmax",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dusfc",      "dusfc",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dvsfc",      "dvsfc",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dtsfc",      "dtsfc",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dqsfc",      "dqsfc",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "totprcp",    "totprcp",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "gflux",      "gflux",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dlwsfc",     "dlwsfc",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "ulwsfc",     "ulwsfc",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "suntim",     "suntim",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "runoff",     "runoff",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "ep",         "ep",         "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "cldwrk",     "cldwrk",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dugwd",      "dugwd",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dvgwd",      "dvgwd",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "psmean",     "psmean",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "cnvprcp",    "cnvprcp",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "spfhmin",    "spfhmin",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "spfhmax",    "spfhmax",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "rain",       "rain",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "rainc",      "rainc",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "u10m",       "u10m",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "v10m",       "v10m",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "zlvl",       "zlvl",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "psurf",      "psurf",      "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "hpbl",       "hpbl",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "pwat",       "pwat",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "t1",         "t1",         "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "q1",         "q1",         "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "u1",         "u1",         "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "v1",         "v1",         "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "chh",        "chh",        "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "cmm",        "cmm",        "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dlwsfci",    "dlwsfci",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "ulwsfci",    "ulwsfci",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dswsfci",    "dswsfci",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "uswsfci",    "uswsfci",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dusfci",     "dusfci",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dvsfci",     "dvsfci",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dtsfci",     "dtsfci",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "dqsfci",     "dqsfci",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "gfluxi",     "gfluxi",     "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "epi",        "epi",        "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "smcwlt2",    "smcwlt2",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "smcref2",    "smcref2",    "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "wet1",       "wet1",       "gfs_physics",   "all",  .false.,  "none",  2
+#"gfs_phys",  "sr",         "sr",         "gfs_physics",   "all",  .false.,  "none",  2
 ###
 # gfs surface data
 ###
-#"gfs_sfc",   "alnsf"      "alnsf"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "alnwf"      "alnwf"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "alvsf"      "alvsf"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "alvwf"      "alvwf"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "canopy"     "canopy"     "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "f10m"       "f10m"       "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "facsf"      "facsf"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "facwf"      "facwf"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "ffhh"       "ffhh"       "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "ffmm"       "ffmm"       "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "fice"       "fice"       "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "hice"       "hice"       "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "snoalb"     "snoalb"     "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "shdmax"     "shdmax"     "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "shdmin"     "shdmin"     "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "snowd"      "snowd"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "stype"      "stype"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "q2m"        "q2m"        "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "t2m"        "t2m"        "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "tsfc"       "tsfc"       "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "tg3"        "tg3"        "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "tisfc"      "tisfc"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "tprcp"      "tprcp"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "vtype"      "vtype"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "weasd"      "weasd"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "slc_1"      "slc_1"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "slc_2"      "slc_2"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "slc_3"      "slc_3"      "gfs_surface",   "all",  .false.,  "none",  2
-#"gfs_sfc",   "slc_4"      "slc_4"      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "alnsf",      "alnsf",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "alnwf",      "alnwf",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "alvsf",      "alvsf",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "alvwf",      "alvwf",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "canopy",     "canopy",     "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "f10m",       "f10m",       "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "facsf",      "facsf",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "facwf",      "facwf",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "ffhh",       "ffhh",       "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "ffmm",       "ffmm",       "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "fice",       "fice",       "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "hice",       "hice",       "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "snoalb",     "snoalb",     "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "shdmax",     "shdmax",     "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "shdmin",     "shdmin",     "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "snowd",      "snowd",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "stype",      "stype",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "q2m",        "q2m",        "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "t2m",        "t2m",        "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "tsfc",       "tsfc",       "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "tg3",        "tg3",        "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "tisfc",      "tisfc",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "tprcp",      "tprcp",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "vtype",      "vtype",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "weasd",      "weasd",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "slc_1",      "slc_1",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "slc_2",      "slc_2",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "slc_3",      "slc_3",      "gfs_surface",   "all",  .false.,  "none",  2
+#"gfs_sfc",   "slc_4",      "slc_4",      "gfs_surface",   "all",  .false.,  "none",  2
 ###
-#"gfs_phys",  "dt3dt_1"    "dt3dt_1"    "gfs_physics1",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dt3dt_2"    "dt3dt_2"    "gfs_physics1",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dt3dt_3"    "dt3dt_3"    "gfs_physics1",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dt3dt_4"    "dt3dt_4"    "gfs_physics1",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dt3dt_5"    "dt3dt_5"    "gfs_physics1",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dt3dt_6"    "dt3dt_6"    "gfs_physics1",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dt3dt_1",    "dt3dt_1",    "gfs_physics1",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dt3dt_2",    "dt3dt_2",    "gfs_physics1",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dt3dt_3",    "dt3dt_3",    "gfs_physics1",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dt3dt_4",    "dt3dt_4",    "gfs_physics1",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dt3dt_5",    "dt3dt_5",    "gfs_physics1",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dt3dt_6",    "dt3dt_6",    "gfs_physics1",  "all",  .false.,  "none",  2
 ###
-#"gfs_phys",  "dq3dt_1"    "dq3dt_1"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_2"    "dq3dt_2"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_3"    "dq3dt_3"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_4"    "dq3dt_4"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_5"    "dq3dt_5"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_6"    "dq3dt_6"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_7"    "dq3dt_7"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_8"    "dq3dt_8"    "gfs_physics2",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dq3dt_9"    "dq3dt_9"    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_1",    "dq3dt_1",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_2",    "dq3dt_2",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_3",    "dq3dt_3",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_4",    "dq3dt_4",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_5",    "dq3dt_5",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_6",    "dq3dt_6",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_7",    "dq3dt_7",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_8",    "dq3dt_8",    "gfs_physics2",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dq3dt_9",    "dq3dt_9",    "gfs_physics2",  "all",  .false.,  "none",  2
 ###
-#"gfs_phys",  "du3dt_1"    "du3dt_1"    "gfs_physics3",  "all",  .false.,  "none",  2
-#"gfs_phys",  "du3dt_2"    "du3dt_2"    "gfs_physics3",  "all",  .false.,  "none",  2
-#"gfs_phys",  "du3dt_3"    "du3dt_3"    "gfs_physics3",  "all",  .false.,  "none",  2
-#"gfs_phys",  "du3dt_4"    "du3dt_4"    "gfs_physics3",  "all",  .false.,  "none",  2
+#"gfs_phys",  "du3dt_1",    "du3dt_1",    "gfs_physics3",  "all",  .false.,  "none",  2
+#"gfs_phys",  "du3dt_2",    "du3dt_2",    "gfs_physics3",  "all",  .false.,  "none",  2
+#"gfs_phys",  "du3dt_3",    "du3dt_3",    "gfs_physics3",  "all",  .false.,  "none",  2
+#"gfs_phys",  "du3dt_4",    "du3dt_4",    "gfs_physics3",  "all",  .false.,  "none",  2
 ###
-#"gfs_phys",  "dv3dt_1"    "dv3dt_1"    "gfs_physics4",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dv3dt_2"    "dv3dt_2"    "gfs_physics4",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dv3dt_3"    "dv3dt_3"    "gfs_physics4",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dv3dt_4"    "dv3dt_4"    "gfs_physics4",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dv3dt_1",    "dv3dt_1",    "gfs_physics4",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dv3dt_2",    "dv3dt_2",    "gfs_physics4",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dv3dt_3",    "dv3dt_3",    "gfs_physics4",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dv3dt_4",    "dv3dt_4",    "gfs_physics4",  "all",  .false.,  "none",  2
 ###
-#"gfs_phys",  "dtemp_dt"   "dtemp_dt"   "gfs_physics5",  "all",  .false.,  "none",  2
-#"gfs_phys",  "du_dt"      "du_dt"      "gfs_physics5",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dv_dt"      "dv_dt"      "gfs_physics5",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dsphum_dt"  "dsphum_dt"  "gfs_physics5",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dtemp_dt",   "dtemp_dt",   "gfs_physics5",  "all",  .false.,  "none",  2
+#"gfs_phys",  "du_dt",      "du_dt",      "gfs_physics5",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dv_dt",      "dv_dt",      "gfs_physics5",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dsphum_dt",  "dsphum_dt",  "gfs_physics5",  "all",  .false.,  "none",  2
 ###
-#"gfs_phys",  "dclwmr_dt"  "dclwmr_dt"  "gfs_physics6",  "all",  .false.,  "none",  2
-#"gfs_phys",  "do3mr_dt"   "do3mr_dt"   "gfs_physics6",  "all",  .false.,  "none",  2
-#"gfs_phys",  "dqdt_v"     "dqdt_v"     "gfs_physics6",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dclwmr_dt",  "dclwmr_dt",  "gfs_physics6",  "all",  .false.,  "none",  2
+#"gfs_phys",  "do3mr_dt",   "do3mr_dt",   "gfs_physics6",  "all",  .false.,  "none",  2
+#"gfs_phys",  "dqdt_v",     "dqdt_v",     "gfs_physics6",  "all",  .false.,  "none",  2
 ###
 # coarse grained diagnostics
 ###
@@ -883,7 +883,7 @@
 #  FORMAT FOR FIELD ENTRIES (not all input values are used)
 #  ------------------------
 #
-#"module_name", "field_name", "output_name", "file_name" "time_sampling", time_avg, "other_opts", packing
+#"module_name", "field_name", "output_name", "file_name", "time_sampling", time_avg, "other_opts", packing
 #
 #time_avg = .true. or .false.
 #
