@@ -105,65 +105,65 @@
 # "dynamics",  "q50_coarse",         "q50_coarse",        "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "q10_coarse",         "q10_coarse",        "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "ql1000_coarse",      "ql1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "ql850_coarse",       "ql850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "ql700_coarse",       "ql700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "ql500_coarse",       "ql500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "ql250_coarse",       "ql250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "ql200_coarse",       "ql200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "ql100_coarse",       "ql100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "ql50_coarse",        "ql50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "ql10_coarse",        "ql10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat1000_coarse", "ql1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat850_coarse",  "ql850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat700_coarse",  "ql700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat500_coarse",  "ql500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat250_coarse",  "ql250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat200_coarse",  "ql200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "liq_wat100_coarse",  "ql100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "liq_wat50_coarse",   "ql50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "liq_wat10_coarse",   "ql10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "qi1000_coarse",      "qi1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qi850_coarse",       "qi850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qi700_coarse",       "qi700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qi500_coarse",       "qi500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qi250_coarse",       "qi250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qi200_coarse",       "qi200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qi100_coarse",       "qi100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qi50_coarse",        "qi50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qi10_coarse",        "qi10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat1000_coarse", "qi1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat850_coarse",  "qi850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat700_coarse",  "qi700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat500_coarse",  "qi500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat250_coarse",  "qi250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat200_coarse",  "qi200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "ice_wat100_coarse",  "qi100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "ice_wat50_coarse",   "qi50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "ice_wat10_coarse",   "qi10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "qr1000_coarse",      "qr1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qr850_coarse",       "qr850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qr700_coarse",       "qr700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qr500_coarse",       "qr500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qr250_coarse",       "qr250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qr200_coarse",       "qr200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qr100_coarse",       "qr100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qr50_coarse",        "qr50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qr10_coarse",        "qr10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat1000_coarse", "qr1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat850_coarse",  "qr850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat700_coarse",  "qr700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat500_coarse",  "qr500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat250_coarse",  "qr250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat200_coarse",  "qr200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "rainwat100_coarse",  "qr100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "rainwat50_coarse",   "qr50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "rainwat10_coarse",   "qr10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "qs1000_coarse",      "qs1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qs850_coarse",       "qs850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qs700_coarse",       "qs700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qs500_coarse",       "qs500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qs250_coarse",       "qs250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qs200_coarse",       "qs200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qs100_coarse",       "qs100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qs50_coarse",        "qs50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qs10_coarse",        "qs10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat1000_coarse", "qs1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat850_coarse",  "qs850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat700_coarse",  "qs700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat500_coarse",  "qs500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat250_coarse",  "qs250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat200_coarse",  "qs200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "snowwat100_coarse",  "qs100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "snowwat50_coarse",   "qs50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "snowwat10_coarse",   "qs10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "qg1000_coarse",      "qg1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qg850_coarse",       "qg850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qg700_coarse",       "qg700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qg500_coarse",       "qg500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qg250_coarse",       "qg250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qg200_coarse",       "qg200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "qg100_coarse",       "qg100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qg50_coarse",        "qg50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "qg10_coarse",        "qg10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel1000_coarse", "qg1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel850_coarse",  "qg850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel700_coarse",  "qg700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel500_coarse",  "qg500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel250_coarse",  "qg250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel200_coarse",  "qg200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "graupel100_coarse",  "qg100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "graupel50_coarse",   "qg50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "graupel10_coarse",   "qg10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "cf1000_coarse",      "cf1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "cf850_coarse",       "cf850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "cf700_coarse",       "cf700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "cf500_coarse",       "cf500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "cf250_coarse",       "cf250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "cf200_coarse",       "cf200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "cf100_coarse",       "cf100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "cf50_coarse",        "cf50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
-# "dynamics",  "cf10_coarse",        "cf10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt1000_coarse", "cf1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt850_coarse",  "cf850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt700_coarse",  "cf700_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt500_coarse",  "cf500_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt250_coarse",  "cf250_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt200_coarse",  "cf200_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "cld_amt100_coarse",  "cf100_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "cld_amt50_coarse",   "cf50_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "cld_amt10_coarse",   "cf10_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
  "dynamics",  "rh1000_coarse",      "rh1000_coarse",     "atmos_4xdaily_coarse", "all", .false.,  "none", 2
  "dynamics",  "rh850_coarse",       "rh850_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
@@ -191,12 +191,12 @@
 # "dynamics", "m10C_reflectivity_coarse","REFDm10C_coarse", "atmos_4xdaily_coarse","all",.false., "none", 2
 # "dynamics", "40dBz_height_coarse","40dBz_height_coarse", "atmos_4xdaily_coarse","all",.false., "none", 2
 ####
- "dynamics",  "intqv_coarse",     "intqv_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "intql_coarse",     "intql_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "intqi_coarse",     "intqi_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "intqr_coarse",     "intqr_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "intqs_coarse",     "intqs_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "intqg_coarse",     "intqg_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "int_sphum_coarse",   "intqv_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "int_liq_wat_coarse", "intql_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "int_ice_wat_coarse", "intqi_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "int_rainwat_coarse", "intqr_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "int_snowwat_coarse", "intqs_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+ "dynamics",  "int_graupel_coarse", "intqg_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
  "dynamics",  "prew_coarse",       "prew_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
  "dynamics",  "prer_coarse",       "prer_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
@@ -358,12 +358,12 @@
 # "dynamics",  "t_plev_coarse",        "t_plev_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "h_plev_coarse",        "h_plev_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "q_plev_coarse",        "q_plev_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
-# "dynamics",  "ql_plev_coarse",       "ql_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
-# "dynamics",  "qi_plev_coarse",       "qi_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
-# "dynamics",  "qr_plev_coarse",       "qr_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
-# "dynamics",  "qs_plev_coarse",       "qs_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
-# "dynamics",  "qg_plev_coarse",       "qg_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
-# "dynamics",  "cf_plev_coarse",       "cf_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "liq_wat_plev_coarse",  "ql_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "ice_wat_plev_coarse"   "qi_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "rainwat_plev_coarse"   "qr_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "snowwat_plev_coarse",  "qs_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "graupel_plev_coarse"   "qg_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "cld_amt_plev_coarse"   "cf_plev_coarse",       "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "omg_plev_coarse",      "omg_plev_coarse",      "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 ###
 # FV3 variabls needed for NGGPS evaluation
@@ -412,7 +412,7 @@
 # "gfs_sfc",   "SOILW2_coarse",         "SOILW2_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW3_coarse",         "SOILW3_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW4_coarse",         "SOILW4_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "dpt2m_coarse",          "DPT2m_coarse",      "nggps2d_coarse",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dpt2m_coarse",          "DPT2m_coarse",      "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_sfc",   "q2m_coarse",            "SPFH2m_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDCclm_coarse",        "TCDCclm_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDChcl_coarse",        "TCDChcl_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2

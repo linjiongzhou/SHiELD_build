@@ -412,7 +412,7 @@
 # "gfs_sfc",   "SOILW2",         "SOILW2",     "phys2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW3",         "SOILW3",     "phys2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW4",         "SOILW4",     "phys2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "dpt2m",          "DPT2m",      "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dpt2m",          "DPT2m",      "phys2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "q2m",            "SPFH2m",     "phys2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDCclm",        "TCDCclm",    "phys2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDChcl",        "TCDChcl",    "phys2d",         "all",  .false.,  "none",  2

@@ -446,7 +446,7 @@
 # "gfs_sfc",   "SOILW2",         "SOILW2",     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW3",         "SOILW3",     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW4",         "SOILW4",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "dpt2m",          "DPT2m",      "nggps2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dpt2m",          "DPT2m",      "nggps2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "q2m",            "SPFH2m",     "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDCclm",        "TCDCclm",    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "TCDChcl",        "TCDChcl",    "nggps2d",         "all",  .false.,  "none",  2
