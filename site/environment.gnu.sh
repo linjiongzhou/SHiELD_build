@@ -61,40 +61,6 @@ case $hostname in
        echo -e ' '
        module list
        ;;
-   gaea1? | nid* )
-       echo " gaea C3/C4 environment "
-
-       . ${MODULESHOME}/init/sh
-       module unload PrgEnv-pgi PrgEnv-intel PrgEnv-gnu
-       module rm intel-classic
-       module rm intel-oneapi
-       module rm intel
-       module load   PrgEnv-gnu
-       module rm gcc
-       module load gcc/10.3.0
-       module load cray-hdf5/1.12.1.3
-       module load cray-netcdf/4.8.1.3
-       module load craype-hugepages4M
-       module load cmake/3.20.1
-       module load libyaml/0.2.5
-
-       # Add -DHAVE_GETTID to the FMS cppDefs
-       export FMS_CPPDEFS=-DHAVE_GETTID
-
-       # make your compiler selections here
-       export FC=ftn
-       export CC=cc
-       export CXX=CC
-       export LD=ftn
-       export TEMPLATE=site/gnu.mk
-       export LAUNCHER=srun
-
-       # highest level of AVX support
-       export AVX_LEVEL=-march=native
-
-       echo -e ' '
-       module list
-       ;;
    Orion* )
        echo " Orion environment "
 
