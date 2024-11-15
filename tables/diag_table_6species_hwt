@@ -1,21 +1,21 @@
 #output files
 "grid_spec",              -1,  "hours",    1, "hours",  "time"
-"atmos_hourly",           1,  "hours",    1, "hours",  "time"
+"atmos_hourly",            1,  "hours",    1, "hours",  "time"
 #"atmos_daily",            24,  "hours",    1, "hours",  "time"
 "atmos_static",           -1,  "hours",    1, "hours",  "time"
 "atmos_sos",               1,  "hours",    1, "hours",  "time"
 "atmos_sos_ave",           1,  "hours",    1, "hours",  "time"
 #"atmos_coarse",            1,  "hours",    1, "hours",  "time"
-"atmos3d_hourly",         1,  "hours",    1, "hours",  "time"
+"atmos3d_hourly",          1,  "hours",    1, "hours",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics",             0,  "hours",    1, "hours",  "time"
 #"gfs_surface",             0,  "hours",    1, "hours",  "time"
 # files needed for NGGPS evaluation (only at end of simulation, here)
-"nggps3d_hourly",         1,  "hours",    1, "hours",  "time"
-"nggps2d",                 0,  "hours",    1, "hours",  "time"
-"tracer3d_hourly",        1,  "hours",    1, "hours",  "time"
-#"cloud3d_hourly",         1,  "hours",    1, "hours",  "time"
-#"nggps3d_dt",              1,  "hours",    1, "hours",  "time"
+"phys3d_hourly",          1,  "hours",    1, "hours",  "time"
+"phys2d",                 0,  "hours",    1, "hours",  "time"
+"tracer3d_hourly",         1,  "hours",    1, "hours",  "time"
+#"cloud3d_hourly",          1,  "hours",    1, "hours",  "time"
+#"phys3d_dt",              1,  "hours",    1, "hours",  "time"
 #"phys_coarse",             1,  "hours",    1, "hours",  "time"
 
 #
@@ -186,7 +186,7 @@
 # "dynamics",  "omg10",       "omg10",      "atmos_hourly", "all", .false.,  "none", 2
 ###
  "dynamics", "max_reflectivity",  "REFC",    "atmos_hourly","all",.false., "none", 2
-# "dynamics", "base_reflectivity", "REFD1km", "atmos_hourly","all",.false., "none", 2
+ "dynamics", "base_reflectivity", "REFD1km", "atmos_hourly","all",.false., "none", 2
 # "dynamics", "4km_reflectivity",  "REFD4km", "atmos_hourly","all",.false., "none", 2
 # "dynamics", "m10C_reflectivity","REFDm10C", "atmos_hourly","all",.false., "none", 2
 # "dynamics", "40dBz_height","40dBz_height", "atmos_hourly","all",.false., "none", 2
@@ -368,84 +368,84 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "reflectivity",  "reflectivity",  "nggps3d_hourly",  "all",  .false.,  "none",  2
+ "dynamics",  "reflectivity",  "reflectivity",  "phys3d_hourly",  "all",  .false.,  "none",  2
 ###
 # tendencies
 ###
-# "dynamics", "qv_dt_gfdlmp", "qv_dt_gfdlmp", "nggps3d_dt", "all", .false., "none", 2
-# "dynamics", "ql_dt_gfdlmp", "ql_dt_gfdlmp", "nggps3d_dt", "all", .false., "none", 2
-# "dynamics", "qi_dt_gfdlmp", "qi_dt_gfdlmp", "nggps3d_dt", "all", .false., "none", 2
-# "dynamics", "qr_dt_gfdlmp", "qr_dt_gfdlmp", "nggps3d_dt", "all", .false., "none", 2
-# "dynamics", "qg_dt_gfdlmp", "qg_dt_gfdlmp", "nggps3d_dt", "all", .false., "none", 2
-# "dynamics", "qs_dt_gfdlmp", "qs_dt_gfdlmp", "nggps3d_dt", "all", .false., "none", 2
-# "dynamics", "T_dt_gfdlmp",  "T_dt_gfdlmp",  "nggps3d_dt", "all", .false., "none", 2
+# "dynamics", "qv_dt_gfdlmp", "qv_dt_gfdlmp", "phys3d_dt", "all", .false., "none", 2
+# "dynamics", "ql_dt_gfdlmp", "ql_dt_gfdlmp", "phys3d_dt", "all", .false., "none", 2
+# "dynamics", "qi_dt_gfdlmp", "qi_dt_gfdlmp", "phys3d_dt", "all", .false., "none", 2
+# "dynamics", "qr_dt_gfdlmp", "qr_dt_gfdlmp", "phys3d_dt", "all", .false., "none", 2
+# "dynamics", "qg_dt_gfdlmp", "qg_dt_gfdlmp", "phys3d_dt", "all", .false., "none", 2
+# "dynamics", "qs_dt_gfdlmp", "qs_dt_gfdlmp", "phys3d_dt", "all", .false., "none", 2
+# "dynamics", "T_dt_gfdlmp",  "T_dt_gfdlmp",  "phys3d_dt", "all", .false., "none", 2
 ###
 # GFS variabls needed for NGGPS evaluation
 ###
-# "gfs_phys",  "ALBDOsfc",       "ALBDOsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "cnvprcpb_ave",   "CPRATsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "totprcpb_ave",   "PRATEsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "DLWRFsfc",       "DLWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "ULWRFsfc",       "ULWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "DSWRFsfc",       "DSWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "USWRFsfc",       "USWRFsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "DSWRFtoa",       "DSWRFtoa",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "USWRFtoa",       "USWRFtoa",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "ULWRFtoa",       "ULWRFtoa",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csdlf_ave",      "DLWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csulf_ave",      "ULWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csdsf_ave",      "DSWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csusf_ave",      "USWRFsfc_clr",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csusf_avetoa",   "USWRFtoa_clr",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "csulf_avetoa",   "ULWRFtoa_clr",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "gflux_ave",      "GFLUXsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "HGTsfc",         "HGTsfc",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "hpbl",           "HPBLsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "fice",           "ICECsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "SLMSKsfc",       "SLMSKsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "lhtfl_ave",      "LHTFLsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "shtfl_ave",      "SHTFLsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "psurf",          "PRESsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "pwat",           "PWATclm",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "soilm",          "SOILM",      "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW1",         "SOILW1",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW2",         "SOILW2",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW3",         "SOILW3",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILW4",         "SOILW4",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dpt2m",          "DPT2m",      "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "q2m",            "SPFH2m",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDCclm",        "TCDCclm",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDChcl",        "TCDChcl",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDClcl",        "TCDClcl",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "TCDCmcl",        "TCDCmcl",    "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT1",         "SOILT1",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT2",         "SOILT2",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT3",         "SOILT3",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "SOILT4",         "SOILT4",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "t2m",            "TMP2m",      "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "tsfc",           "TMPsfc",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "u-gwd_ave",      "UGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "v-gwd_ave",      "VGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dusfc",          "UFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dvsfc",          "VFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "u10m",           "UGRD10m",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "v10m",           "VGRD10m",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "weasd",          "WEASDsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "snowd",          "SNODsfc",    "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "acond",          "CMMsfc",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "sfexc",          "CHHsfc",     "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "ffmm",           "FFMMsfc",    "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "ffhh",           "FFHHsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "ZORLsfc",        "ZORLsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "VFRACsfc",       "VFRACsfc",   "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_sfc",   "f10m",           "F10Msfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "vtype",          "VTYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "stype",          "STYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "toticeb_ave",     "ICEsfc",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "totsnwb_ave",     "SNOWsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "totgrpb_ave",     "GRAUPELsfc", "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "netflxsfc",      "netflxsfc",  "nggps2d",         "all",  .false.,  "none",  2
-# "gfs_phys",  "tclim_iano",     "tclim_iano", "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "ALBDOsfc",       "ALBDOsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "cnvprcpb_ave",   "CPRATsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "totprcpb_ave",   "PRATEsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "DLWRFsfc",       "DLWRFsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "ULWRFsfc",       "ULWRFsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "DSWRFsfc",       "DSWRFsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "USWRFsfc",       "USWRFsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "DSWRFtoa",       "DSWRFtoa",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "USWRFtoa",       "USWRFtoa",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "ULWRFtoa",       "ULWRFtoa",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csdlf_ave",      "DLWRFsfc_clr",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csulf_ave",      "ULWRFsfc_clr",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csdsf_ave",      "DSWRFsfc_clr",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csusf_ave",      "USWRFsfc_clr",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csusf_avetoa",   "USWRFtoa_clr",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "csulf_avetoa",   "ULWRFtoa_clr",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "gflux_ave",      "GFLUXsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "HGTsfc",         "HGTsfc",     "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "hpbl",           "HPBLsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "fice",           "ICECsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "SLMSKsfc",       "SLMSKsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "lhtfl_ave",      "LHTFLsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "shtfl_ave",      "SHTFLsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "psurf",          "PRESsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "pwat",           "PWATclm",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "soilm",          "SOILM",      "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW1",         "SOILW1",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW2",         "SOILW2",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW3",         "SOILW3",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILW4",         "SOILW4",     "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dpt2m",          "DPT2m",      "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "q2m",            "SPFH2m",     "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDCclm",        "TCDCclm",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDChcl",        "TCDChcl",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDClcl",        "TCDClcl",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "TCDCmcl",        "TCDCmcl",    "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT1",         "SOILT1",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT2",         "SOILT2",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT3",         "SOILT3",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "SOILT4",         "SOILT4",     "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "t2m",            "TMP2m",      "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "tsfc",           "TMPsfc",     "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "u-gwd_ave",      "UGWDsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "v-gwd_ave",      "VGWDsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dusfc",          "UFLXsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "dvsfc",          "VFLXsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "u10m",           "UGRD10m",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "v10m",           "VGRD10m",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "weasd",          "WEASDsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "snowd",          "SNODsfc",    "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "acond",          "CMMsfc",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "sfexc",          "CHHsfc",     "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "ffmm",           "FFMMsfc",    "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "ffhh",           "FFHHsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "ZORLsfc",        "ZORLsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "VFRACsfc",       "VFRACsfc",   "phys2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "f10m",           "F10Msfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "vtype",          "VTYPEsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_sfc",   "stype",          "STYPEsfc",   "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "toticeb_ave",     "ICEsfc",     "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "totsnwb_ave",     "SNOWsfc",    "phys2d",         "all",  .false.,  "none",  2
+ "gfs_phys",  "totgrpb_ave",     "GRAUPELsfc", "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "netflxsfc",      "netflxsfc",  "phys2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "tclim_iano",     "tclim_iano", "phys2d",         "all",  .false.,  "none",  2
 ###
 #############################################################################################
 ###
