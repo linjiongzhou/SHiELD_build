@@ -3,17 +3,17 @@
 "atmos_hourly",           1,  "hours",    1, "hours",  "time"
 #"atmos_daily",            24,  "hours",    1, "hours",  "time"
 "atmos_static",           -1,  "hours",    1, "hours",  "time"
-"atmos_sos",               1,  "hours",    1, "hours",  "time"
-"atmos_sos_ave",           1,  "hours",    1, "hours",  "time"
+#"atmos_sos",               1,  "hours",    1, "hours",  "time"
+#"atmos_sos_ave",           1,  "hours",    1, "hours",  "time"
 #"atmos_coarse",            1,  "hours",    1, "hours",  "time"
-"atmos3d_hourly",         1,  "hours",    1, "hours",  "time"
+#"atmos3d_hourly",         1,  "hours",    1, "hours",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics",             0,  "hours",    1, "hours",  "time"
 #"gfs_surface",             0,  "hours",    1, "hours",  "time"
 # files needed for NGGPS evaluation (only at end of simulation, here)
-"nggps3d_hourly",         1,  "hours",    1, "hours",  "time"
+#"nggps3d_hourly",         1,  "hours",    1, "hours",  "time"
 "nggps2d",                 0,  "hours",    1, "hours",  "time"
-"tracer3d_hourly",        1,  "hours",    1, "hours",  "time"
+#"tracer3d_hourly",        1,  "hours",    1, "hours",  "time"
 #"cloud3d_hourly",         1,  "hours",    1, "hours",  "time"
 #"nggps3d_dt",              1,  "hours",    1, "hours",  "time"
 #"phys_coarse",             1,  "hours",    1, "hours",  "time"
@@ -85,13 +85,13 @@
 # "dynamics",  "z50",         "h50",        "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "z10",         "h10",        "atmos_hourly", "all", .false.,  "none", 2
 ####
- "dynamics",  "w1000",       "w1000",      "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "w850",        "w850",       "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "w700",        "w700",       "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "w500",        "w500",       "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "w250",        "w250",       "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "w200",        "w200",       "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "w100",        "w100",       "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w1000",       "w1000",      "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w850",        "w850",       "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w700",        "w700",       "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w500",        "w500",       "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w250",        "w250",       "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w200",        "w200",       "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "w100",        "w100",       "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "w50",         "w50",        "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "w10",         "w10",        "atmos_hourly", "all", .false.,  "none", 2
 ####
@@ -185,7 +185,7 @@
 # "dynamics",  "omg50",       "omg50",      "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "omg10",       "omg10",      "atmos_hourly", "all", .false.,  "none", 2
 ###
- "dynamics", "max_reflectivity",  "REFC",    "atmos_hourly","all",.false., "none", 2
+# "dynamics", "max_reflectivity",  "REFC",    "atmos_hourly","all",.false., "none", 2
 # "dynamics", "base_reflectivity", "REFD1km", "atmos_hourly","all",.false., "none", 2
 # "dynamics", "4km_reflectivity",  "REFD4km", "atmos_hourly","all",.false., "none", 2
 # "dynamics", "m10C_reflectivity","REFDm10C", "atmos_hourly","all",.false., "none", 2
@@ -198,11 +198,11 @@
  "dynamics",  "intqs",     "intqs",    "atmos_hourly", "all", .false.,  "none", 2
  "dynamics",  "intqg",     "intqg",    "atmos_hourly", "all", .false.,  "none", 2
 ####
- "dynamics",  "prew",       "prew",      "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "prer",       "prer",      "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "prei",       "prei",      "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "pres",       "pres",      "atmos_hourly", "all", .false.,  "none", 2
- "dynamics",  "preg",       "preg",      "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "prew",       "prew",      "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "prer",       "prer",      "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "prei",       "prei",      "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "pres",       "pres",      "atmos_hourly", "all", .false.,  "none", 2
+# "dynamics",  "preg",       "preg",      "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "cond",       "cond",      "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "dep",        "dep",       "atmos_hourly", "all", .false.,  "none", 2
 # "dynamics",  "reevap",     "reevap",    "atmos_hourly", "all", .false.,  "none", 2
@@ -231,13 +231,13 @@
 ###
 # tracer
 ###
- "dynamics",  "sphum",         "sphum",        "tracer3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "liq_wat",       "liq_wat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "ice_wat",       "ice_wat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "rainwat",       "rainwat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "snowwat",       "snowwat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "graupel",       "graupel",      "tracer3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "cld_amt",       "cld_amt",      "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "sphum",         "sphum",        "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "liq_wat",       "liq_wat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "ice_wat",       "ice_wat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "rainwat",       "rainwat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "snowwat",       "snowwat",      "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "graupel",       "graupel",      "tracer3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "cld_amt",       "cld_amt",      "tracer3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "o3mr",          "o3mr",         "tracer3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "aerosol",       "aerosol",      "tracer3d_hourly",  "all",  .false.,  "none",  2
 ###
@@ -344,15 +344,15 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "ucomp",         "ucomp",         "atmos3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "vcomp",         "vcomp",         "atmos3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "temp",          "temp",          "atmos3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "delp",          "delp",          "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "ucomp",         "ucomp",         "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "vcomp",         "vcomp",         "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "temp",          "temp",          "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "delp",          "delp",          "atmos3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "pfhy",          "hypres",        "atmos3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "pfnh",          "nhpres",        "atmos3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "w",             "w",             "atmos3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "delz",          "delz",          "atmos3d_hourly",  "all",  .false.,  "none",  2
- "dynamics",  "rh",            "rh",            "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "w",             "w",             "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "delz",          "delz",          "atmos3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "rh",            "rh",            "atmos3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "u_plev",        "u_plev",        "atmos3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "v_plev",        "v_plev",        "atmos3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "t_plev",        "t_plev",        "atmos3d_hourly",  "all",  .false.,  "none",  2
@@ -368,7 +368,7 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "reflectivity",  "reflectivity",  "nggps3d_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "reflectivity",  "reflectivity",  "nggps3d_hourly",  "all",  .false.,  "none",  2
 ###
 # tendencies
 ###
@@ -400,14 +400,14 @@
 # "gfs_phys",  "csulf_avetoa",   "ULWRFtoa_clr",   "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_phys",  "gflux_ave",      "GFLUXsfc",   "nggps2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "HGTsfc",         "HGTsfc",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "hpbl",           "HPBLsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "fice",           "ICECsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "hpbl",           "HPBLsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "fice",           "ICECsfc",    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "SLMSKsfc",       "SLMSKsfc",   "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "lhtfl_ave",      "LHTFLsfc",   "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "shtfl_ave",      "SHTFLsfc",   "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "psurf",          "PRESsfc",    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "pwat",           "PWATclm",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "soilm",          "SOILM",      "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "soilm",          "SOILM",      "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW1",         "SOILW1",     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW2",         "SOILW2",     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW3",         "SOILW3",     "nggps2d",         "all",  .false.,  "none",  2
@@ -424,23 +424,23 @@
 # "gfs_sfc",   "SOILT4",         "SOILT4",     "nggps2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "t2m",            "TMP2m",      "nggps2d",         "all",  .false.,  "none",  2
  "gfs_sfc",   "tsfc",           "TMPsfc",     "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "u-gwd_ave",      "UGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "v-gwd_ave",      "VGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dusfc",          "UFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_phys",  "dvsfc",          "VFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "u-gwd_ave",      "UGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "v-gwd_ave",      "VGWDsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "dusfc",          "UFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_phys",  "dvsfc",          "VFLXsfc",    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "u10m",           "UGRD10m",    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "v10m",           "VGRD10m",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "weasd",          "WEASDsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "snowd",          "SNODsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "weasd",          "WEASDsfc",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "snowd",          "SNODsfc",    "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "acond",          "CMMsfc",     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "sfexc",          "CHHsfc",     "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "ffmm",           "FFMMsfc",    "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "ffhh",           "FFHHsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "ZORLsfc",        "ZORLsfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "VFRACsfc",       "VFRACsfc",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "ZORLsfc",        "ZORLsfc",    "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "VFRACsfc",       "VFRACsfc",   "nggps2d",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "f10m",           "F10Msfc",    "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "vtype",          "VTYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
- "gfs_sfc",   "stype",          "STYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "vtype",          "VTYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "stype",          "STYPEsfc",   "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "toticeb_ave",     "ICEsfc",     "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "totsnwb_ave",     "SNOWsfc",    "nggps2d",         "all",  .false.,  "none",  2
  "gfs_phys",  "totgrpb_ave",     "GRAUPELsfc", "nggps2d",         "all",  .false.,  "none",  2
@@ -661,25 +661,25 @@
 ####
 ## SOS high-frequency
 ####
- "dynamics",  "tq",          "tq",          "atmos_sos", "all", .false., "none", 2
- "dynamics",  "lw",          "lw",          "atmos_sos", "all", .false., "none", 2
- "dynamics",  "iw",          "iw",          "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "tq",          "tq",          "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "lw",          "lw",          "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "iw",          "iw",          "atmos_sos", "all", .false., "none", 2
 # "dynamics",  "tb",          "tb",          "atmos_sos", "all", .false., "none", 2
- "dynamics",  "ps",          "ps",          "atmos_sos", "all", .false., "none", 2
- "dynamics",  "us",          "us",          "atmos_sos", "all", .false., "none", 2
- "dynamics",  "vs",          "vs",          "atmos_sos", "all", .false., "none", 2
- "dynamics",  "slp",         "slp",         "atmos_sos", "all", .false., "none", 2
- "dynamics",  "vort850",     "vort850",     "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "ps",          "ps",          "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "us",          "us",          "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "vs",          "vs",          "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "slp",         "slp",         "atmos_sos", "all", .false., "none", 2
+# "dynamics",  "vort850",     "vort850",     "atmos_sos", "all", .false., "none", 2
 # "dynamics",  "w850",        "w850",        "atmos_sos", "all", .false., "none", 2
 # "dynamics",  "ctt",         "ctt",         "atmos_sos", "all", .false., "none", 2
 # "dynamics",  "ctp",         "ctp",         "atmos_sos", "all", .false., "none", 2
 ####
 ## hourly statistics
 ####
- "dynamics", "uh25",   "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
- "dynamics", "uh25",   "MNUPHL2_5km", "atmos_sos_ave", "all", min, "none", 2
- "dynamics", "wmaxup", "MAXUVV",      "atmos_sos_ave", "all", max, "none", 2
- "dynamics", "wmaxdn", "MAXDVV",      "atmos_sos_ave", "all", min, "none", 2
+# "dynamics", "uh25",   "MXUPHL2_5km", "atmos_sos_ave", "all", max, "none", 2
+# "dynamics", "uh25",   "MNUPHL2_5km", "atmos_sos_ave", "all", min, "none", 2
+# "dynamics", "wmaxup", "MAXUVV",      "atmos_sos_ave", "all", max, "none", 2
+# "dynamics", "wmaxdn", "MAXDVV",      "atmos_sos_ave", "all", min, "none", 2
 ####
 ## Monthly averages:
 ####

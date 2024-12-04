@@ -3,17 +3,17 @@
 "atmos_4xdaily_coarse",           6,  "hours",    1, "hours",  "time"
 #"atmos_daily_coarse",            24,  "hours",    1, "hours",  "time"
 "atmos_static_coarse",           -1,  "hours",    1, "hours",  "time"
-"atmos_sos_coarse",               1,  "hours",    1, "hours",  "time"
-"atmos_sos_ave_coarse",           1,  "hours",    1, "hours",  "time"
+#"atmos_sos_coarse",               1,  "hours",    1, "hours",  "time"
+#"atmos_sos_ave_coarse",           1,  "hours",    1, "hours",  "time"
 #"atmos_coarse",            6,  "hours",    1, "hours",  "time"
-"atmos3d_4xdaily_coarse",         6,  "hours",    1, "hours",  "time"
+#"atmos3d_4xdaily_coarse",         6,  "hours",    1, "hours",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics_coarse",             0,  "hours",    1, "hours",  "time"
 #"gfs_surface_coarse",             0,  "hours",    1, "hours",  "time"
 # files needed for NGGPS evaluation (only at end of simulation, here)
-"nggps3d_4xdaily_coarse",         6,  "hours",    1, "hours",  "time"
+#"nggps3d_4xdaily_coarse",         6,  "hours",    1, "hours",  "time"
 "nggps2d_coarse",                 0,  "hours",    1, "hours",  "time"
-"tracer3d_4xdaily_coarse",        6,  "hours",    1, "hours",  "time"
+#"tracer3d_4xdaily_coarse",        6,  "hours",    1, "hours",  "time"
 #"cloud3d_4xdaily_coarse",         6,  "hours",    1, "hours",  "time"
 #"nggps3d_dt_coarse",              6,  "hours",    1, "hours",  "time"
 #"phys_coarse",             6,  "hours",    1, "hours",  "time"
@@ -85,13 +85,13 @@
 # "dynamics",  "z50_coarse",         "h50_coarse",        "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "z10_coarse",         "h10_coarse",        "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "w1000_coarse",       "w1000_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "w850_coarse",        "w850_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "w700_coarse",        "w700_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "w500_coarse",        "w500_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "w250_coarse",        "w250_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "w200_coarse",        "w200_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "w100_coarse",        "w100_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w1000_coarse",       "w1000_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w850_coarse",        "w850_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w700_coarse",        "w700_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w500_coarse",        "w500_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w250_coarse",        "w250_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w200_coarse",        "w200_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "w100_coarse",        "w100_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "w50_coarse",         "w50_coarse",        "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "w10_coarse",         "w10_coarse",        "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
@@ -185,7 +185,7 @@
 # "dynamics",  "omg50_coarse",       "omg50_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "omg10_coarse",       "omg10_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ###
- "dynamics", "max_reflectivity_coarse",  "REFC_coarse",    "atmos_4xdaily_coarse","all",.false., "none", 2
+# "dynamics", "max_reflectivity_coarse",  "REFC_coarse",    "atmos_4xdaily_coarse","all",.false., "none", 2
 # "dynamics", "base_reflectivity_coarse", "REFD1km_coarse", "atmos_4xdaily_coarse","all",.false., "none", 2
 # "dynamics", "4km_reflectivity_coarse",  "REFD4km_coarse", "atmos_4xdaily_coarse","all",.false., "none", 2
 # "dynamics", "m10C_reflectivity_coarse","REFDm10C_coarse", "atmos_4xdaily_coarse","all",.false., "none", 2
@@ -198,11 +198,11 @@
  "dynamics",  "int_snowwat_coarse", "intqs_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
  "dynamics",  "int_graupel_coarse", "intqg_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 ####
- "dynamics",  "prew_coarse",       "prew_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "prer_coarse",       "prer_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "prei_coarse",       "prei_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "pres_coarse",       "pres_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
- "dynamics",  "preg_coarse",       "preg_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "prew_coarse",       "prew_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "prer_coarse",       "prer_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "prei_coarse",       "prei_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "pres_coarse",       "pres_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
+# "dynamics",  "preg_coarse",       "preg_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "cond_coarse",       "cond_coarse",      "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "dep_coarse",        "dep_coarse",       "atmos_4xdaily_coarse", "all", .false.,  "none", 2
 # "dynamics",  "reevap_coarse",     "reevap_coarse",    "atmos_4xdaily_coarse", "all", .false.,  "none", 2
@@ -231,13 +231,13 @@
 ###
 # tracer
 ###
- "dynamics",  "sphum_coarse",         "sphum_coarse",        "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "liq_wat_coarse",       "liq_wat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "ice_wat_coarse",       "ice_wat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "rainwat_coarse",       "rainwat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "snowwat_coarse",       "snowwat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "graupel_coarse",       "graupel_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "cld_amt_coarse",       "cld_amt_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "sphum_coarse",         "sphum_coarse",        "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "liq_wat_coarse",       "liq_wat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "ice_wat_coarse",       "ice_wat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "rainwat_coarse",       "rainwat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "snowwat_coarse",       "snowwat_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "graupel_coarse",       "graupel_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "cld_amt_coarse",       "cld_amt_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "o3mr_coarse",          "o3mr_coarse",         "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "aerosol_coarse",       "aerosol_coarse",      "tracer3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 ###
@@ -344,15 +344,15 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "ucomp_coarse",         "ucomp_coarse",         "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "vcomp_coarse",         "vcomp_coarse",         "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "temp_coarse",          "temp_coarse",          "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "delp_coarse",          "delp_coarse",          "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "ucomp_coarse",         "ucomp_coarse",         "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "vcomp_coarse",         "vcomp_coarse",         "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "temp_coarse",          "temp_coarse",          "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "delp_coarse",          "delp_coarse",          "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "pfhy_coarse",          "hypres_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "pfnh_coarse",          "nhpres_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "w_coarse",             "w_coarse",             "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "delz_coarse",          "delz_coarse",          "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
- "dynamics",  "rh_coarse",            "rh_coarse",            "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "w_coarse",             "w_coarse",             "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "delz_coarse",          "delz_coarse",          "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "rh_coarse",            "rh_coarse",            "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "u_plev_coarse",        "u_plev_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "v_plev_coarse",        "v_plev_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 # "dynamics",  "t_plev_coarse",        "t_plev_coarse",        "atmos3d_4xdaily_coarse",  "all",  .false.,  "none",  2
@@ -368,7 +368,7 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
- "dynamics",  "reflectivity_coarse",  "reflectivity_coarse",  "nggps3d_4xdaily_coarse",  "all",  .false.,  "none",  2
+# "dynamics",  "reflectivity_coarse",  "reflectivity_coarse",  "nggps3d_4xdaily_coarse",  "all",  .false.,  "none",  2
 ###
 # tendencies
 ###
@@ -400,14 +400,14 @@
 # "gfs_phys",  "csulf_avetoa_coarse",   "ULWRFtoa_clr_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_phys",  "gflux_ave_coarse",      "GFLUXsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_sfc",   "HGTsfc_coarse",         "HGTsfc_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_phys",  "hpbl_coarse",           "HPBLsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "fice_coarse",           "ICECsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_phys",  "hpbl_coarse",           "HPBLsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "fice_coarse",           "ICECsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_sfc",   "SLMSKsfc_coarse",       "SLMSKsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "lhtfl_ave_coarse",      "LHTFLsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "shtfl_ave_coarse",      "SHTFLsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "psurf_coarse",          "PRESsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "pwat_coarse",           "PWATclm_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_phys",  "soilm_coarse",          "SOILM_coarse",      "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_phys",  "soilm_coarse",          "SOILM_coarse",      "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW1_coarse",         "SOILW1_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW2_coarse",         "SOILW2_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "SOILW3_coarse",         "SOILW3_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
@@ -424,23 +424,23 @@
 # "gfs_sfc",   "SOILT4_coarse",         "SOILT4_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_sfc",   "t2m_coarse",            "TMP2m_coarse",      "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_sfc",   "tsfc_coarse",           "TMPsfc_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_phys",  "u-gwd_ave_coarse",      "UGWDsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_phys",  "v-gwd_ave_coarse",      "VGWDsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_phys",  "dusfc_coarse",          "UFLXsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_phys",  "dvsfc_coarse",          "VFLXsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_phys",  "u-gwd_ave_coarse",      "UGWDsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_phys",  "v-gwd_ave_coarse",      "VGWDsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_phys",  "dusfc_coarse",          "UFLXsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_phys",  "dvsfc_coarse",          "VFLXsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "u10m_coarse",           "UGRD10m_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "v10m_coarse",           "VGRD10m_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "weasd_coarse",          "WEASDsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "snowd_coarse",          "SNODsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "weasd_coarse",          "WEASDsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "snowd_coarse",          "SNODsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "acond_coarse",          "CMMsfc_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "sfexc_coarse",          "CHHsfc_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "ffmm_coarse",           "FFMMsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "ffhh_coarse",           "FFHHsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "ZORLsfc_coarse",        "ZORLsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "VFRACsfc_coarse",       "VFRACsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "ZORLsfc_coarse",        "ZORLsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "VFRACsfc_coarse",       "VFRACsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
 # "gfs_sfc",   "f10m_coarse",           "F10Msfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "vtype_coarse",          "VTYPEsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
- "gfs_sfc",   "stype_coarse",          "STYPEsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "vtype_coarse",          "VTYPEsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
+# "gfs_sfc",   "stype_coarse",          "STYPEsfc_coarse",   "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "toticeb_ave_coarse",     "ICEsfc_coarse",     "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "totsnwb_ave_coarse",     "SNOWsfc_coarse",    "nggps2d_coarse",         "all",  .false.,  "none",  2
  "gfs_phys",  "totgrpb_ave_coarse",     "GRAUPELsfc_coarse", "nggps2d_coarse",         "all",  .false.,  "none",  2
@@ -661,25 +661,25 @@
 ####
 ## SOS high-frequency
 ####
- "dynamics",  "tq_coarse",          "tq_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "lw_coarse",          "lw_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "iw_coarse",          "iw_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "tq_coarse",          "tq_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "lw_coarse",          "lw_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "iw_coarse",          "iw_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
 # "dynamics",  "tb_coarse",          "tb_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "ps_coarse",          "ps_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "us_coarse",          "us_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "vs_coarse",          "vs_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "slp_coarse",         "slp_coarse",         "atmos_sos_coarse", "all", .false., "none", 2
- "dynamics",  "vort850_coarse",     "vort850_coarse",     "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "ps_coarse",          "ps_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "us_coarse",          "us_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "vs_coarse",          "vs_coarse",          "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "slp_coarse",         "slp_coarse",         "atmos_sos_coarse", "all", .false., "none", 2
+# "dynamics",  "vort850_coarse",     "vort850_coarse",     "atmos_sos_coarse", "all", .false., "none", 2
 # "dynamics",  "w850_coarse",        "w850_coarse",        "atmos_sos_coarse", "all", .false., "none", 2
 # "dynamics",  "ctt_coarse",         "ctt_coarse",         "atmos_sos_coarse", "all", .false., "none", 2
 # "dynamics",  "ctp_coarse",         "ctp_coarse",         "atmos_sos_coarse", "all", .false., "none", 2
 ####
 ## hourly statistics
 ####
- "dynamics", "uh25_coarse",   "MXUPHL2_5km_coarse", "atmos_sos_ave_coarse", "all", max, "none", 2
- "dynamics", "uh25_coarse",   "MNUPHL2_5km_coarse", "atmos_sos_ave_coarse", "all", min, "none", 2
- "dynamics", "wmaxup_coarse", "MAXUVV_coarse",      "atmos_sos_ave_coarse", "all", max, "none", 2
- "dynamics", "wmaxdn_coarse", "MAXDVV_coarse",      "atmos_sos_ave_coarse", "all", min, "none", 2
+# "dynamics", "uh25_coarse",   "MXUPHL2_5km_coarse", "atmos_sos_ave_coarse", "all", max, "none", 2
+# "dynamics", "uh25_coarse",   "MNUPHL2_5km_coarse", "atmos_sos_ave_coarse", "all", min, "none", 2
+# "dynamics", "wmaxup_coarse", "MAXUVV_coarse",      "atmos_sos_ave_coarse", "all", max, "none", 2
+# "dynamics", "wmaxdn_coarse", "MAXDVV_coarse",      "atmos_sos_ave_coarse", "all", min, "none", 2
 ####
 ## Monthly averages:
 ####
