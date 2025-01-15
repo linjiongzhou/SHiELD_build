@@ -58,7 +58,7 @@ spin()
   pic="nopic"
 
   config_name="SHiELD"
-  tag="v2025.e0004"
+  tag="v2025.e0001"
 
 #
 # parse arguments
