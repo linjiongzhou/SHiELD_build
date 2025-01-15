@@ -54,10 +54,11 @@ spin()
   bit="32bit"
   avx="Y"
   compiler="intel"
-  clean="noclean"
+  clean="clean"
   pic="nopic"
 
   config_name="SHiELD"
+  tag="v2025.e0004"
 
 #
 # parse arguments
@@ -167,6 +168,7 @@ echo -e "\tbit      = $bit"
 echo -e "\tavx      = $avx"
 echo -e "\tcompiler = $compiler"
 echo -e "\tclean    = $clean"
+echo -e "\ttag      = $tag"
 echo -e "\tpic      = $pic"
 echo -e "\n"
 sleep 5
@@ -289,7 +291,7 @@ echo -e "  building ${config} ${hydro} ${comp} ${bit} ${compiler} \t `date`"
     mk_make ${config} ${hydro} ${comp} ${bit} ${avx} ${compiler} ${pic} >> build_${config}_${hydro}.${comp}.${bit}.${compiler}.out 2>&1
   #
   # move the executable to an accessible area
-    mv exec/${config}_${hydro}.${comp}.${bit}.${compiler}/test.x bin/${config_name}_${hydro}.${comp}.${bit}.${compiler}.x
+    mv exec/${config}_${hydro}.${comp}.${bit}.${compiler}/test.x bin/${config_name}_${hydro}.${comp}.${bit}.${compiler}.${tag}.x
 
 #
 # test and report on build success
