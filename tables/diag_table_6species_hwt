@@ -201,9 +201,9 @@
  "dynamics", "srh01",  "HLCY0_1km", "atmos_hourly", "all", .false., "none", 2
  "dynamics", "srh03",  "HLCY0_3km", "atmos_hourly", "all", .false., "none", 2
  "dynamics", "srh25",  "HLCY2_5km", "atmos_hourly", "all", .false., "none", 2
- "dynamics", "cape",   "CAPE",      "atmos_hourly", "all", .false., "none", 2
- "dynamics", "cin",    "CIN",       "atmos_hourly", "all", .false., "none", 2
- "dynamics", "shear06","SHEAR06",   "atmos_hourly", "all", .false., "none", 2
+# "dynamics", "cape",   "CAPE",      "atmos_hourly", "all", .false., "none", 2
+# "dynamics", "cin",    "CIN",       "atmos_hourly", "all", .false., "none", 2
+# "dynamics", "shear06","SHEAR06",   "atmos_hourly", "all", .false., "none", 2
 ####
  "dynamics",  "intqv",     "intqv",    "atmos_hourly", "all", .false.,  "none", 2
  "dynamics",  "intql",     "intql",    "atmos_hourly", "all", .false.,  "none", 2

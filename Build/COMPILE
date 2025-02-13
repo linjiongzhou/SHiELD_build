@@ -48,7 +48,7 @@ spin()
 # set default values
 #
 # configure your build parameters
-  config="shield"
+  config="shieldfull"
   hydro="nh"
   comp="prod"
   bit="32bit"
@@ -57,7 +57,7 @@ spin()
   clean="clean"
   pic="nopic"
 
-  config_name="SHiELD"
+  config_name="SHiELDFULL"
   tag="v2025.e0001"
 
 #

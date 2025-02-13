@@ -1,0 +1,47 @@
+# added by FRE: sphum must be present in atmos
+# specific humidity for moist runs
+ "TRACER", "atmos_mod", "sphum"
+           "longname",     "specific humidity"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# prognostic hydrometeors
+ "TRACER", "atmos_mod", "liq_wat"
+           "longname",     "cloud water mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "rainwat"
+           "longname",     "rain mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_wat"
+           "longname",     "cloud ice mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snowwat"
+           "longname",     "snow mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "graupel"
+           "longname",     "graupel mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# prognostic ozone mixing ratio tracer
+ "TRACER", "atmos_mod", "o3mr"
+           "longname",     "ozone mixing ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# prognostic tke
+ "TRACER", "atmos_mod", "sgs_tke"
+           "longname",    "TKE"
+           "units",     "m**2/s**2"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# non-prognostic cloud amount
+ "TRACER", "atmos_mod", "cld_amt"
+           "longname",     "cloud amount"
+           "units",        "1"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# non-prognostic aerosol
+ "TRACER", "atmos_mod", "aerosol"
+           "longname",     "aerosol"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /

@@ -6,14 +6,14 @@
 #"atmos_sos",              45,  "seconds",    1, "seconds",  "time"
 #"atmos_sos_ave",          45,  "seconds",    1, "seconds",  "time"
 #"atmos_coarse",           45,  "seconds",    1, "seconds",  "time"
-#"atmos3d",                45,  "seconds",    1, "seconds",  "time"
+"atmos3d",                45,  "seconds",    1, "seconds",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics",             0,  "seconds",    1, "seconds",  "time"
 #"gfs_surface",             0,  "seconds",    1, "seconds",  "time"
 # files needed for NGGPS evaluation (only at end of simulation, here)
-#"nggps3d",                45,  "seconds",    1, "seconds",  "time"
+"nggps3d",                45,  "seconds",    1, "seconds",  "time"
 "nggps2d",                 0,  "seconds",    1, "seconds",  "time"
-#"tracer3d",               45,  "seconds",    1, "seconds",  "time"
+"tracer3d",               45,  "seconds",    1, "seconds",  "time"
 #"cloud3d",                45,  "seconds",    1, "seconds",  "time"
 #"tracer3d_qlr",           45,  "seconds",    1, "seconds",  "time"
 #"tracer3d_qis",           45,  "seconds",    1, "seconds",  "time"
@@ -235,13 +235,13 @@
 ###
 # tracer
 ###
-# "dynamics",  "sphum",         "sphum",        "tracer3d",  "all",  .false.,  "none",  2
-# "dynamics",  "liq_wat",       "liq_wat",      "tracer3d",  "all",  .false.,  "none",  2
-# "dynamics",  "ice_wat",       "ice_wat",      "tracer3d",  "all",  .false.,  "none",  2
-# "dynamics",  "rainwat",       "rainwat",      "tracer3d",  "all",  .false.,  "none",  2
-# "dynamics",  "snowwat",       "snowwat",      "tracer3d",  "all",  .false.,  "none",  2
-# "dynamics",  "graupel",       "graupel",      "tracer3d",  "all",  .false.,  "none",  2
-# "dynamics",  "cld_amt",       "cld_amt",      "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "sphum",         "sphum",        "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "liq_wat",       "liq_wat",      "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "ice_wat",       "ice_wat",      "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "rainwat",       "rainwat",      "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "snowwat",       "snowwat",      "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "graupel",       "graupel",      "tracer3d",  "all",  .false.,  "none",  2
+ "dynamics",  "cld_amt",       "cld_amt",      "tracer3d",  "all",  .false.,  "none",  2
 # "dynamics",  "o3mr",          "o3mr",         "tracer3d",  "all",  .false.,  "none",  2
 # "dynamics",  "aerosol",       "aerosol",      "tracer3d",  "all",  .false.,  "none",  2
 # "dynamics",  "ql_num",        "ql_num",       "tracer3d",  "all",  .false.,  "none",  2
@@ -523,14 +523,14 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
-# "dynamics",  "ucomp",         "ucomp",         "atmos3d",  "all",  .false.,  "none",  2
-# "dynamics",  "vcomp",         "vcomp",         "atmos3d",  "all",  .false.,  "none",  2
-# "dynamics",  "temp",          "temp",          "atmos3d",  "all",  .false.,  "none",  2
-# "dynamics",  "delp",          "delp",          "atmos3d",  "all",  .false.,  "none",  2
+ "dynamics",  "ucomp",         "ucomp",         "atmos3d",  "all",  .false.,  "none",  2
+ "dynamics",  "vcomp",         "vcomp",         "atmos3d",  "all",  .false.,  "none",  2
+ "dynamics",  "temp",          "temp",          "atmos3d",  "all",  .false.,  "none",  2
+ "dynamics",  "delp",          "delp",          "atmos3d",  "all",  .false.,  "none",  2
 # "dynamics",  "pfhy",          "hypres",        "atmos3d",  "all",  .false.,  "none",  2
 # "dynamics",  "pfnh",          "nhpres",        "atmos3d",  "all",  .false.,  "none",  2
-# "dynamics",  "w",             "w",             "atmos3d",  "all",  .false.,  "none",  2
-# "dynamics",  "delz",          "delz",          "atmos3d",  "all",  .false.,  "none",  2
+ "dynamics",  "w",             "w",             "atmos3d",  "all",  .false.,  "none",  2
+ "dynamics",  "delz",          "delz",          "atmos3d",  "all",  .false.,  "none",  2
 # "dynamics",  "rh",            "rh",            "atmos3d",  "all",  .false.,  "none",  2
 # "dynamics",  "u_plev",        "u_plev",        "atmos3d",  "all",  .false.,  "none",  2
 # "dynamics",  "v_plev",        "v_plev",        "atmos3d",  "all",  .false.,  "none",  2
@@ -547,7 +547,7 @@
 ###
 # FV3 variabls needed for NGGPS evaluation
 ###
-# "dynamics",  "reflectivity",  "reflectivity",  "nggps3d",  "all",  .false.,  "none",  2
+ "dynamics",  "reflectivity",  "reflectivity",  "nggps3d",  "all",  .false.,  "none",  2
 ###
 # tendencies
 ###
