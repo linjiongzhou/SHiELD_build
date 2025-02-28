@@ -14,7 +14,7 @@
            "units",        "kg/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "ice_wat"
-           "longname",     "ice specific ratio - mass (total)"
+           "longname",     "ice category 1 specific ratio - mass (total)"
            "units",        "kg/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "liq_wat_num"
@@ -26,23 +26,23 @@
            "units",        "#/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "ice_wat_num"
-           "longname",     "ice specific ratio - number"
+           "longname",     "ice category 1 specific ratio - number"
            "units",        "#/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "ice_rim_mass"
-           "longname",     "ice specific ratio - mass (rime)"
+           "longname",     "ice category 1 specific ratio - mass (rime)"
            "units",        "kg/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "ice_wat_vol"
-           "longname",     "ice specific ratio - volume"
+           "longname",     "ice category 1 specific ratio - volume"
            "units",        "m**3/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "ice_rad_ref"
-           "longname",     "ice specific ratio - reflectivity"
+           "longname",     "ice category 1 specific ratio - reflectivity"
            "units",        "m**6/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "ice_liq_mass"
-           "longname",     "ice specific ratio - mass (liquid)"
+           "longname",     "ice category 1 specific ratio - mass (liquid)"
            "units",        "kg/kg"
        "profile_type", "fixed", "surface_value=1.e30" /
 # prognostic ozone mixing ratio tracer
@@ -86,7 +86,7 @@
            "adjust_mass", "false"
        "profile_type", "fixed", "surface_value=1.e30" /
  "TRACER", "atmos_mod", "qi_old"
-           "longname",     "ice water at the previous time step"
+           "longname",     "ice category 1 the previous time step"
            "units",        "kg/kg"
            "tracer_type",  "diagnostic"
            "adjust_mass", "false"

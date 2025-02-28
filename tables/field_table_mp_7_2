@@ -1,0 +1,123 @@
+# added by FRE: sphum must be present in atmos
+# specific humidity for moist runs
+ "TRACER", "atmos_mod", "sphum"
+           "longname",     "specific humidity"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# prognostic hydrometeors
+ "TRACER", "atmos_mod", "liq_wat"
+           "longname",     "cloud water mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "rainwat"
+           "longname",     "rain mass specific ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_wat"
+           "longname",     "ice category 1 specific ratio - mass (total)"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snowwat"
+           "longname",     "ice category 2 specific ratio - mass (total)"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "liq_wat_num"
+           "longname",     "cloud water number specific ratio"
+           "units",        "#/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "rainwat_num"
+           "longname",     "rain number specific ratio"
+           "units",        "#/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_wat_num"
+           "longname",     "ice category 1 specific ratio - number"
+           "units",        "#/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_rim_mass"
+           "longname",     "ice category 1 specific ratio - mass (rime)"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_wat_vol"
+           "longname",     "ice category 1 specific ratio - volume"
+           "units",        "m**3/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_rad_ref"
+           "longname",     "ice category 1 specific ratio - reflectivity"
+           "units",        "m**6/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "ice_liq_mass"
+           "longname",     "ice category 1 specific ratio - mass (liquid)"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snow_wat_num"
+           "longname",     "ice category 2 specific ratio - number"
+           "units",        "#/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snow_rim_mass"
+           "longname",     "ice category 2 specific ratio - mass (rime)"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snow_wat_vol"
+           "longname",     "ice category 2 specific ratio - volume"
+           "units",        "m**3/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snow_rad_ref"
+           "longname",     "ice category 2 specific ratio - reflectivity"
+           "units",        "m**6/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "snow_liq_mass"
+           "longname",     "ice category 2 specific ratio - mass (liquid)"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# prognostic ozone mixing ratio tracer
+ "TRACER", "atmos_mod", "o3mr"
+           "longname",     "ozone mixing ratio"
+           "units",        "kg/kg"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# prognostic tke
+ "TRACER", "atmos_mod", "sgs_tke"
+           "longname",    "TKE"
+           "units",     "m**2/s**2"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# non-prognostic cloud amount
+ "TRACER", "atmos_mod", "cld_amt"
+           "longname",     "cloud amount"
+           "units",        "1"
+       "profile_type", "fixed", "surface_value=1.e30" /
+# diagnostic variables
+ "TRACER", "atmos_mod", "pt_old"
+           "longname",     "temperature at the previous time step"
+           "units",        "K"
+           "tracer_type",  "diagnostic"
+           "adjust_mass", "false"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "qv_old"
+           "longname",     "water vapor at the previous time step"
+           "units",        "kg/kg"
+           "tracer_type",  "diagnostic"
+           "adjust_mass", "false"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "qc_old"
+           "longname",     "cloud water at the previous time step"
+           "units",        "kg/kg"
+           "tracer_type",  "diagnostic"
+           "adjust_mass", "false"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "qr_old"
+           "longname",     "rain water at the previous time step"
+           "units",        "kg/kg"
+           "tracer_type",  "diagnostic"
+           "adjust_mass", "false"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "qi_old"
+           "longname",     "ice category 1 the previous time step"
+           "units",        "kg/kg"
+           "tracer_type",  "diagnostic"
+           "adjust_mass", "false"
+       "profile_type", "fixed", "surface_value=1.e30" /
+ "TRACER", "atmos_mod", "qs_old"
+           "longname",     "ice category 2 at the previous time step"
+           "units",        "kg/kg"
+           "tracer_type",  "diagnostic"
+           "adjust_mass", "false"
+       "profile_type", "fixed", "surface_value=1.e30" /

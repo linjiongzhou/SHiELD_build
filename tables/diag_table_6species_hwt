@@ -1,12 +1,15 @@
 #output files
 "grid_spec",              -1,  "hours",    1, "hours",  "time"
 "atmos_hourly",            1,  "hours",    1, "hours",  "time"
+#"atmos_mp_hourly",         1,  "hours",    1, "hours",  "time"
 #"atmos_daily",            24,  "hours",    1, "hours",  "time"
 "atmos_static",           -1,  "hours",    1, "hours",  "time"
 #"atmos_sos",               1,  "hours",    1, "hours",  "time"
 "atmos_sos_ave",           1,  "hours",    1, "hours",  "time"
 #"atmos_coarse",            1,  "hours",    1, "hours",  "time"
 "atmos3d_hourly",          1,  "hours",    1, "hours",  "time"
+#"atmos3d_dt_hourly",       1,  "hours",    1, "hours",  "time"
+#"atmos3d_mp_hourly",       1,  "hours",    1, "hours",  "time"
 #NOTE: Using multiple gfs output files appears to cause OOM errors.
 #"gfs_physics",             0,  "hours",    1, "hours",  "time"
 #"gfs_surface",             0,  "hours",    1, "hours",  "time"
@@ -293,6 +296,37 @@
 # "dynamics",  "res",         "res",        "cloud3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "reg",         "reg",        "cloud3d_hourly",  "all",  .false.,  "none",  2
 # "dynamics",  "cld",         "cld",        "cloud3d_hourly",  "all",  .false.,  "none",  2
+###
+# cloud microphysics precipitation
+###
+# "dynamics",  "acc_drzl",   "acc_drzl",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_rain",   "acc_rain",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_crys",   "acc_crys",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_snow",   "acc_snow",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_grpl",   "acc_grpl",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_pell",   "acc_pell",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_hail",   "acc_hail",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_wsnow",  "acc_wsnow",  "atmos_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "acc_sndp",   "acc_sndp",   "atmos_mp_hourly",  "all",  .false.,  "none",  2
+###
+# cloud microphysics tendencies
+###
+# "dynamics",  "T_dt_gfdlmp",        "t_dt",        "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qv_dt_gfdlmp",       "sphum_dt",    "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "liq_wat_dt_gfdlmp",  "liq_wat_dt",  "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "ice_wat_dt_gfdlmp",  "ice_wat_dt",  "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qr_dt_gfdlmp",       "rainwat_dt",  "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qs_dt_gfdlmp",       "snowwat_dt",  "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qg_dt_gfdlmp",       "graupel_dt",  "atmos3d_dt_hourly",  "all",  .false.,  "none",  2
+###
+# qi type
+###
+# "dynamics",  "qi_type_1",  "qi_type_1",  "atmos3d_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_type_2",  "qi_type_2",  "atmos3d_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_type_3",  "qi_type_3",  "atmos3d_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_type_4",  "qi_type_4",  "atmos3d_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_type_5",  "qi_type_5",  "atmos3d_mp_hourly",  "all",  .false.,  "none",  2
+# "dynamics",  "qi_type_6",  "qi_type_6",  "atmos3d_mp_hourly",  "all",  .false.,  "none",  2
 #############################################################################################
 ###
 # coarse grained diagnostics
