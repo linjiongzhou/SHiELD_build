@@ -48,7 +48,7 @@ spin()
 # set default values
 #
 # configure your build parameters
-  config="shieldfull"
+  config="shield"
   hydro="nh"
   comp="prod"
   bit="32bit"
@@ -57,7 +57,7 @@ spin()
   clean="clean"
   pic="nopic"
 
-  config_name="SHiELDFULL"
+  config_name="SHiELD"
   tag="v2025.e0001"
 
 #
@@ -65,7 +65,7 @@ spin()
   for arg in "$@"
   do
       case $arg in
-          shield|solo|shield|shiemom)
+          shield|solo|shiemom)
              config="${arg#*=}"
              if [ $config = 'solo' ] ; then
                config_name="SOLO"
