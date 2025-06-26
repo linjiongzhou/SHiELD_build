@@ -75,8 +75,10 @@ case $hostname in
       module rm gcc
       module load intel-classic/2023.2.0
       module unload cray-libsci
-      module load cray-hdf5/1.12.2.11
-      module load cray-netcdf/4.9.0.11
+      #module load cray-hdf5/1.12.2.11
+      #module load cray-netcdf/4.9.0.11
+      module load cray-hdf5/1.14.3.5
+      module load cray-netcdf/4.9.0.17
       module load craype-hugepages4M
       module load cmake/3.23.1
       module load libyaml/0.2.5
@@ -215,7 +217,7 @@ case $hostname in
       module list
       ;;
    stellar* )
-     echo " Stellar environment "                                                                                                                            
+     echo " Stellar environment "
 
       . ${MODULESHOME}/init/sh
       module purge
@@ -238,8 +240,8 @@ case $hostname in
       # highest level of AVX support
       export AVX_LEVEL=-march=core-avx2
       echo -e ' '
-      module list  
- 
+      module list
+
       ;;
    * )
       echo " no environment available based on the hostname "
